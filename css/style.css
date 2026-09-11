@@ -1,0 +1,165 @@
+@charset "utf-8";
+:root {
+    --blue: #27589B;
+    --orange: #F08302;
+    --text_color: #102440;
+    --snow_white: #FAFDFF;
+    --gray_white: #F6F6F6;
+    --logo_coler: #04243D;
+}
+
+
+
+body {
+    background-image: url(../images/main/bg_noise_offwhite.jpg);
+}
+
+
+/* メインビジュアル */
+.mv {
+    margin-top: 6.94vw;
+    margin-bottom: 100px;
+}
+
+
+/* メインビジュアル＿＿上部 */
+.mv__title {
+    position: relative;
+}
+.mv__circle {
+    width: 40.28vw;/* 縦横同じサイズを指定して可変しても正円を保つ */
+    height: 40.28vw;
+    background-image: url(..//images/main/bg_noise_white.jpg);
+    border-radius: 50%;/* 正円にするために角を丸く */
+    margin: 0 auto;/* 左右中央 */
+}
+.mv__title img {
+    width: 53.4%;
+    position: absolute;
+    top: 50%;/* 親要素から50％動く */
+    left: 50%;
+    transform: translate(-50%, -50%);/* 自分自身（ロゴ画像）のサイズを基準に「自分の幅の50%左へ、自分の高さの50%上へ動く。
+    これでロゴの width を後から変更しても、画像の縦横比が変わっても、親要素のサイズが変わっても中央配置にしてくれる */
+    transition: 0.5s ;
+}
+.mv__title img:first-child {/* メインロゴ表示*/
+    opacity: 1;
+}
+.mv__title img:last-child {/* ホバーロゴ非表示*/
+    opacity: 0;
+}
+.mv__title:hover img:first-child {/* ホバー時＿メインロゴ非表示*/
+    opacity: 0;
+}
+.mv__title:hover img:last-child {/* ホバー時＿ホバーロゴ表示*/
+    opacity: 1;
+}
+
+
+/* メインビジュアル＿＿下部 */
+.mv__object {
+    position: relative;
+    margin-top: -8.05vw;
+}
+.blue_tama__back {
+    width: 86.87vw;
+    margin-left: 3%;
+}
+.mv__front--container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-start;
+    margin-left: 3.05vw;
+}
+.blue_tama__front--left {
+    width: 30.7vw;
+    margin-left: 4.38vw;
+    margin-top: 4.93vw;/* 計算、デザインカンプの位置の差縦71px÷横幅1440px×100＝4.93vw */
+}
+.blue_tama__front--center {
+    width: 11.6vw;
+    margin-left: 10.14vw;
+    margin-top: 11.67vw;
+}
+.blue_tama__front--right {
+    width: 29.38vw;
+    margin-left: 9.1vw;
+    margin-top: 2.5vw;
+}
+
+
+/* メインビジュアル＿＿スクロールダウン */
+.scroll__container {
+    position: relative;
+    margin-top: 9.44vw;
+}
+.scroll__container a span {/* 波打つスクロール文字 */
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 100%;
+    display: block;
+    transform: rotate(90deg);
+    animation: wave 2s infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+@keyframes wave {
+    0%,
+    100% {
+    transform: rotate(90deg) translateY(0);
+    }
+    50% {
+    transform: rotate(90deg) translateY(-8px);
+    }
+}
+.scroll__bar {/* SCROLL文字の下の棒 */
+    width: 1px;
+    height: 7vw;
+    background-color: var(--text_color);
+    margin-top: 0.49vw;
+}
+
+
+/* ナビゲーションバー */
+
+.header__inner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0;
+}
+.header__inner--logo {
+    position: absolute;
+    left: 12px;
+    width: 80px;
+}
+
+.header__nav{
+    width: 55.49%;
+    height: 50px;
+    background-color: rgba(246, 246, 256, 0.3);
+    border: 1px solid var(--gray_white);
+    border-radius: 50px;
+}
+
+.header__nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 11.8%;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.header__nav a {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--blue);
+}
+

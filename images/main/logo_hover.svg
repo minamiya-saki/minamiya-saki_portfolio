@@ -1,0 +1,92 @@
+<svg width="700" height="330" viewBox="0 0 700 330" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<path d="M134.952 124.384C134.952 153.859 112.712 179.362 65.7197 179.362C40.9937 179.362 16.2408 171.879 0 159.127L13.9979 133.894C26.4824 144.376 45.4795 151.13 65.2332 151.13C88.4729 151.13 102.228 140.891 102.228 124.654C102.228 108.418 90.7429 98.665 64.2334 98.665H48.2359V76.4308L87.9865 29.2068H8.48519V1.97461H127.683V23.7225L85.2032 74.1885C118.198 78.43 134.925 98.1788 134.925 124.411L134.952 124.384Z" fill="url(#pattern0_524_3507)"/>
+<path d="M315.623 1.97461V23.7225L247.661 176.876H212.936L278.656 29.4769H209.937V59.2216H179.698V1.97461H315.65H315.623Z" fill="url(#pattern1_524_3507)"/>
+<path d="M487.791 124.384C487.791 153.859 465.551 179.362 418.558 179.362C393.806 179.362 369.08 171.879 352.839 159.127L366.837 133.894C379.321 144.376 398.318 151.13 418.072 151.13C441.312 151.13 455.066 140.891 455.066 124.654C455.066 108.418 443.582 98.665 417.072 98.665H401.075V76.4308L440.825 29.2068H361.351V1.97461H480.549V23.7225L438.069 74.1885C471.064 78.43 487.791 98.1788 487.791 124.411V124.384Z" fill="url(#pattern2_524_3507)"/>
+<path d="M603.501 66.6485C602.934 66.0812 602.447 65.5679 601.907 65.0276C601.907 65.0276 599.502 62.7042 599.556 62.6231C590.314 52.8433 587.747 47.5212 587.747 40.6861C587.747 29.9338 595.989 22.2072 609.987 22.2072C622.985 22.2072 630.227 28.9612 630.227 38.9571C630.227 46.7107 625.876 52.9784 613.203 61.0292L630.551 77.8602C648.873 65.784 656.709 53.978 656.709 38.4708C656.709 14.7507 638.226 0 609.987 0C579.262 0 559.265 16.7499 559.265 41.2265C559.265 53.978 564.507 65.4598 578.748 79.6973C550.266 95.6908 538.268 110.928 538.268 132.676C538.268 160.151 565.021 179.386 601.988 179.386C620.877 179.386 637.712 174.253 651.872 164.96L633.118 146.778C624.498 151.479 614.851 153.91 604.258 153.91C582.775 153.91 568.777 143.914 568.777 129.434C568.777 116.952 575.776 107.686 596.016 96.4472C596.016 96.4472 638.469 137.052 638.523 136.998C638.523 136.998 660.682 158.476 660.763 158.422L682.759 179.657L700 159.422C673.545 133.999 647.143 108.631 621.12 83.6686C621.12 83.6686 603.609 66.7026 603.555 66.7296L603.501 66.6485Z" fill="url(#pattern3_524_3507)"/>
+<path d="M683.3 128.357C688.623 116.767 693.487 101.611 695.92 90.1289H668.464C667.113 96.9099 665.357 103.151 663.276 108.905L683.327 128.33L683.3 128.357Z" fill="url(#pattern4_524_3507)"/>
+<path d="M0 212.672H50.5328C88.0136 212.672 113.604 235.77 113.604 270.432C113.604 305.093 88.0136 328.192 50.5328 328.192H0V212.645V212.672ZM49.533 310.037C75.2858 310.037 91.9589 294.368 91.9589 270.432C91.9589 246.496 75.2858 230.826 49.533 230.826H21.4562V310.064H49.533V310.037Z" fill="url(#pattern5_524_3507)"/>
+<path d="M233.555 310.215V328.208H146.865V212.66H231.231V230.653H168.321V260.695H224.124V278.363H168.321V310.215H233.528H233.555Z" fill="url(#pattern6_524_3507)"/>
+<path d="M264.257 315.986L271.688 299.317C280.93 306.747 295.63 312.015 309.817 312.015C327.815 312.015 335.408 305.585 335.408 296.994C335.408 272.058 266.716 288.403 266.716 245.501C266.716 226.86 281.579 211.002 313.276 211.002C327.139 211.002 341.677 214.622 351.757 221.241L345.001 237.91C334.597 231.804 323.194 228.833 313.141 228.833C295.306 228.833 288.037 235.776 288.037 244.502C288.037 269.086 356.54 253.093 356.54 295.508C356.54 313.987 341.515 329.845 309.817 329.845C291.82 329.845 273.823 324.226 264.257 315.986Z" fill="url(#pattern7_524_3507)"/>
+<path d="M394.939 212.66H416.396V328.208H394.939V212.66Z" fill="url(#pattern8_524_3507)"/>
+<path d="M540.32 269.102H560.615V315.164C548.562 324.89 531.727 329.861 515.378 329.861C479.546 329.861 453.145 304.925 453.145 270.426C453.145 235.926 479.573 211.018 515.73 211.018C535.051 211.018 551.238 217.447 562.128 229.821L548.589 243.032C539.51 233.954 529.106 229.821 516.729 229.821C492.139 229.821 474.79 246.49 474.79 270.426C474.79 294.362 492.139 311.031 516.567 311.031C524.809 311.031 532.916 309.383 540.347 305.087V269.102H540.32Z" fill="url(#pattern9_524_3507)"/>
+<path d="M699.946 212.66V328.208H682.273L618.553 249.969V328.208H597.259V212.66H614.932L678.652 290.899V212.66H699.946Z" fill="url(#pattern10_524_3507)"/>
+<defs>
+<pattern id="pattern0_524_3507" patternUnits="userSpaceOnUse" patternTransform="matrix(8 0 0 8 0 1.97461)" preserveAspectRatio="none" viewBox="0 0 40 40" width="1" height="1">
+<g id="pattern0_524_3507_inner">
+<circle cx="10" cy="10" r="9" fill="#27589B"/>
+<circle cx="10" cy="30" r="9" fill="#27589B"/>
+<circle cx="30" cy="10" r="9" fill="#27589B"/>
+<circle cx="30" cy="30" r="9" fill="#27589B"/>
+</g>
+</pattern><pattern id="pattern1_524_3507" patternUnits="userSpaceOnUse" patternTransform="matrix(8 0 0 8 179.698 1.97461)" preserveAspectRatio="none" viewBox="0 0 40 40" width="1" height="1">
+<g id="pattern1_524_3507_inner">
+<circle cx="10" cy="10" r="9" fill="#27589B"/>
+<circle cx="10" cy="30" r="9" fill="#27589B"/>
+<circle cx="30" cy="10" r="9" fill="#27589B"/>
+<circle cx="30" cy="30" r="9" fill="#27589B"/>
+</g>
+</pattern><pattern id="pattern2_524_3507" patternUnits="userSpaceOnUse" patternTransform="matrix(8 0 0 8 352.839 1.97461)" preserveAspectRatio="none" viewBox="0 0 40 40" width="1" height="1">
+<g id="pattern2_524_3507_inner">
+<circle cx="10" cy="10" r="9" fill="#27589B"/>
+<circle cx="10" cy="30" r="9" fill="#27589B"/>
+<circle cx="30" cy="10" r="9" fill="#27589B"/>
+<circle cx="30" cy="30" r="9" fill="#27589B"/>
+</g>
+</pattern><pattern id="pattern3_524_3507" patternUnits="userSpaceOnUse" patternTransform="matrix(8 0 0 8 538.268 0)" preserveAspectRatio="none" viewBox="0 0 40 40" width="1" height="1">
+<g id="pattern3_524_3507_inner">
+<circle cx="10" cy="10" r="9" fill="#27589B"/>
+<circle cx="10" cy="30" r="9" fill="#27589B"/>
+<circle cx="30" cy="10" r="9" fill="#27589B"/>
+<circle cx="30" cy="30" r="9" fill="#27589B"/>
+</g>
+</pattern><pattern id="pattern4_524_3507" patternUnits="userSpaceOnUse" patternTransform="matrix(8 0 0 8 663.276 90.1289)" preserveAspectRatio="none" viewBox="0 0 40 40" width="1" height="1">
+<g id="pattern4_524_3507_inner">
+<circle cx="10" cy="10" r="9" fill="#27589B"/>
+<circle cx="10" cy="30" r="9" fill="#27589B"/>
+<circle cx="30" cy="10" r="9" fill="#27589B"/>
+<circle cx="30" cy="30" r="9" fill="#27589B"/>
+</g>
+</pattern><pattern id="pattern5_524_3507" patternUnits="userSpaceOnUse" patternTransform="matrix(8 0 0 8 0 212.645)" preserveAspectRatio="none" viewBox="0 0 40 40" width="1" height="1">
+<g id="pattern5_524_3507_inner">
+<circle cx="10" cy="10" r="9" fill="#27589B"/>
+<circle cx="10" cy="30" r="9" fill="#27589B"/>
+<circle cx="30" cy="10" r="9" fill="#27589B"/>
+<circle cx="30" cy="30" r="9" fill="#27589B"/>
+</g>
+</pattern><pattern id="pattern6_524_3507" patternUnits="userSpaceOnUse" patternTransform="matrix(8 0 0 8 146.865 212.66)" preserveAspectRatio="none" viewBox="0 0 40 40" width="1" height="1">
+<g id="pattern6_524_3507_inner">
+<circle cx="10" cy="10" r="9" fill="#27589B"/>
+<circle cx="10" cy="30" r="9" fill="#27589B"/>
+<circle cx="30" cy="10" r="9" fill="#27589B"/>
+<circle cx="30" cy="30" r="9" fill="#27589B"/>
+</g>
+</pattern><pattern id="pattern7_524_3507" patternUnits="userSpaceOnUse" patternTransform="matrix(8 0 0 8 264.257 211.002)" preserveAspectRatio="none" viewBox="0 0 40 40" width="1" height="1">
+<g id="pattern7_524_3507_inner">
+<circle cx="10" cy="10" r="9" fill="#27589B"/>
+<circle cx="10" cy="30" r="9" fill="#27589B"/>
+<circle cx="30" cy="10" r="9" fill="#27589B"/>
+<circle cx="30" cy="30" r="9" fill="#27589B"/>
+</g>
+</pattern><pattern id="pattern8_524_3507" patternUnits="userSpaceOnUse" patternTransform="matrix(8 0 0 8 394.939 212.66)" preserveAspectRatio="none" viewBox="0 0 40 40" width="1" height="1">
+<g id="pattern8_524_3507_inner">
+<circle cx="10" cy="10" r="9" fill="#27589B"/>
+<circle cx="10" cy="30" r="9" fill="#27589B"/>
+<circle cx="30" cy="10" r="9" fill="#27589B"/>
+<circle cx="30" cy="30" r="9" fill="#27589B"/>
+</g>
+</pattern><pattern id="pattern9_524_3507" patternUnits="userSpaceOnUse" patternTransform="matrix(8 0 0 8 453.145 211.018)" preserveAspectRatio="none" viewBox="0 0 40 40" width="1" height="1">
+<g id="pattern9_524_3507_inner">
+<circle cx="10" cy="10" r="9" fill="#27589B"/>
+<circle cx="10" cy="30" r="9" fill="#27589B"/>
+<circle cx="30" cy="10" r="9" fill="#27589B"/>
+<circle cx="30" cy="30" r="9" fill="#27589B"/>
+</g>
+</pattern><pattern id="pattern10_524_3507" patternUnits="userSpaceOnUse" patternTransform="matrix(8 0 0 8 597.259 212.66)" preserveAspectRatio="none" viewBox="0 0 40 40" width="1" height="1">
+<g id="pattern10_524_3507_inner">
+<circle cx="10" cy="10" r="9" fill="#27589B"/>
+<circle cx="10" cy="30" r="9" fill="#27589B"/>
+<circle cx="30" cy="10" r="9" fill="#27589B"/>
+<circle cx="30" cy="30" r="9" fill="#27589B"/>
+</g>
+</pattern></defs>
+</svg>
