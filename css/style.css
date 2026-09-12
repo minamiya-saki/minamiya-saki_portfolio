@@ -123,7 +123,6 @@ body {
 
 
 /* ナビゲーションバー */
-
 .header__inner {
     position: relative;
     display: flex;
@@ -136,7 +135,6 @@ body {
     left: 12px;
     width: 80px;
 }
-
 .header__nav{
     width: 55.49%;
     height: 50px;
@@ -144,7 +142,6 @@ body {
     border: 1px solid var(--gray_white);
     border-radius: 50px;
 }
-
 .header__nav ul {
     display: flex;
     justify-content: space-between;
@@ -154,7 +151,6 @@ body {
     height: 100%;
     box-sizing: border-box;
 }
-
 .header__nav a {
     font-family: Montserrat;
     font-size: 16px;
@@ -163,3 +159,63 @@ body {
     color: var(--blue);
 }
 
+
+/* セクション */
+section {
+    margin-bottom: 200px;
+}
+
+#about {
+    margin: 100px 0 0 11.8%;
+
+}
+
+.h2__test--0 {
+    font-family: Montserrat;
+    font-size: 80px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: transparent;
+    text-shadow: 1px 1px 0 var(--blue),
+    -1px -1px 0 var(--blue),
+    -1px 1px 0 var(--blue),
+    1px -1px 0 var(--blue),
+    1px 0 0 var(--blue),
+    -1px  0 0 var(--blue),
+    0 1px 0 var(--blue),  
+    0 -1px 0 var(--blue);
+    margin-bottom: 80px;
+}
+
+.h2__test--1 {
+    font-family: Montserrat;
+    font-size: 80px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--blue);
+    margin-bottom: 80px;
+}
+
+.h2__test--2 img {
+    height: 58px;
+    padding: 11px 0 11px 0;
+    margin-bottom: 80px;
+    width: auto;
+}
+
+.headding {
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    margin-bottom: 48px;
+}
+.headding__lead {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    line-height: 3.0;
+    width: 45%;
+    margin-bottom: 48px;
+    
+}
