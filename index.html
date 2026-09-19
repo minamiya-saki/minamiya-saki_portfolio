@@ -20,6 +20,10 @@
 
 
 <body>
+    <!-- toTopが戻る位置 -->
+    <div id="top"></div>
+
+
     <!-- メインビジュアル -->
     <div id="mv">
         <!-- メインビジュアル＿＿上部 -->
@@ -51,6 +55,7 @@
         </div>
     </div>
 
+
     <!-- ナビゲーションバー -->
     <header>
         <div class="header__inner">
@@ -65,6 +70,7 @@
             </nav>
         </div>
     </header>
+
 
     <!-- メインコンテンツ -->
     <main>
@@ -107,42 +113,47 @@
                 <ul class="works__list">
                     <li class="works__item">
                         <a href="">
-                            <img src="images/work_thumb/mu_hp_373&portfolio@2x.webp">
+                            <img src="images/work_thumb/mu_hp_373&portfolio@2x.webp" alt="ミナミ&DESIGN PORTFOLIO">
                         </a>
                         <p class="works__category">HP</p>
                         <p class="works__title">373&DESIGN PORTFOLIO</p>
                     </li>
                     <li class="works__item">
                         <a href="">
-                            <img src="images/work_thumb/mu_lp_dezasuta_life_hear_design@2x.webp">
+                            <img src="images/work_thumb/mu_lp_dezasuta_life_hear_design@2x.webp"
+                                alt="LIFE hair design [FICTION]のランディングページ">
                         </a>
                         <p class="works__category">LP</p>
                         <p class="works__title">LIFE hair design [FICTION]</p>
                     </li>
                     <li class="works__item">
                         <a href="">
-                            <img src="images/work_thumb/mu_lp_dezasuta_design_cafe@2x.webp">
+                            <img src="images/work_thumb/mu_lp_dezasuta_design_cafe@2x.webp"
+                                alt="DESIGN CAFE [FICTION]のランディングページ">
                         </a>
                         <p class="works__category">LP</p>
                         <p class="works__title">DESIGN CAFE [FICTION]</p>
                     </li>
                     <li class="works__item">
                         <a href="">
-                            <img src="images/work_thumb/mu_banner_dezasuta_hamburger_pop@2x.webp">
+                            <img src="images/work_thumb/mu_banner_dezasuta_hamburger_pop@2x.webp"
+                                alt="デラックスバーガー① [FICTION]のバナー">
                         </a>
                         <p class="works__category">BANNER</p>
                         <p class="works__title">デラックスバーガー① [FICTION]</p>
                     </li>
                     <li class="works__item">
                         <a href="">
-                            <img src="images/work_thumb/mu_banner_dezasuta_hamburger_luxury@2x.webp">
+                            <img src="images/work_thumb/mu_banner_dezasuta_hamburger_luxury@2x.webp"
+                                alt="デラックスバーガー② [FICTION]のバナー">
                         </a>
                         <p class="works__category">BANNER</p>
                         <p class="works__title">デラックスバーガー② [FICTION]</p>
                     </li>
                     <li class="works__item">
                         <a href="">
-                            <img src="images/work_thumb/mu_banner_dezasuta_ice@2x.webp">
+                            <img src="images/work_thumb/mu_banner_dezasuta_ice@2x.webp"
+                                alt="HAPPY HOLODAY ICE CREAM [FICTION]のバナー">
                         </a>
                         <p class="works__category">BANNER</p>
                         <p class="works__title">HAPPY HOLODAY ICE CREAM [FICTION]</p>
@@ -175,29 +186,31 @@
                     <li class="service__circle service__hp">
                         <p class="service__title--deco" aria-hidden="true">HOME<br>PAGE </p>
                         <dl>
-                            <dt>ホームページ制作</dt>
-                            <dd>ホームページは、企業やお店の“顔”となる大切な存在です。<br>訪れた人にとって使いやすく、ブランドの魅力を感じられる体験と物語をつくります。</dd>
+                            <dt class="service__category">ホームページ制作</dt>
+                            <dd class="service__category--text">
+                                ホームページは、企業やお店の“顔”となる大切な存在です。<br>訪れた人にとって使いやすく、ブランドの魅力を感じられる体験と物語をつくります。</dd>
                         </dl>
                     </li>
                     <li class="service__circle service__lp">
                         <p class="service__title--deco" aria-hidden="true">LANDING<br>PAGE </p>
                         <dl>
-                            <dt>ランディングページ制作</dt>
-                            <dd>伝えたいことを整理し、届けたい相手を見つめ、まずは「何を達成したいか」を一緒に考えます。<br>
-                                目的に寄り添い、成果につながるランディングページを制作します。</dd>
+                            <dt class="service__category">ランディングページ制作</dt>
+                            <dd class="service__category--text">伝えたいことを整理し、届けたい相手を見つめ、まずは「何を達成したいか」を一緒に考えます。<br>
+                                目的に寄り添い、成果につながるランディングページを制作します。</ddservice__category->
                         </dl>
                     </li>
-                    <li class="service__circle service__web">
+                    <li class=" service__circle service__web">
                         <p class="service__title--deco" aria-hidden="true">WEB<br>GRAPHIC</p>
                         <dl>
-                            <dt>WEB画像制作</dt>
-                            <dd>画像が何を伝えるべきか、その目的を明確にすることから始めます。<br>情報の優先順位を整理し、視認性を大切にしながら、クリックした先まで見据えて設計します。</dd>
+                            <dt class="service__category">WEB画像制作</dt>
+                            <dd class="service__category--text">
+                                画像が何を伝えるべきか、その目的を明確にすることから始めます。<br>情報の優先順位を整理し、視認性を大切にしながら、クリックした先まで見据えて設計します。</dd>
                         </dl>
                     </li>
                 </ul>
             </div>
             <!-- セクション＿＿サービスーースキル -->
-            <div class="skill">
+            <div class=" skill">
                 <h3><img src="images/main/skill.svg"></h3>
                 <div class="skill__inner">
                     <ul class="skill__tool">
@@ -232,7 +245,6 @@
                 </li>
             </ul>
         </section>
-
         <!-- セクション＿＿コンタクト -->
         <section id="contact">
             <div class="contact">
@@ -253,57 +265,63 @@
                 </a>
             </div>
         </section>
-        <footer>
-            <img src="images/main/footer_nami_pc.svg" class="footer__wave">
-            <div class="footer">
-                <div class="footer__container">
-                    <nav class="footer__nav">
-                        <ul>
-                            <li><a href="#about">ABOUT</a></li>
-                            <li><a href="#works">WORKS</a></li>
-                            <li><a href="#service">SERVICE</a></li>
-                            <li><a href="#contact">CONTACT</a></li>
-                        </ul>
-                    </nav>
-                    <div class="footer__icon--container">
-                        <a href="#mv" class="footer__logo">
-                            <img src="images/main/logo_fafdff_web.svg">
-                        </a>
-                        <a href="" class="sns">
-                            <img src="images/main/line_brand_icon.png">
-                        </a>
-                        <a href="" class="sns">
-                            <img src="images/main/Instagram_Glyph_White.png">
-                        </a>
-                    </div>
-                    <a href="privacy_policy.html">プライバシーポリシー</a>
-                    <p class="copyright">373&DESIGN</p>
-                </div>
-                <!-- toTOP設置 -->
-                <a href="#mv" class="totop">
-                    <!-- 回るテキスト -->
-                    <div class="totop__svg-wrap">
-                        <svg class="totop__svg" viewBox="0 0 100 100">
-                            <path id="totopPath" class="totop__path" d="M 0 50 A 50 50 0 1 1 0 51 z" />
-                            <text class="totop__text">
-                                <textPath xlink:href="#totopPath">
-                                    SCROLL TO TOP
-                                </textPath>
-                            </text>
-                        </svg>
-                    </div>
-                    <!-- 矢印 -->
-                    <div class="totop__circle">
-                        <div class="totop__arrow"></div>
-                    </div>
-                </a>
-            </div>
-        </footer>
-
-
-
-
     </main>
+
+
+    <!-- フッター -->
+    <footer>
+        <img src="images/main/footer_nami_pc.svg" class="footer__wave">
+        <div class="footer">
+            <div class="footer__container">
+                <!-- フッターナビ -->
+                <nav class="footer__nav">
+                    <ul>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#works">WORKS</a></li>
+                        <li><a href="#service">SERVICE</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <div class="footer__icon--container">
+                    <a href="#mv" class="footer__logo">
+                        <img src="images/main/logo_fafdff_web.svg" alt="373&DESIGNのロゴ">
+                    </a>
+                    <a href="https://lin.ee/58rOvTp" target="_blank" class="sns">
+                        <img src="images/main/line_brand_icon.png" alt="LINEのアイコン">
+                    </a>
+                    <a href="https://www.instagram.com/373_valley_design?stkn=MXAxNTZ2bGgxdW9zdQ==" target="_blank"
+                        class="sns">
+                        <img src="images/main/Instagram_Glyph_White.png" alt="Instagramのアイコン">
+                    </a>
+                </div>
+                <a href="privacy_policy.html" class="privacy_policy">プライバシーポリシー</a>
+                <p class="copyright">©373&DESIGN</p>
+            </div>
+            <!-- toTOP設置 -->
+            <a href="#top" class="totop">
+                <!-- 回るテキスト -->
+                <div class="totop__svg-wrap">
+                    <svg class="totop__svg" viewBox="0 0 100 100">
+                        <path id="totopPath" class="totop__path" d="M 0 50 A 50 50 0 1 1 0 51 z" />
+                        <text class="totop__text">
+                            <textPath xlink:href="#totopPath">
+                                SCROLL TO TOP
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+                <!-- 矢印 -->
+                <div class="totop__circle">
+                    <div class="totop__arrow"></div>
+                </div>
+            </a>
+        </div>
+    </footer>
+
+
+
+
+
 
 
 
@@ -312,12 +330,6 @@
 
     <!-- ヘッダー -->
 
-
-
-
-    <main>
-
-    </main>
 
 
 </body>

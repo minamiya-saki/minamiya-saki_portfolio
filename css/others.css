@@ -1,0 +1,253 @@
+@charset "utf-8";
+/* ーーー下層ページCSSーーー */
+
+
+:root {
+    --blue: #27589B;
+    --orange: #F08302;
+    --text_color: #102440;
+    --snow_white: #FAFDFF;
+    --gray_white: #F6F6F6;
+    --logo_color: #04243D;
+}
+
+/* 下層ページ＿＿セクションーーマージンボトム200px */
+section {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+    padding: 0 10px;
+}
+/* 下層ページ__h2--マージンボトム */
+h2 img {
+    margin-bottom: 160px;
+}
+
+
+/* パンくずリスト */
+ol {
+    list-style-type: none;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    max-width: 1100px;
+    margin: 40px auto 140px;
+}
+.breadcrumb {
+    display: flex;
+}
+.breadcrumb li,
+.breadcrumb a {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    color: #878C94;
+    padding: 20px 0;
+}
+/* 項目の間にある三角形 */
+.breadcrumb li + li::before {
+    content: "";
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background-image: url(../images/main/breadcrumb_arrow.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 25px;
+}
+/* パンくずホバー時 */
+.breadcrumb li a:hover {
+    color: var(--orange);
+    -webkit-text-stroke: 1px var(--orange);
+}
+
+/* ページ＿＿プロフィール */
+.profile {
+    position: relative;
+    text-align: center;
+}
+.profile__photo {
+    width: 36.3%;
+    border-radius: 30px;
+    filter: drop-shadow(8px 8px 0px var(--blue));
+    position: relative;
+    bottom: 180px;
+    z-index: -1;
+}
+.profile__circle {
+    width: min(69.4vw, 1000px);
+    height: min(69.4vw, 1000px);
+    border-radius: 50%;
+    position: absolute;
+    top: 580px;
+    left: -100px;
+    z-index: -9999;
+    background-image: url(../images/main/bg_noise_white.jpg);
+    animation: fuwafuwa 3s ease-in-out infinite alternate-reverse;
+}
+.headding {
+    margin-bottom: 64px;
+}
+.profile__inner {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.1em; 
+    margin-left: 40px;
+    margin-top: -440px;
+    margin-bottom: 380px;
+}
+h3 span {
+    color: var(--orange);
+}
+.profile__list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 64px;
+    animation: fadeIn 0.4s ease;
+}
+.profile__text {
+    letter-spacing: 0.06em;
+    line-height: 2.2;
+    margin-bottom: 64px;
+    width: 77%;
+}
+/* アコーディオンメニュー */
+summary {
+    letter-spacing: 0.2em;
+    padding: 14px 0;
+    /* margin-top: 32px; */
+    list-style: none;
+    width: fit-content;
+    cursor: pointer;
+}
+/* 三角矢印 */
+summary::before {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-image: url(../images/main/orange_arrow.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+/* 三角矢印＿＿オープン */
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+summary span {
+    border-bottom: dashed 1px var(--text_color);
+}
+/* オープン＿＿内容をふわっと表示させる */
+details {
+    &::details-content {
+        @media (prefers-reduced-motion: no-preference) {
+        transition-duration: 0.3s;
+        transition-property: content-visibility, opacity;
+        transition-behavior: allow-discrete;
+        }
+    }
+    &:not([open])::details-content {
+        opacity: 0;
+    }
+}
+details ul {
+    margin: 32px 0 0 25px;
+}
+/* 屋号 */
+.yagou {
+    position: relative;
+    text-align: right;
+}
+.yagou__inner {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+.yagou__inner img {
+    margin-top: 10px;
+    width: 230px;
+}
+.yagou__text {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    text-align: left;
+}
+.yagou__text p {
+    letter-spacing: 0.06em;
+    line-height: 2.2;
+}
+/* 戻るボタン */
+.btn__revese {
+    transform: scaleX(-1);
+}
+.btn__container {
+    display: flex;
+    justify-content: center;
+    margin-top: 128px;
+}
+
+
+/* ページ＿＿ワークス（一覧） */
+h2 {
+    text-align: center;
+}
+.h3works__container {
+    margin-bottom: 72px;
+}
+.h3works {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.h3works img {
+        margin-bottom: 0;
+}
+.h3works__border {
+    flex-grow: 1;
+    border-top: dashed 1px var(--blue);
+}
+.h3works__container--others {
+    margin-top: 100px;
+}
+
+
+
+
+
+
+/* ページ＿＿プライバシーポリシー */
+.praivacypolicy {
+    max-width: 660px;
+    margin: 0 auto;
+}
+.praivacypolicy li,
+.praivacypolicy p,
+.praivacypolicy dd {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    line-height: 2.0;
+}
+.praivacypolicy dt {
+    font-weight: 700;
+    color: var(--text_color);
+}
+.praivacypolicy  ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+.praivacypolicy p,
+.praivacypolicy dd {
+    margin-bottom: 32px;
+}
+.praivacypolicy dt {
+    margin-bottom: 16px;
+}
