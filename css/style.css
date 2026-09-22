@@ -14,15 +14,16 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
+    overflow: hidden;
 }
 
 body {
     background-image: url(../images/main/bg_noise_offwhite.jpg);
 }
 
-main {
+/* main {
     overflow: hidden;
-}
+} */
 
 
 /* メインビジュアル */
