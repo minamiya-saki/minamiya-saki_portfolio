@@ -43,10 +43,12 @@
 
     <main>
         <!-- パンくずリスト -->
-        <ol class="breadcrumb">
-            <li><a href="index.html">HOME</a></li>
-            <li aria-current="page">PROFILE</li>
-        </ol>
+        <nav>
+            <ol class="breadcrumb">
+                <li><a href="index.html">HOME</a></li>
+                <li aria-current="page">PROFILE</li>
+            </ol>
+        </nav>
 
 
         <!-- プロフィール -->
@@ -55,7 +57,10 @@
                 <h2>
                     <img src="images/main/profile.svg" alt="profile">
                 </h2>
-                <img src="images/main/profile_photo_1_pc.webp" class="profile__photo">
+                <div class="profile__photo--wrap">
+                    <img src="images/main/profile_photo_1_pc.webp" class="profile__photo" alt="みなみやの写真">
+                    <img src="images/main/profile_photo_2_pc.webp" class="profile__photo" alt="みなみやのイラスト">
+                </div>
             </div>
             <div class="profile__circle"></div>
             <div class="profile__inner">

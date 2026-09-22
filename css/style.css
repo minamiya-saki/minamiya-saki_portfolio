@@ -830,7 +830,119 @@ h3 img {
     }
 }
 
+/* 
+.hamburger {
+    display: none;
+} */
+
+.hamburger,
+.header__nav--sp {
+    display: none;
+}
 
 @media screen and (max-width: 768px) {
-
+    .header__nav {
+        display: none;
+    }
+    /* ハンバーガー＿＿オープン */
+    .hamburger {
+        display: block;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        background-color: rgba(246, 246, 256, 0.3);
+        backdrop-filter: blur(6px);
+        border: 1px solid var(--gray_white);
+        position: absolute;
+        top: -12px;
+        right: 16px;
+        z-index: 9999;
+        cursor: pointer;
+    }
+    .hamburger span {
+        font-family: Montserrat;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        color: var(--logo_color);
+        position: absolute;
+        top: 28px;
+        right: 6px;
+        transition: 0.3s;
+    }
+    /* ハンバーガー＿＿上の線 */
+    .hamburger::before {
+        content: "";
+        width: 40px;
+        height: 3px;
+        border-radius: 10px;
+        background-color: var(--logo_color);
+        position: absolute;
+        top: 17px;
+        right: 7px;
+        transition: 0.3s;
+    }
+    /* ハンバーガー＿＿真ん中の線 */
+    .hamburger::after {
+        content: "";
+        width: 30px;
+        height: 3px;
+        border-radius: 10px;
+        background-color: var(--logo_color);
+        position: absolute;
+        top: 24px;
+        right: 7px;
+        transition: 0.3s;
+    }
+    .header__nav--sp {
+        display: block;
+        width: 45vw;
+        height: 100vh;
+        background-color: var(--blue);
+        position: absolute;
+        top: -30px;
+        right: 0;
+        transform: translateX(100%);
+        transition: 0.3s ease;
+    }
+    .header__nav--sp ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        padding-right: 12px;
+        gap: 60px;
+    }
+    .header__nav--sp a {
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        color: var(--snow_white);
+        padding: 14px 0;
+    }
+    /* ハンバーガー＿＿バツの動き */
+    .open span {
+        color: transparent;
+    }
+    .open::before {
+        transform: rotate(45deg);
+        top: 26px;
+        background-color: var(--snow_white);
+    }
+    .open::after {
+        transform: rotate(-45deg);
+        top: 26px;
+        width: 40px;
+        background-color: var(--snow_white);
+    }
+    .hamburger.open {
+        background-color: transparent;
+        backdrop-filter: transparent;
+        border: none;
+    }
+    .header__nav--sp.open {
+        transform: translateX(0);
+    }
 }

@@ -32,7 +32,7 @@ ol {
     font-weight: 400;
     letter-spacing: 0.2em;
     max-width: 1100px;
-    margin: 40px auto 140px;
+    margin: 40px auto 120px;
 }
 .breadcrumb {
     display: flex;
@@ -68,14 +68,35 @@ ol {
     position: relative;
     text-align: center;
 }
-.profile__photo {
+.profile h2 {
+    position: relative;
+    z-index: 2;
+}
+.profile__photo--wrap {
     width: 36.3%;
-    border-radius: 30px;
-    filter: drop-shadow(8px 8px 0px var(--blue));
+    margin: 0 auto;
     position: relative;
     bottom: 180px;
-    z-index: -1;
 }
+/* 調整中 */
+.profile__photo {
+    filter: drop-shadow(8px 8px 0px var(--blue));
+    border-radius: 30px;
+    transition: 0.3s;
+}
+.profile__photo:last-of-type {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.profile__photo--wrap:hover .profile__photo:last-of-type {
+    opacity: 1;
+}
+
+
+
+
 .profile__circle {
     width: min(69.4vw, 1000px);
     height: min(69.4vw, 1000px);
@@ -91,6 +112,8 @@ ol {
     margin-bottom: 64px;
 }
 .profile__inner {
+    position: relative;
+    z-index: 2;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.1em; 
@@ -219,7 +242,98 @@ h2 {
 }
 
 
+/*  ページ＿＿ワークス各詳細ページ */
+.work {
+    max-width: 660px;
+    margin: 0 auto;
+}
+.work__thumb {
+    text-align: center;
+}
+.work img {
+    border-radius: 20px;
+}
+/* モーダルボタン */
+.work__modal {
+    width: 300px;
+    height: 50px;
+    background-color: var(--text_color);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 56px auto;
+}
+.work__modal p {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--snow_white);
+}
+.work__modal p::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 15px;
+    background-image: url(../images/main/white_arrow.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 32px;
+}
+/* ワーク＿＿プロダクション */
+.work a {
+    cursor: pointer;
+}
+.work__production {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: fit-content;
+    padding: 16px 0;
+    border-top: 1px solid #BBBFC5;
+    border-bottom: 1px solid #BBBFC5;
+    margin-bottom: 24px;
+}
+.work__production li {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+}
+.work__production--text {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 2.0;
+    margin-bottom: 100px;
+}
+/* モーダル */
+.remodal {
+    padding: 5px 5px 60px 5px;
+}
+.remodal-close:before {
+    color: #BBBFC5;
+    font-size: 44px;
+}
 
+.remodal-close {
+    top: auto;
+    right: 14px;
+    bottom: 12px;
+    left: auto;
+}
+
+.remodal__image {
+    max-height: 80vh;
+    overflow: auto;
+}
+.remodal__image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: solid 1px #BBBFC5;
+}
 
 
 
