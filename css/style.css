@@ -590,7 +590,7 @@ h3 img {
 
 /* セクション＿＿コンタクト */
 #contact {
-    margin-bottom: 200px;
+    margin-bottom: 210px;
 }
 .contact {
     position: relative;
@@ -599,7 +599,8 @@ h3 img {
     text-align: center;
 }
 .contact .section__title--deco-right {
-    right: -24%;
+    right: -34%;
+    top: -290px;
 }
 .contact__text {
     font-size: 16px;
@@ -1213,6 +1214,31 @@ h3 img {
         font-size: 14px;
     }
     .skill__inner p {
+        font-size: 14px;
+    }
+
+
+    /* ボイス */
+    .slider__list li {
+        width: 330px;
+        height: 440px;
+        border-radius: 10px;
+    }
+    .slider__inner {
+        padding: 24px;
+    }
+    .slider__inner div {
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+    .slider__inner img {
+        width: 40px;
+        height: 40px;
+    }
+    .slider__inner .voice__title {
+        font-size: 16px;
+    }
+    .slider__inner p {
         font-size: 14px;
     }
 
