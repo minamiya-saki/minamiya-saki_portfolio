@@ -25,17 +25,11 @@ h2 img {
 
 
 /* パンくずリスト */
-ol {
-    list-style-type: none;
-    font-family: Montserrat;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0.2em;
-    max-width: 1100px;
-    margin: 40px auto 120px;
-}
 .breadcrumb {
     display: flex;
+    list-style-type: none;
+    max-width: 1100px;
+    margin: 40px auto 120px;
 }
 .breadcrumb li,
 .breadcrumb a {
@@ -63,6 +57,7 @@ ol {
     -webkit-text-stroke: 1px var(--orange);
 }
 
+
 /* ページ＿＿プロフィール */
 .profile {
     position: relative;
@@ -78,25 +73,24 @@ ol {
     position: relative;
     bottom: 180px;
 }
-/* 調整中 */
-.profile__photo {
-    filter: drop-shadow(8px 8px 0px var(--blue));
-    border-radius: 30px;
-    transition: 0.3s;
+.profile__photo--wrap picture {
+    display: block;
 }
-.profile__photo:last-of-type {
-    opacity: 0;
+.profile__photo--wrap picture:last-child {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: 0.3s;
 }
-.profile__photo--wrap:hover .profile__photo:last-of-type {
+.profile__photo--wrap img {
+    filter: drop-shadow(8px 8px 0px var(--blue));
+    border-radius: 30px;
+}
+.profile__photo--wrap:hover  picture:last-child {
     opacity: 1;
 }
-
-
-
-
 .profile__circle {
     width: min(69.4vw, 1000px);
     height: min(69.4vw, 1000px);
@@ -117,9 +111,9 @@ ol {
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.1em; 
-    margin-left: 40px;
-    margin-top: -440px;
-    margin-bottom: 380px;
+    left: 40px;
+    top: -440px;
+    margin-bottom: -60px;
 }
 h3 span {
     color: var(--orange);
@@ -255,8 +249,8 @@ h2 {
 }
 /* モーダルボタン */
 .work__modal {
-    width: 300px;
-    height: 50px;
+    width: fit-content;
+    padding: 15px 54px;
     background-color: var(--text_color);
     border-radius: 30px;
     display: flex;
@@ -274,7 +268,7 @@ h2 {
 .work__modal p::after {
     content: "";
     display: inline-block;
-    width: 20px;
+    width: 15px;
     height: 15px;
     background-image: url(../images/main/white_arrow.svg);
     background-repeat: no-repeat;
@@ -299,7 +293,7 @@ h2 {
     font-family: Montserrat;
     font-size: 14px;
     font-weight: 400;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2em;
 }
 .work__production--text {
     font-size: 16px;
@@ -316,14 +310,12 @@ h2 {
     color: #BBBFC5;
     font-size: 44px;
 }
-
 .remodal-close {
     top: auto;
     right: 14px;
     bottom: 12px;
     left: auto;
 }
-
 .remodal__image {
     max-height: 80vh;
     overflow: auto;
@@ -364,4 +356,170 @@ h2 {
 }
 .praivacypolicy dt {
     margin-bottom: 16px;
+}
+
+
+/* レスポンシブ */
+
+
+@media screen and (max-width: 900px) {
+    .praivacypolicy__title {
+        display: block;
+        padding: 11px 0;
+    }
+    .praivacypolicy__title img {
+        height: 140px; 
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .breadcrumb {
+        display: none;
+    }
+    section {
+        margin-top: 120px;
+        margin-bottom: 160px;
+        padding: 0 7.69%;
+    }
+    h2 img {
+        margin-bottom: 80px;
+    }
+
+
+
+
+    /* プロフィール */
+    .profile__photo--wrap {
+        width: 74.3%;
+        bottom: 104px;
+    }
+    .profile__inner {
+        font-size: 14px;
+        letter-spacing: 0.04em; 
+        left: 0px;
+        top: -170px;
+        margin-bottom: 70px;
+    }
+    .headding {
+        margin-bottom: 108px;
+    }
+    .profile__list {
+        gap: 28px;
+        margin-bottom: 80px;
+    }
+    .profile__list li {
+        line-height: 2.0;
+    }
+    .profile__text {
+        letter-spacing: 0.04em;
+        line-height: 2.0;
+        margin-bottom: 80px;
+        width: 100%;
+    }
+    .profile__circle {
+    width: 650px;
+    height: 650px;
+    top: 290px;
+    left: -230px;
+    }
+    /* 屋号 */
+    .yagou__inner {
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+    }
+    .yagou .headding {
+        margin-bottom: 80px;
+    }
+    .yagou__inner img {
+        margin-top: 0px;
+        width: 58.9%;
+    }
+    .yagou__text {
+        gap: 28px;
+    }
+    .yagou__text p {
+        font-size: 14px;
+        letter-spacing: 0.04em;
+        line-height: 2.0;
+    }
+    /* ボタン */
+    .btn__container {
+    margin-top: 90px;
+    }
+
+
+    /* ワークス */
+    .h3works {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    }
+    .h3works img {
+        height: 20px;
+        margin-bottom: 0;
+    }
+    .h3works__container {
+        margin-bottom: 50px;
+    }
+    .h3works__container--others {
+        margin-top: 90px;
+    }
+
+
+    /* プライバシーポリシー */
+    .praivacypolicy__title img {
+        height: 88px;
+    }
+    .praivacypolicy {
+        max-width: none;
+    }
+    .praivacypolicy li,
+    .praivacypolicy p,
+    .praivacypolicy dd {
+        font-size: 14px;
+        letter-spacing: 0.05em;
+    }
+    .praivacypolicy dt {
+        margin-bottom: 14px;
+    }
+
+
+    /* ワーク */
+    .work img {
+        border-radius: 10px;
+        width: 74.3%;
+    }
+    .work__modal {
+        padding: 15px 32px;
+        margin: 50px auto;
+    }
+    .work__modal p {
+        font-size: 14px;
+    }
+    .work__modal p::after {
+        width: 13px;
+        height: 13px;
+        margin-left: 24px;
+    }
+    .work__production {
+        margin: 0 auto 16px;
+    }
+    .work__production--text {
+        font-size: 14px;
+        width: fit-content;
+        margin: 0 auto 100px;
+    }
+}
+
+
+
+
+/* PC版では消す */
+@media screen and (min-width: 769px) {
+    .h3works__border:nth-child(1) {
+        display: none;
+    }
 }

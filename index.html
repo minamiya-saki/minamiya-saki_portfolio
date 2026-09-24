@@ -28,13 +28,19 @@
     <div id="mv">
         <!-- メインビジュアル＿＿上部 -->
         <h1 class="mv__title">
+
             <div class="mv__circle"></div>
-            <img src="images/main/logo_web_color.svg" alt="373&DESIGN">
-            <img src="images/main/logo_hover.svg" alt="373&DESIGN">
+            <div class="mv__logo">
+                <img src="images/main/logo_web_color.svg" alt="373&DESIGN">
+                <img src="images/main/logo_hover.svg" alt="373&DESIGN">
+            </div>
         </h1>
         <!-- メインビジュアル＿＿下部 -->
         <div class="mv__object">
-            <img src="images/main/mv_blue_tama_back_pc.png" alt="浮かぶ水飛沫" class="blue_tama__back">
+            <picture>
+                <source srcset="./images/main/mv_blue_tama_back_sp.png" media="(max-width:768px)" />
+                <img src="images/main/mv_blue_tama_back_pc.png" alt="浮かぶ水飛沫" class="blue_tama__back">
+            </picture>
             <div class="mv__front--container">
                 <!-- スクロールダウン -->
                 <div class="scroll__container">
@@ -48,9 +54,18 @@
                     </a>
                     <div class="scroll__bar"></div>
                 </div>
-                <img src="images/main/mv_blue_tama_front_left_pc.png" alt="浮かぶ青玉" class="blue_tama__front--left">
-                <img src="images/main/mv_blue_tama_front_center_pc.png" alt="浮かぶ青玉" class="blue_tama__front--center">
-                <img src="images/main/mv_blue_tama_front_right_pc.png" alt="浮かぶ青玉" class="blue_tama__front--right">
+                <picture class="blue_tama__front--left">
+                    <source srcset="./images/main/mv_blue_tama_front_left_sp.png" media="(max-width:768px)" />
+                    <img src="images/main/mv_blue_tama_front_left_pc.png" alt="浮かぶ青玉">
+                </picture>
+                <picture class="blue_tama__front--center">
+                    <source srcset="./images/main/mv_blue_tama_front_center_sp.png" media="(max-width:768px)" />
+                    <img src="images/main/mv_blue_tama_front_center_pc.png" alt="浮かぶ青玉">
+                </picture>
+                <picture class="blue_tama__front--right">
+                    <source srcset="./images/main/mv_blue_tama_front_right_sp.png" media="(max-width:768px)" />
+                    <img src="images/main/mv_blue_tama_front_right_pc.png" alt="浮かぶ青玉">
+                </picture>
             </div>
         </div>
     </div>
@@ -59,7 +74,9 @@
     <!-- ナビゲーションバー -->
     <header>
         <div class="header__inner">
-            <a href="#mv" class="header__inner--logo"><img src="images/main/logo_web_color.svg" alt="373&DESIGNのロゴ"></a>
+            <div class="header__logo--inner">
+                <a href="#mv"><img src="images/main/logo_web_color.svg" alt="373&DESIGNのロゴ"></a>
+            </div>
             <nav class="header__nav">
                 <ul>
                     <li><a href="#about">ABOUT</a></li>
@@ -68,11 +85,11 @@
                     <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
-
             <!-- ハンバーガーメニュー -->
             <div class="hamburger">
                 <span>MENU</span>
             </div>
+            <div class="hamburger__overlay"></div>
             <nav class="header__nav--sp">
                 <ul>
                     <li><a href="#about">ABOUT</a></li>
@@ -95,6 +112,9 @@
                         <img src="images/main/about.svg" alt="about">
                     </h2>
                     <h3 class="headding">物語と伴走するデザイン</h3>
+                    <div class="about__image--sp">
+                        <img src="images/main/about_image_sp.webp" alt="海の画像">
+                    </div>
                     <p class="headding__lead">寄せては返す波のように、想いをすくい上げ、すり合わせを重ねます。<br>
                         整えるのは、見た目だけではありません。<br>
                         込められた想いや背景を紐解き、ひとつの物語として形にしていきます。<br>
@@ -190,10 +210,6 @@
                     <img src="images/main/service.svg" alt="service">
                 </h2>
             </div>
-
-
-
-            <!-- 調整中 -->
             <div class="service__container">
                 <ul class="service__list">
                     <li class="service__circle service__hp">
@@ -209,7 +225,7 @@
                         <dl>
                             <dt class="service__category">ランディングページ制作</dt>
                             <dd class="service__category--text">伝えたいことを整理し、届けたい相手を見つめ、まずは「何を達成したいか」を一緒に考えます。<br>
-                                目的に寄り添い、成果につながるランディングページを制作します。</ddservice__category->
+                                目的に寄り添い、成果につながるランディングページを制作します。</dd>
                         </dl>
                     </li>
                     <li class=" service__circle service__web">
@@ -261,6 +277,8 @@
         <!-- セクション＿＿コンタクト -->
         <section id="contact">
             <div class="contact">
+                <img src="images/main/section_white_tama_right.webp" alt="" aria-hidden="true"
+                    class="section__title--deco-right">
                 <h2>
                     <img src="images/main/contact.svg" alt="contact">
                 </h2>
@@ -299,13 +317,15 @@
                     <a href="#mv" class="footer__logo">
                         <img src="images/main/logo_fafdff_web.svg" alt="373&DESIGNのロゴ">
                     </a>
-                    <a href="https://lin.ee/58rOvTp" target="_blank" class="sns">
-                        <img src="images/main/line_brand_icon.png" alt="LINEのアイコン">
-                    </a>
-                    <a href="https://www.instagram.com/373_valley_design?stkn=MXAxNTZ2bGgxdW9zdQ==" target="_blank"
-                        class="sns">
-                        <img src="images/main/Instagram_Glyph_White.png" alt="Instagramのアイコン">
-                    </a>
+                    <div class="footer__sns--container">
+                        <a href="https://lin.ee/58rOvTp" target="_blank" class="sns">
+                            <img src="images/main/line_brand_icon.png" alt="LINEのアイコン">
+                        </a>
+                        <a href="https://www.instagram.com/373_valley_design?stkn=MXAxNTZ2bGgxdW9zdQ==" target="_blank"
+                            class="sns">
+                            <img src="images/main/Instagram_Glyph_White.png" alt="Instagramのアイコン">
+                        </a>
+                    </div>
                 </div>
                 <a href="privacy_policy.html" class="privacy_policy">プライバシーポリシー</a>
                 <p class="copyright">©373&DESIGN</p>

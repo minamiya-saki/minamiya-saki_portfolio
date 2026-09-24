@@ -35,9 +35,23 @@
     <!-- ナビゲーションバー -->
     <header>
         <div class="header__inner">
-            <a href="../index.html#mv" class="header__inner--logo"><img src="../images/main/logo_web_color.svg"
-                    alt="373&DESIGNのロゴ"></a>
+            <div class="header__logo--inner">
+                <a href="../index.html#mv"><img src="../images/main/logo_web_color.svg" alt="373&DESIGNのロゴ"></a>
+            </div>
             <nav class="header__nav">
+                <ul>
+                    <li><a href="../index.html#about">ABOUT</a></li>
+                    <li><a href="../index.html#works">WORKS</a></li>
+                    <li><a href="../index.html#service">SERVICE</a></li>
+                    <li><a href="../index.html#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+            <!-- ハンバーガーメニュー -->
+            <div class="hamburger">
+                <span>MENU</span>
+            </div>
+            <div class="hamburger__overlay"></div>
+            <nav class="header__nav--sp">
                 <ul>
                     <li><a href="../index.html#about">ABOUT</a></li>
                     <li><a href="../index.html#works">WORKS</a></li>
@@ -53,8 +67,8 @@
         <!-- パンくずリスト -->
         <nav>
             <ol class="breadcrumb">
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="works.html">WORKS</a></li>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../works.html">WORKS</a></li>
             </ol>
         </nav>
 
@@ -64,10 +78,8 @@
             <div class="work">
                 <div class="work__thumb">
                     <img src="../images/work_thumb/mu_banner_dezasuta_mobile@2x.webp">
-
                     <p class="works__category">BANNER</p>
                     <p class="works__title">デザスタmobile [FICTION]</p>
-
                     <!-- モーダルボタン -->
                     <a data-remodal-target="modal">
                         <div class="work__modal">
@@ -100,31 +112,33 @@
 
     <!-- フッター -->
     <footer>
-        <img src="../images/main/footer_nami_pc.svg" class="footer__wave">
+        <img src="images/main/footer_nami_pc.svg" class="footer__wave">
         <div class="footer">
             <div class="footer__container">
                 <!-- フッターナビ -->
                 <nav class="footer__nav">
                     <ul>
-                        <li><a href="../index.html#about">ABOUT</a></li>
-                        <li><a href="../index.html#works">WORKS</a></li>
-                        <li><a href="../index.html#service">SERVICE</a></li>
-                        <li><a href="../index.html#contact">CONTACT</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#works">WORKS</a></li>
+                        <li><a href="#service">SERVICE</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
                     </ul>
                 </nav>
                 <div class="footer__icon--container">
-                    <a href="../index.html#mv" class="footer__logo">
+                    <a href="..index.html#mv" class="footer__logo">
                         <img src="../images/main/logo_fafdff_web.svg" alt="373&DESIGNのロゴ">
                     </a>
-                    <a href="https://lin.ee/58rOvTp" target="_blank" class="sns">
-                        <img src="../images/main/line_brand_icon.png" alt="LINEのアイコン">
-                    </a>
-                    <a href="https://www.instagram.com/373_valley_design?stkn=MXAxNTZ2bGgxdW9zdQ==" target="_blank"
-                        class="sns">
-                        <img src="../images/main/Instagram_Glyph_White.png" alt="Instagramのアイコン">
-                    </a>
+                    <div class="footer__sns--container">
+                        <a href="https://lin.ee/58rOvTp" target="_blank" class="sns">
+                            <img src="../images/main/line_brand_icon.png" alt="LINEのアイコン">
+                        </a>
+                        <a href="https://www.instagram.com/373_valley_design?stkn=MXAxNTZ2bGgxdW9zdQ==" target="_blank"
+                            class="sns">
+                            <img src="../images/main/Instagram_Glyph_White.png" alt="Instagramのアイコン">
+                        </a>
+                    </div>
                 </div>
-                <a href="privacy_policy.html" class="privacy_policy">プライバシーポリシー</a>
+                <a href="../privacy_policy.html" class="privacy_policy">プライバシーポリシー</a>
                 <p class="copyright">©373&DESIGN</p>
             </div>
             <!-- toTOP設置 -->

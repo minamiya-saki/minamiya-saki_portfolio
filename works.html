@@ -27,9 +27,23 @@
     <!-- ナビゲーションバー -->
     <header>
         <div class="header__inner">
-            <a href="index.html#mv" class="header__inner--logo"><img src="images/main/logo_web_color.svg"
-                    alt="373&DESIGNのロゴ"></a>
+            <div class="header__logo--inner">
+                <a href="#mv"><img src="images/main/logo_web_color.svg" alt="373&DESIGNのロゴ"></a>
+            </div>
             <nav class="header__nav">
+                <ul>
+                    <li><a href="index.html#about">ABOUT</a></li>
+                    <li><a href="index.html#works">WORKS</a></li>
+                    <li><a href="index.html#service">SERVICE</a></li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+            <!-- ハンバーガーメニュー -->
+            <div class="hamburger">
+                <span>MENU</span>
+            </div>
+            <div class="hamburger__overlay"></div>
+            <nav class="header__nav--sp">
                 <ul>
                     <li><a href="index.html#about">ABOUT</a></li>
                     <li><a href="index.html#works">WORKS</a></li>
@@ -57,6 +71,7 @@
             </h2>
             <div class="h3works__container">
                 <h3 class="h3works">
+                    <span class="h3works__border"></span>
                     <img src="images/main/webdesign.svg" alt="web-design">
                     <span class="h3works__border"></span>
                 </h3>
@@ -217,23 +232,25 @@
                 <!-- フッターナビ -->
                 <nav class="footer__nav">
                     <ul>
-                        <li><a href="index.html#about">ABOUT</a></li>
-                        <li><a href="index.html#works">WORKS</a></li>
-                        <li><a href="index.html#service">SERVICE</a></li>
-                        <li><a href="index.html#contact">CONTACT</a></li>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#works">WORKS</a></li>
+                        <li><a href="#service">SERVICE</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
                     </ul>
                 </nav>
                 <div class="footer__icon--container">
                     <a href="#mv" class="footer__logo">
                         <img src="images/main/logo_fafdff_web.svg" alt="373&DESIGNのロゴ">
                     </a>
-                    <a href="https://lin.ee/58rOvTp" target="_blank" class="sns">
-                        <img src="images/main/line_brand_icon.png" alt="LINEのアイコン">
-                    </a>
-                    <a href="https://www.instagram.com/373_valley_design?stkn=MXAxNTZ2bGgxdW9zdQ==" target="_blank"
-                        class="sns">
-                        <img src="images/main/Instagram_Glyph_White.png" alt="Instagramのアイコン">
-                    </a>
+                    <div class="footer__sns--container">
+                        <a href="https://lin.ee/58rOvTp" target="_blank" class="sns">
+                            <img src="images/main/line_brand_icon.png" alt="LINEのアイコン">
+                        </a>
+                        <a href="https://www.instagram.com/373_valley_design?stkn=MXAxNTZ2bGgxdW9zdQ==" target="_blank"
+                            class="sns">
+                            <img src="images/main/Instagram_Glyph_White.png" alt="Instagramのアイコン">
+                        </a>
+                    </div>
                 </div>
                 <a href="privacy_policy.html" class="privacy_policy">プライバシーポリシー</a>
                 <p class="copyright">©373&DESIGN</p>
@@ -258,6 +275,11 @@
             </a>
         </div>
     </footer>
+
+    <!-- jQueryのCDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
