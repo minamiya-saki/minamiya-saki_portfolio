@@ -66,6 +66,7 @@ h2 img {
 .profile h2 {
     position: relative;
     z-index: 2;
+    pointer-events: none;
 }
 .profile__photo--wrap {
     width: 36.3%;
@@ -114,6 +115,10 @@ h2 img {
     left: 40px;
     top: -440px;
     margin-bottom: -60px;
+    pointer-events: none;
+}
+.profile__inner details {
+    pointer-events: auto;
 }
 h3 span {
     color: var(--orange);
