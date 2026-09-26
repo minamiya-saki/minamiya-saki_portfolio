@@ -19,6 +19,7 @@ html {
 
 body {
     background-image: url(../images/main/bg_noise_offwhite.jpg);
+    cursor: url("../images/main/cursor.svg") 0 0, auto;
 }
 
 main {
@@ -529,8 +530,7 @@ h3 img {
 }
 
 
-
-/* ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿調整中 */
+/* ＿＿サービスーーボイス */
 .voice {
     width: 1100px;
     margin: 0 auto;
@@ -549,16 +549,11 @@ h3 img {
     background-color: var(--gray_white);
     padding: 50px;
 }
-
-
 .splide__slide {
     position: relative;
     opacity: 1;
     transition: opacity 0.4s ease;
 }
-
-
-
 .splide__slide:not(.is-active)::after {
     content: "";
     position: absolute;
@@ -567,15 +562,11 @@ h3 img {
     border-radius: 20px;
     transition: background-color 0.4s;
 }
-
 @media screen and (max-width: 768px) {
     .splide__slide:not(.is-active)::after {
         border-radius: 10px; /* SP版の角丸に合わせる */
     }
 }
-
-
-
 .splide__slide div {
     display: flex;
     gap: 1.9vw;
@@ -608,9 +599,6 @@ h3 img {
     background-position: calc(50% + 3px)center;
     background-repeat: no-repeat;
 }
-
-
-
 .splide__arrow svg {
     display: none;
 }
@@ -621,8 +609,27 @@ h3 img {
 .splide__arrow--next {
     right: calc(50% - 300px - 80px);
 }
-
-
+.splide__pagination__page.is-active {
+    background: #BBBFC5;
+    mix-blend-mode: multiply;
+    transform: scale(2.86);
+    z-index: 1;
+}
+.splide__pagination__page {
+    background: #BBBFC5;
+    mix-blend-mode: multiply;
+    border: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin: 0 40px;
+    opacity: 1;
+    padding: 0;
+    position: relative;
+    top: 100px;
+    transition: transform .2s linear;
+}
 
 
 /* セクション＿＿コンタクト */
@@ -1279,6 +1286,9 @@ h3 img {
     .splide__arrow--next {
         right: calc(50% - 150px - 30px);
     }
+    .splide__pagination__page {
+        top: 80px;
+    }
 
 
 
@@ -1353,7 +1363,16 @@ h3 img {
 
 /* マウス操作が前提のPC向けスタイル（ホバー時のみ表示など） */
 @media (hover: hover) and (pointer: fine) {
-
+    .mv__title:hover,
+    a:hover,
+    button:hover,
+    .hamburger:hover,
+    summary:hover,
+    .my-close:hover,
+    .profile__photo--wrap:hover,
+    .splide .splide__pagination__page:hover {
+        cursor: url("../images/main/cursor_hover.svg") 0 0, pointer;
+    }
     /* メインビジュアル＿＿ホバー */
     .mv__logo:hover img:first-child {
         opacity: 0;

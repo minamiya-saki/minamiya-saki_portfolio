@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIVACY POLICY | 373&DESIGN</title>
+    <meta name="description" content="373&DESIGNはWEBデザイナーみなみやのポートフォリオサイトです。ホームページ制作・ランディングページ制作・Web画像制作を承っています。">
+
+    <!-- グーグルフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/others.css" />
+
+</head>
+
+
+<body>
+    <!-- toTopが戻る位置 -->
+    <div id="top"></div>
+
+
+    <!-- ナビゲーションバー -->
+    <header>
+        <div class="header__inner">
+            <div class="header__logo--inner">
+                <a href="index.html"><img src="images/main/logo_web_color.svg" alt="373&DESIGNのロゴ"></a>
+            </div>
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="index.html#about">ABOUT</a></li>
+                    <li><a href="index.html#works">WORKS</a></li>
+                    <li><a href="index.html#service">SERVICE</a></li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+            <!-- ハンバーガーメニュー -->
+            <div class="hamburger">
+                <span>MENU</span>
+            </div>
+            <div class="hamburger__overlay"></div>
+            <nav class="header__nav--sp">
+                <ul>
+                    <li><a href="index.html#about">ABOUT</a></li>
+                    <li><a href="index.html#works">WORKS</a></li>
+                    <li><a href="index.html#service">SERVICE</a></li>
+                    <li><a href="index.html#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <!-- パンくずリスト -->
+        <nav>
+            <ol class="breadcrumb">
+                <li><a href="index.html">HOME</a></li>
+                <li aria-current="page">CONTACT</li>
+            </ol>
+        </nav>
+
+
+        <!-- プライバシーポリシー -->
+        <section>
+            <h2>
+                <img src="images/main/contact.svg" alt="contact">
+            </h2>
+
+        </section>
+
+
+        <!-- ボタン -->
+        <div class="btn__container">
+            <a href="index.html" class="btn__link">
+                <div class="btn__inner btn__revese">
+                    <div class="btn__circle"></div>
+                    <span class="btn__arrow"></span>
+                </div>
+                <p>TOPへ戻る</p>
+            </a>
+        </div>
+        </section>
+    </main>
+
+
+
+    <!-- フッター -->
+    <footer>
+        <picture>
+            <source srcset="images/main/footer_nami_sp.svg" media="(max-width:768px)" />
+            <img src="images/main/footer_nami_pc.svg" class="footer__wave">
+        </picture>
+        <div class="footer">
+            <div class="footer__container">
+                <!-- フッターナビ -->
+                <nav class="footer__nav">
+                    <ul>
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#works">WORKS</a></li>
+                        <li><a href="#service">SERVICE</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <div class="footer__icon--container">
+                    <a href="#mv" class="footer__logo">
+                        <img src="images/main/logo_fafdff_web.svg" alt="373&DESIGNのロゴ">
+                    </a>
+                    <div class="footer__sns--container">
+                        <a href="https://lin.ee/58rOvTp" target="_blank" class="sns">
+                            <img src="images/main/line_brand_icon.png" alt="LINEのアイコン">
+                        </a>
+                        <a href="https://www.instagram.com/373_valley_design?stkn=MXAxNTZ2bGgxdW9zdQ==" target="_blank"
+                            class="sns">
+                            <img src="images/main/Instagram_Glyph_White.png" alt="Instagramのアイコン">
+                        </a>
+                    </div>
+                </div>
+                <a href="privacy_policy.html" class="privacy_policy">プライバシーポリシー</a>
+                <p class="copyright">©373&DESIGN</p>
+            </div>
+            <!-- toTOP設置 -->
+            <a href="#top" class="totop">
+                <!-- 回るテキスト -->
+                <div class="totop__svg-wrap">
+                    <svg class="totop__svg" viewBox="0 0 100 100">
+                        <path id="totopPath" class="totop__path" d="M 0 50 A 50 50 0 1 1 0 51 z" />
+                        <text class="totop__text">
+                            <textPath xlink:href="#totopPath">
+                                SCROLL TO TOP
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+                <!-- 矢印 -->
+                <div class="totop__circle">
+                    <div class="totop__arrow"></div>
+                </div>
+            </a>
+        </div>
+    </footer>
+
+    <!-- jQueryのCDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

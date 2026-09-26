@@ -313,16 +313,37 @@ h2 {
 .remodal {
     padding: 5px 5px 60px 5px;
 }
-.remodal-close:before {
-    color: #BBBFC5;
-    font-size: 44px;
+.my-close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    right: 10px;
+    bottom: 8px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
-.remodal-close {
-    top: auto;
-    right: 14px;
-    bottom: 12px;
-    left: auto;
+.my-close::before,
+.my-close::after {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 2px;
+    border-radius: 10px;
+    background-color: #BBBFC5;
 }
+.my-close::before {
+    transform: rotate(45deg);
+}
+.my-close::after {
+    transform: rotate(-45deg);
+}
+
+
+
 .remodal__image {
     max-height: 80vh;
     overflow: auto;
