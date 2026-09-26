@@ -208,6 +208,7 @@ header {
     letter-spacing: 0.2em;
     color: var(--blue);
     padding: 14px 0;
+    transition: 0.3s;
 }
 /* ヘッダーナビ＿＿ホバー時 */
 .header__nav a:hover {
@@ -733,7 +734,7 @@ h3 img {
     color: var(--snow_white);
     padding: 14px 0;
     display: inline-block;
-
+    transition: 0.3s;
 }
 /* フッターーナビ＿＿ホバー時 */
 .footer__nav a:hover {

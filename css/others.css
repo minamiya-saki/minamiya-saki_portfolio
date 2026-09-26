@@ -395,12 +395,37 @@ h2 {
     }
 
 
-
-
     /* プロフィール */
     .profile__photo--wrap {
         width: 74.3%;
         bottom: 104px;
+    }
+    .profile__photo--wrap picture {
+        transition: none;
+        animation: profile__photo--switch 8s infinite;
+    }
+    .profile__photo--wrap picture:first-child {
+        animation-delay: 0s;
+    }
+    .profile__photo--wrap picture:last-child {
+        animation-delay: 4s;
+    }
+    @keyframes profile__photo--switch {
+        0% {
+        opacity: 0;
+        }
+        25% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 1;
+        }
+        75% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+        }
     }
     .profile__inner {
         font-size: 14px;
