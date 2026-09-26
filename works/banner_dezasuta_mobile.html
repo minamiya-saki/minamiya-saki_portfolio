@@ -37,7 +37,7 @@
     <header>
         <div class="header__inner">
             <div class="header__logo--inner">
-                <a href="../index.html#mv"><img src="../images/main/logo_web_color.svg" alt="373&DESIGNのロゴ"></a>
+                <a href="../index.html"><img src="../images/main/logo_web_color.svg" alt="373&DESIGNのロゴ"></a>
             </div>
             <nav class="header__nav">
                 <ul>
@@ -113,7 +113,10 @@
 
     <!-- フッター -->
     <footer>
-        <img src="images/main/footer_nami_pc.svg" class="footer__wave">
+        <picture>
+            <source srcset="../images/main/footer_nami_sp.svg" media="(max-width:768px)" />
+            <img src="../images/main/footer_nami_pc.svg" class="footer__wave">
+        </picture>
         <div class="footer">
             <div class="footer__container">
                 <!-- フッターナビ -->

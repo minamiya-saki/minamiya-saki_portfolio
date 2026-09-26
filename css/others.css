@@ -89,8 +89,10 @@ h2 img {
     filter: drop-shadow(8px 8px 0px var(--blue));
     border-radius: 30px;
 }
-.profile__photo--wrap:hover  picture:last-child {
-    opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+    .profile__photo--wrap:hover  picture:last-child {
+        opacity: 1;
+    }
 }
 .profile__circle {
     width: min(69.4vw, 1000px);

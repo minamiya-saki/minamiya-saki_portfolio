@@ -60,13 +60,6 @@ main {
 .mv__title img:last-of-type {
     opacity: 0;
 }
-.mv__logo:hover img:first-child {
-    opacity: 0;
-}
-
-.mv__logo:hover img:last-child {
-    opacity: 1;
-}
 
 
 /* メインビジュアル＿＿下部 */
@@ -234,9 +227,7 @@ section {
     margin-bottom: 400px;
     padding: 0 11.8%;
 }
-/* section:not(.service__container) {
-    padding: 0 11.8%;
-} */
+
 
 
 
@@ -336,13 +327,6 @@ h2 img {
     margin-left: 25px;
     transition: 0.3s;
 }
-/* ボタン＿＿ホバー時の動き */
-.btn__link:hover .btn__arrow {
-    width: 80px;
-}
-.btn__link:hover .btn__circle {
-    transform: translateX(20px);
-}
 
 
 
@@ -386,11 +370,6 @@ h2 img {
     border-radius: 10px;
     overflow: hidden;
 }
-.works__item a img:hover {
-	opacity:0.6;
-    transform: scale(1.06);
-	transition:0.4s;
-}
 /* ＿＿作品カテゴリ */
 .works__category {
     font-family: Montserrat;
@@ -417,6 +396,7 @@ h2 img {
 /* セクション＿＿サービス */
 #service {
     max-width: none;
+    /* padding: 0; */
 }
 .section__service{
     max-width: 1100px;
@@ -554,38 +534,94 @@ h3 img {
     width: 1100px;
     margin: 0 auto;
 }
-.slider__list li {
-    width: 41.6vw;
+
+.splide {
+    max-width: none;
+    padding: 0;
+    margin-left: -11.8vw;
+    margin-right: -11.8vw;
+}
+.splide__slide {
+    width: 600px;
     height: 432px;
     border-radius: 20px;
     background-color: var(--gray_white);
-}
-.slider__inner {
     padding: 50px;
 }
-.slider__inner div {
+
+
+.splide__slide {
+    position: relative;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+
+
+.splide__slide:not(.is-active)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.6); 
+    border-radius: 20px;
+    transition: background-color 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+    .splide__slide:not(.is-active)::after {
+        border-radius: 10px; /* SP版の角丸に合わせる */
+    }
+}
+
+
+
+.splide__slide div {
     display: flex;
     gap: 1.9vw;
     margin-bottom: 26px;
     align-items: center;
 }
-.slider__inner img {
+.splide__slide img {
     width: 48px;
     height: 48px;
 }
-.slider__inner .voice__title {
+.splide__slide .voice__title {
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 0.04em;
     line-height: 1.5;
     color: var(--orange);
 }
-.slider__inner p {
+.splide__slide p {
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.04em;
     line-height: 2.0;
 }
+.splide__arrow {
+    background-color: var(--gray_white);
+    width: 60px;
+    height: 60px;
+    background-image: url(../images/main/voice_arrow.svg);
+    background-size: 22px;
+    background-position: calc(50% + 3px)center;
+    background-repeat: no-repeat;
+}
+
+
+
+.splide__arrow svg {
+    display: none;
+}
+.splide__arrow--prev {
+    left: calc(50% - 300px - 80px);
+    transform: translateY(-50%)scaleX(-1);
+}
+.splide__arrow--next {
+    right: calc(50% - 300px - 80px);
+}
+
+
 
 
 /* セクション＿＿コンタクト */
@@ -663,14 +699,6 @@ h3 img {
     letter-spacing: 0.2em;
     top: 170px;
 }
-/* コンタクトボタン＿＿ホバー時の動き */
-.contact__btn:hover .contact__btn--arrow {
-    width: 80px;
-}
-.contact__btn:hover .contact__btn--circle {
-    transform: translateX(20px);
-}
-
 
 
 /* フッター */
@@ -824,10 +852,7 @@ h3 img {
 .totop__arrow::after {
     transform: rotate(-45deg);
 }   
-/* ＿＿toTOP＿＿ホバー時の動き */
-.totop:hover .totop__arrow {
-    animation: totop 2s linear infinite;
-}
+
 @keyframes totop {
     0% {
         transform: translateY(0px);
@@ -920,14 +945,13 @@ h3 img {
     .hamburger span {
         font-family: Montserrat;
         font-size: 12px;
-        font-weight: 500;
+        font-weight: 600;
         letter-spacing: 0.08em;
         color: var(--logo_color);
         position: absolute;
-        top: 30px;
+        top: 32px;
         right: 9px;
         transition: 0.3s;
-        /* position: fixed; */
     }
     /* ハンバーガー＿＿上の線 */
     .hamburger::before {
@@ -1170,19 +1194,19 @@ h3 img {
         width: min(100%, 330px);
     }
     .service__title--deco {
-        font-size: 42px;
+        font-size: 38px;
     }
     .service__category {
         font-size: 20px;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.02em;
         bottom: 16px;
         margin-bottom: 0px;
     }
     .service__category--text {
         font-size: 14px;
-        font-weight: 400;
         line-height: 1.8;
-        width: 78.7%;
+        letter-spacing: 0.02em;
+        width: 68%;
     }
     .service__circle p,
     .service__circle dl {
@@ -1202,6 +1226,7 @@ h3 img {
     display: flex;
     flex-direction: column;
     row-gap: 24px;
+    margin-left: 2.5%;
     }
     .skill__tool, 
     .skill__implementation {
@@ -1219,28 +1244,41 @@ h3 img {
 
 
     /* ボイス */
-    .slider__list li {
-        width: 330px;
-        height: 440px;
+    .splide__slide{
+        width: 300px;
+        height: 520px;
+        /* height: fit-content; */
         border-radius: 10px;
-    }
-    .slider__inner {
         padding: 24px;
     }
-    .slider__inner div {
-        gap: 12px;
+    .splide__slide div {
+        gap: 16px;
         margin-bottom: 12px;
     }
-    .slider__inner img {
+    .splide__slide img {
         width: 40px;
         height: 40px;
     }
-    .slider__inner .voice__title {
+    .splide__slide .voice__title {
         font-size: 16px;
     }
-    .slider__inner p {
+    .splide__slide p {
         font-size: 14px;
     }
+    .splide__arrow {
+        width: 44px;
+        height: 44px;
+        border: 1px solid var(--orange);
+        background-size: 20px;
+        background-position: calc(50% + 2px)center;
+    }
+    .splide__arrow--prev {
+        left: calc(50% - 150px - 30px);
+    }
+    .splide__arrow--next {
+        right: calc(50% - 150px - 30px);
+    }
+
 
 
     /* コンタクト */
@@ -1299,5 +1337,51 @@ h3 img {
         .blue_tama__front--center {
         top: -30%;
         left: 20%;
+    }
+}
+
+
+/* ボイス＿＿レスポンシブ調整 */
+/* @media screen and (max-width: 390px) {
+    .splide__slide div {
+        flex-direction: column;
+        gap: 14px;
+    }
+} */
+
+
+/* マウス操作が前提のPC向けスタイル（ホバー時のみ表示など） */
+@media (hover: hover) and (pointer: fine) {
+
+    /* メインビジュアル＿＿ホバー */
+    .mv__logo:hover img:first-child {
+        opacity: 0;
+    }
+    .mv__logo:hover img:last-child {
+        opacity: 1;
+    }
+    /* ボタン＿＿ホバー */
+    .btn__link:hover .btn__arrow {
+        width: 80px;
+    }
+    .btn__link:hover .btn__circle {
+        transform: translateX(20px);
+    }
+    /* ワークス＿＿サムネ＿＿ホバー */
+    .works__item a img:hover {
+        opacity:0.6;
+        transform: scale(1.06);
+        transition:0.4s;
+    }
+    /* コンタクトボタン＿＿ホバー */
+    .contact__btn:hover .contact__btn--arrow {
+        width: 80px;
+    }
+    .contact__btn:hover .contact__btn--circle {
+        transform: translateX(20px);
+    }
+    /* toTOP＿＿ホバー */
+    .totop:hover .totop__arrow {
+        animation: totop 2s linear infinite;
     }
 }
