@@ -313,6 +313,16 @@ h2 {
 .remodal {
     padding: 5px 5px 60px 5px;
 }
+.remodal__image {
+    max-height: 80vh;
+    overflow: auto;
+}
+.remodal__image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: solid 1px #BBBFC5;
+}
 .my-close {
     position: absolute;
     display: flex;
@@ -343,17 +353,9 @@ h2 {
 }
 
 
+/* コンタクト */
 
-.remodal__image {
-    max-height: 80vh;
-    overflow: auto;
-}
-.remodal__image img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border: solid 1px #BBBFC5;
-}
+
 
 
 
@@ -452,18 +454,18 @@ h2 {
         font-size: 14px;
         letter-spacing: 0.04em; 
         left: 0px;
-        top: -170px;
+        top: -140px;
         margin-bottom: 70px;
     }
     .headding {
         margin-bottom: 108px;
     }
     .profile__list {
-        gap: 16px;
+        gap: 18px;
         margin-bottom: 80px;
     }
     .profile__list li {
-        line-height: 2.0;
+        line-height: 1.8;
     }
     .profile__text {
         letter-spacing: 0.04em;

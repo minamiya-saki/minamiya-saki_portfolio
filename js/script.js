@@ -1,29 +1,35 @@
-//ローディング
-//ローディング画面の表示
-$(window).on('load', function() {
-    $('#loading').delay(1500).fadeOut('slow');
+// ローディング
+$(window).on('load', function () {
+    if (sessionStorage.getItem('access')) {
+        // 2回目以降ローディング非表示
+        $('#loading').hide();
+    } else {
+        // 初回のみローディング表示
+        sessionStorage.setItem('access', 'true');
+        // 0.8s待ってからローディング開始
+        setTimeout(function () {
+            $('#loading').addClass('is-loaded');
+        }, 800);
+    }
 });
+
 
 
 // ヘッダーナビ＿＿MVの後にスライドイン（トップページのみ）
 if ($('#about').length) {
-
     function headerShow() {
         const aboutPos = $('#about').offset().top;
         const scrollPos = $(window).scrollTop();
-
         if (scrollPos >= aboutPos - 400) {
             $('header').addClass('is-show');
         } else {
             $('header').removeClass('is-show');
         }
     }
-    // スクロールしたときに判定
     $(window).on('scroll', headerShow);
-    // ページを開いたときにも判定
     headerShow();
     } else {
-    // トップページ以外は常に表示
+    // トップページ以外は常に表示する
     $('header').addClass('is-show');
 }
 

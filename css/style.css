@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* ーーーメイン兼全共通CSSーーー */
+/* ーーーメイン兼共通パーツCSSーーー */
 
 
 :root {
@@ -10,22 +10,20 @@
     --gray_white: #F6F6F6;
     --logo_color: #04243D;
 }
-
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
     overflow-x: hidden;
 }
-
 body {
     background-image: url(../images/main/bg_noise_offwhite.webp);
     /* カーソル */
     cursor: url("../images/main/cursor.svg") 0 0, auto;
 }
-
 main {
     overflow: hidden;
 }
+
 
 /* マウスストーカーのスタイル */
 .stalker {
@@ -57,40 +55,47 @@ main {
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
 }
-#loading_box {
+/* ローディング＿＿中央から消える動き */
+#loading::before {
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: transparent;
+    /* vw、vhの大きい方の100％ */
+    box-shadow: 0 0 0 100vmax var(--blue);
+    transition:
+        width 1.2s ease-in-out,
+        height 1.2s ease-in-out;
 }
-
+#loading_box {
+    position: relative;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
 .loading__logo {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    animation: loadingLogo 1.2s ease forwards;
-    animation-delay: 1.2s;
+    width: 27vw;
 }
-
-@keyframes loadingLogo {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateY(-100px);
-    }
+#loading.is-loaded::before {
+    width: 200vw;
+    height: 200vw;
 }
-
-
-
-
-
+#loading.is-loaded #loading_box {
+    opacity: 0;
+}
+/* ローディング終了後、操作可へ */
+#loading.is-loaded {
+    pointer-events: none;
+}
 
 
 /* メインビジュアル */
@@ -98,8 +103,6 @@ main {
     height: 100svh;
     margin: 10vh 0 200px 0;
 }
-
-
 /* メインビジュアル＿＿上部 */
 .mv__title {
     position: relative;
@@ -118,8 +121,7 @@ main {
     position: absolute;
     top: 50%;/* 親要素から50％動く */
     left: 50%;
-    transform: translate(-50%, -50%);/* 自分自身（ロゴ画像）のサイズを基準に「自分の幅の50%左へ、自分の高さの50%上へ動く。
-    これでロゴの width を後から変更しても、画像の縦横比が変わっても、親要素のサイズが変わっても中央配置にしてくれる */
+    transform: translate(-50%, -50%);
     transition: 0.3s ;
 }
 .mv__title img:first-of-type {
@@ -128,14 +130,11 @@ main {
 .mv__title img:last-of-type {
     opacity: 0;
 }
-
-
 /* メインビジュアル＿＿下部 */
 .mv__object {
     position: relative;
     margin-top: -116px;
 }
-/* 背面の青い粒々 */
 .blue_tama__back {
     width: 86.87%;
     margin-left: 2.9%;
@@ -149,7 +148,6 @@ main {
         transform: translateY(5%);
     }
 }
-/* 前面の青玉 */
 .mv__front--container {
     position: absolute;
     top: 0;
@@ -198,7 +196,6 @@ main {
         transform: translateY(10%);
     }
 }
-
 /* メインビジュアル＿＿スクロールダウン */
 .scroll__container {
     margin: 136px 0 0 3%;
@@ -232,10 +229,6 @@ main {
 
 
 /* ナビゲーションバー */
-
-
-/*  */
-
 header {
     position: fixed;
     top: 0;
@@ -246,14 +239,9 @@ header {
     transform: translateY(-100%);
     transition: transform 0.3s ease-out; 
 }
-
-/* アバウトセクションに入ったらこのクラスを付与 */
 header.is-show {
     transform: translateY(0);
 }
-
-
-
 .header__inner {
     position: relative;
     display: flex;
@@ -315,14 +303,11 @@ section {
 }
 
 
-
-
 /* セクション＿＿アバウト */
 .about {
     margin-top: 200px;
     display: flex;
     align-items: flex-end;
-
 }
 h2 img {
     height: 58px;
@@ -346,7 +331,6 @@ h2 img {
     line-height: 3.0;
     margin-bottom: 48px;
 }
-/* 海の画像 */
 .about__image {
     position: absolute;
     right: 0;
@@ -413,7 +397,6 @@ h2 img {
     margin-left: 25px;
     transition: 0.3s;
 }
-
 
 
 /* セクション＿＿ワークス */
@@ -486,7 +469,6 @@ h2 img {
 /* セクション＿＿サービス */
 #service {
     max-width: none;
-    /* padding: 0; */
 }
 .section__service{
     max-width: 1100px;
@@ -511,7 +493,6 @@ h2 img {
     display: flex;
     justify-content: center;
 }
-/* 背景＿＿白い正円 */
 .service__circle {
     width: min(550px, 100%);
     height: min(550px, 100%);
@@ -623,7 +604,6 @@ h3 img {
     width: 1100px;
     margin: 0 auto;
 }
-
 .splide {
     max-width: none;
     padding: 0;
@@ -654,19 +634,11 @@ h3 img {
 .splide__slide:not(.is-active)::after {
     opacity: 1;
 }
-
 @media screen and (max-width: 768px) {
     .splide__slide:not(.is-active)::after {
         border-radius: 10px; /* SP版の角丸に合わせる */
     }
 }
-
-
-
-
-
-
-
 .splide__slide div {
     display: flex;
     gap: 1.9vw;
@@ -844,7 +816,7 @@ h3 img {
     display: inline-block;
     transition: 0.3s;
 }
-/* フッターーナビ＿＿ホバー時 */
+/* フッターーナビ＿＿ホバー */
 .footer__nav a:hover {
     color: var(--orange);
     -webkit-text-stroke: 1px var(--orange);
@@ -981,15 +953,12 @@ h3 img {
 }
 
 
-/* ーーーレスポンシブーーー */
-
-
+/* ＝＝＝レスポンシブ＝＝＝ */
 @media screen and (max-width: 1300px) {
     .mv__object {
         margin-top: -70px;
     }
 }
-
 
 @media screen and (max-width: 1200px) {
     .service__list {
@@ -1003,7 +972,6 @@ h3 img {
     }
 }
 
-
 @media screen and (max-width: 1060px) {
     /* ヘッダーナビ */
     .header__nav {
@@ -1013,8 +981,6 @@ h3 img {
         width: 100%;
     }
 }
-
-
 
 @media screen and (max-width: 768px) {
     /* ヘッダーナビ */
@@ -1163,6 +1129,7 @@ h3 img {
         visibility: visible;
     }
 
+
     /* メインビジュアル */
     #mv {
         margin: 20vh 0 0 0;
@@ -1270,7 +1237,7 @@ h3 img {
         height: 44px;
         margin-left: 15px;
     }
-    /* セクション　＿＿ワークス */
+    /* セクション＿＿ワークス */
     .section__title--deco-right {
         width: 51.2%;
         position: absolute;
@@ -1352,13 +1319,10 @@ h3 img {
     .skill__inner p {
         font-size: 14px;
     }
-
-
     /* ボイス */
     .splide__slide{
         width: 300px;
         height: 520px;
-        /* height: fit-content; */
         border-radius: 10px;
         padding: 24px;
     }
@@ -1391,14 +1355,14 @@ h3 img {
     }
     .splide__pagination__page {
         top: 80px;
+        margin: 0 20px;
     }
-
 
 
     /* コンタクト */
     .contact__text {
         font-size: 14px;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.04em;
         line-height: 2.3;
         margin-bottom: 50px;
         display: block;
@@ -1453,15 +1417,6 @@ h3 img {
         left: 20%;
     }
 }
-
-
-/* ボイス＿＿レスポンシブ調整 */
-/* @media screen and (max-width: 390px) {
-    .splide__slide div {
-        flex-direction: column;
-        gap: 14px;
-    }
-} */
 
 
 /* マウス操作が前提のPC向けスタイル（ホバー時のみ表示など） */
