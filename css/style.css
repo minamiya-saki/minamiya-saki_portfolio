@@ -18,13 +18,80 @@ html {
 }
 
 body {
-    background-image: url(../images/main/bg_noise_offwhite.jpg);
+    background-image: url(../images/main/bg_noise_offwhite.webp);
+    /* カーソル */
     cursor: url("../images/main/cursor.svg") 0 0, auto;
 }
 
 main {
     overflow: hidden;
 }
+
+/* マウスストーカーのスタイル */
+.stalker {
+    background-color: rgba(250, 253, 255, 0.3);;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    top: -15px;
+    left: -15px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-out;
+    z-index: 9998;
+}
+.stalker.js-hover {
+    background-color: rgba(240, 131, 2, 0.1);
+    width: 50px;
+    height: 50px;
+    top: -15px;
+    left: -15px;
+}
+
+
+/* ローディング */
+#loading {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: var(--blue);
+}
+#loading_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading__logo {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    animation: loadingLogo 1.2s ease forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes loadingLogo {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}
+
+
+
+
+
+
 
 /* メインビジュアル */
 #mv {
@@ -36,12 +103,12 @@ main {
 /* メインビジュアル＿＿上部 */
 .mv__title {
     position: relative;
-    z-index: 9999;
+    z-index: 9998;
 }
 .mv__circle {
     width: 40.28vw;
     height: 40.28vw;
-    background-image: url(../images/main/bg_noise_white.jpg);
+    background-image: url(../images/main/bg_noise_white.webp);
     border-radius: 50%;
     margin: 0 auto;
 }
@@ -165,11 +232,28 @@ main {
 
 
 /* ナビゲーションバー */
+
+
+/*  */
+
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 9999;
+    left: 0;
+    width: 100%;
+    z-index: 9998;
+    /* 初期状態：上に隠す */
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-out; 
 }
+
+/* アバウトセクションに入ったらこのクラスを付与 */
+header.is-show {
+    transform: translateY(0);
+}
+
+
+
 .header__inner {
     position: relative;
     display: flex;
@@ -304,7 +388,7 @@ h2 img {
     width: 60px;
     height: 1px;
     margin-top: 6.4px;
-    border-radius: 9999px;
+    border-radius: 50px;
     background-color: var(--text_color);
     transition: 0.3s;
 }
@@ -315,7 +399,7 @@ h2 img {
     right: 0;
     width: 10px;
     height: 1px;
-    border-radius: 9999px;
+    border-radius: 50px;
     background-color: var(--text_color);
     transform: rotate(45deg);
     transform-origin: calc(100% - 0.5px) 50%;
@@ -325,7 +409,7 @@ h2 img {
     width: 64px;
     height: 64px;
     background-color: var(--orange);
-    border-radius: 9999px;
+    border-radius: 50px;
     margin-left: 25px;
     transition: 0.3s;
 }
@@ -387,6 +471,10 @@ h2 img {
     font-weight: 500;
     text-align: center;
     line-height: 1.1;
+    letter-spacing: 0.02em;
+}
+.works__title span {
+    letter-spacing: -0.04em;
 }
 /* ボタン＿＿作品をもっと見る */
 .works__btn {
@@ -428,7 +516,7 @@ h2 img {
     width: min(550px, 100%);
     height: min(550px, 100%);
     aspect-ratio:1/1;
-    background-image: url(../images/main/bg_noise_white.jpg);
+    background-image: url(../images/main/bg_noise_white.webp);
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -548,25 +636,37 @@ h3 img {
     border-radius: 20px;
     background-color: var(--gray_white);
     padding: 50px;
-}
-.splide__slide {
     position: relative;
     opacity: 1;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.3s ease-in;
 }
-.splide__slide:not(.is-active)::after {
+/* 白いマスクをフワッとかける */
+.splide__slide::after {
     content: "";
     position: absolute;
     inset: 0;
     background-color: rgba(255, 255, 255, 0.6); 
     border-radius: 20px;
-    transition: background-color 0.4s;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
 }
+.splide__slide:not(.is-active)::after {
+    opacity: 1;
+}
+
 @media screen and (max-width: 768px) {
     .splide__slide:not(.is-active)::after {
         border-radius: 10px; /* SP版の角丸に合わせる */
     }
 }
+
+
+
+
+
+
+
 .splide__slide div {
     display: flex;
     gap: 1.9vw;
@@ -598,6 +698,7 @@ h3 img {
     background-size: 22px;
     background-position: calc(50% + 3px)center;
     background-repeat: no-repeat;
+    opacity: 1;
 }
 .splide__arrow svg {
     display: none;
@@ -681,7 +782,7 @@ h3 img {
     position: absolute;
     width: 60px;
     height: 1px;
-    border-radius: 9999px;
+    border-radius: 50px;
     background-color: var(--snow_white);
     top: 126px;
     left: 80px;
@@ -694,7 +795,7 @@ h3 img {
     right: 0;
     width: 10px;
     height: 1px;
-    border-radius: 9999px;
+    border-radius: 50px;
     background-color: var(--snow_white);
     transform: rotate(45deg);
     transform-origin: calc(100% - 0.5px) 50%;
@@ -826,7 +927,7 @@ h3 img {
     width: 92px;
     height: 92px;
     border-radius: 50%;
-    background-image: url(../images/main/bg_noise_white.jpg);
+    background-image: url(../images/main/bg_noise_white.webp);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -838,7 +939,7 @@ h3 img {
     width: 4px;
     height: 32px;
     margin: 0 12.8px;
-    border-radius: 9999px;
+    border-radius: 50px;
     background-color: var(--blue);
     transition: 0.3s;
 }
@@ -850,7 +951,7 @@ h3 img {
     left: calc(50% - 2px);
     width: 4px;
     height: 22px;
-    border-radius: 9999px;
+    border-radius: 50px;
     background-color: var(--blue);
     transform-origin: 50% 2px;
 }
@@ -917,6 +1018,9 @@ h3 img {
 
 @media screen and (max-width: 768px) {
     /* ヘッダーナビ */
+    header {
+        height: 84px;
+    }
     .header__logo--inner {
         width: 60px;
         height: 60px;
@@ -947,7 +1051,7 @@ h3 img {
         position: absolute;
         top: 12px;
         right: 16px;
-        z-index: 9999;
+        z-index: 9998;
         cursor: pointer;
     }
     .hamburger span {
@@ -990,7 +1094,6 @@ h3 img {
         width: 45vw;
         height: 100vh;
         background-color: var(--blue);
-        /* position: absolute; */
         position: fixed;
         top: 0;
         z-index: 9998;
@@ -1363,7 +1466,6 @@ h3 img {
 
 /* マウス操作が前提のPC向けスタイル（ホバー時のみ表示など） */
 @media (hover: hover) and (pointer: fine) {
-    .mv__title:hover,
     a:hover,
     button:hover,
     .hamburger:hover,

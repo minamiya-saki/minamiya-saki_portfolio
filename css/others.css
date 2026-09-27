@@ -29,7 +29,7 @@ h2 img {
     display: flex;
     list-style-type: none;
     max-width: 1100px;
-    margin: 40px auto 120px;
+    margin: 120px auto;
 }
 .breadcrumb li,
 .breadcrumb a {
@@ -102,7 +102,7 @@ h2 img {
     top: 580px;
     left: -100px;
     z-index: -9999;
-    background-image: url(../images/main/bg_noise_white.jpg);
+    background-image: url(../images/main/bg_noise_white.webp);
     animation: fuwafuwa 3s ease-in-out infinite alternate-reverse;
 }
 .headding {
@@ -423,13 +423,13 @@ h2 {
     }
     .profile__photo--wrap picture {
         transition: none;
-        animation: profile__photo--switch 8s infinite;
+        animation: profile__photo--switch 10s infinite;
     }
     .profile__photo--wrap picture:first-child {
         animation-delay: 0s;
     }
     .profile__photo--wrap picture:last-child {
-        animation-delay: 4s;
+        animation-delay: 5s;
     }
     @keyframes profile__photo--switch {
         0% {
@@ -459,7 +459,7 @@ h2 {
         margin-bottom: 108px;
     }
     .profile__list {
-        gap: 28px;
+        gap: 16px;
         margin-bottom: 80px;
     }
     .profile__list li {

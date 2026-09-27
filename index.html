@@ -21,6 +21,10 @@
 
     <link rel="stylesheet" href="./css/style.css" />
 
+    <!-- ファビコン -->
+    <link rel="shortcut icon" href="images/main/favicon.ico" type="image/x-icon">
+
+
 </head>
 
 
@@ -28,6 +32,13 @@
 <body>
     <!-- toTopが戻る位置 -->
     <div id="top"></div>
+
+    <!-- ローディング -->
+    <div id="loading">
+        <div id="loading_box">
+            <img src="images/main/logo_fafdff_web.svg" alt="373&DESIGN" class="loading__logo">
+        </div>
+    </div>
 
 
     <!-- メインビジュアル -->
@@ -299,7 +310,6 @@
                     </ul>
                 </div>
             </div>
-            </div>
         </section>
         <!-- セクション＿＿コンタクト -->
         <section id="contact">
@@ -398,6 +408,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 
     <script src="./js/script.js"></script>
+
+    <!-- マウスストーカー -->
+    <div class="stalker" id="js-stalker"></div>
 </body>
 
 </html>
