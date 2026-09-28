@@ -86,8 +86,8 @@ main {
     width: 27vw;
 }
 #loading.is-loaded::before {
-    width: 200vw;
-    height: 200vw;
+    width: 300vw;
+    height: 300vw;
 }
 #loading.is-loaded #loading_box {
     opacity: 0;
@@ -1427,6 +1427,7 @@ h3 img {
     summary:hover,
     .my-close:hover,
     .profile__photo--wrap:hover,
+    .c-form__submit button,
     .splide .splide__pagination__page:hover {
         cursor: url("../images/main/cursor_hover.svg") 0 0, pointer;
     }
@@ -1460,5 +1461,11 @@ h3 img {
     /* toTOP＿＿ホバー */
     .totop:hover .totop__arrow {
         animation: totop 2s linear infinite;
+    }
+}
+/* タッチ操作デバイスでは非表示 */
+@media (pointer: coarse) {
+    .stalker {
+        display: none;
     }
 }

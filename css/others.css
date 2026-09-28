@@ -352,11 +352,94 @@ h2 {
     transform: rotate(-45deg);
 }
 
+/* 調整中↓↓↓↓↓ */
 
 /* コンタクト */
+.contact__text {
+    text-align: center;
+    margin-bottom: 100px;
+}
+/* コンタクトフォーム */
+.c-form {
+	max-width: 660px;
+	margin: 0 auto;
+}
+.c-form__item {
+	margin-bottom: 32px;
+}
+.c-form__item:nth-last-child(2) {
+	margin-bottom: 100px;
+}
+.c-form__label,
+.c-form__input {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+}
+.c-form__label::after {
+    content: "*";
+    color: var(--orange);
+    padding-left: 4px;
+}
+.c-form__label.no-required::after {
+    /* 必須項目ではないものは”*”を非表示 */
+    display: none;
+}
+.c-form__input {
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: 400;
+    color: #878787;
+    line-height: 1.5;
+    margin-top: 16px;
+    padding: 16px 40px;
+    border: none;
+    background-color: var(--snow_white);
+    border-radius: 10px;
+}
+.c-form__input:focus-visible {
+	outline: var(--orange) solid 1px;
+}
+textarea.c-form__input {
+	height: 300px;
+}
+.c-form__submit {
+	text-align: center;
+}
+.c-form__submit button {
+	font-size: 24px;
+	font-weight: 500;
+    letter-spacing: 0.5em;
+	color: var(--snow_white);
+	background-color: var(--blue);
+	border: solid 1px var(--blue);
+	border-radius: 40px;
+	padding: 18px 70px;
+	transition: 0.3s;
+}
+.c-form__submit button:hover {
+    background-color: var(--orange);
+    border: var(--orange);
+}
+
+@media (min-width: 640px) {
+	.c-form__item {
+		flex-wrap: nowrap;
+	}
+	.c-form__label {
+		width: 40%;
+	}
+}
 
 
 
+/* ラジオボタン */
+
+
+
+
+/* 調整中↑↑↑↑↑ */
 
 
 /* ページ＿＿プライバシーポリシー */

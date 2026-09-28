@@ -59,7 +59,7 @@ $(function () {
         stalker.addClass("js-hover");
     });
 
-    $(document).on("mouseleave", "a, .splide__arrow, .splide__pagination__page", function () {
+    $(document).on("mouseleave", "a, .splide__arrow, .splide__pagination__page, .c-form__submit button", function () {
         stalker.removeClass("js-hover");
     });
 }); 
@@ -84,3 +84,6 @@ new Splide(".splide", {
         },
     },
 }).mount();
+
+//コンタクトフォーム
+let submitted = false;
