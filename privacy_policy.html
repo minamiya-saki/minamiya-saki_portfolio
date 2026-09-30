@@ -24,7 +24,8 @@
 </head>
 
 
-<body>
+<body class="fade">
+    <div class="animation-bg"></div>
     <!-- toTopが戻る位置 -->
     <div id="top"></div>
 
@@ -71,7 +72,7 @@
 
 
         <!-- プライバシーポリシー -->
-        <section>
+        <section class="inview fadeIn">
             <h2>
                 <picture class="praivacypolicy__title">
                     <source srcset="./images/main/praivacypolicy_sp.svg" media="(max-width:900px)" />
@@ -178,14 +179,14 @@
                 <!-- フッターナビ -->
                 <nav class="footer__nav">
                     <ul>
-                        <li><a href="#about">ABOUT</a></li>
-                        <li><a href="#works">WORKS</a></li>
-                        <li><a href="#service">SERVICE</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
+                        <li><a href="index.html#about">ABOUT</a></li>
+                        <li><a href="index.html#works">WORKS</a></li>
+                        <li><a href="index.html#service">SERVICE</a></li>
+                        <li><a href="index.html#contact">CONTACT</a></li>
                     </ul>
                 </nav>
                 <div class="footer__icon--container">
-                    <a href="#mv" class="footer__logo">
+                    <a href="index.html" class="footer__logo">
                         <img src="images/main/logo_fafdff_web.svg" alt="373&DESIGNのロゴ">
                     </a>
                     <div class="footer__sns--container">
@@ -225,7 +226,11 @@
     <!-- jQueryのCDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    <script src="./js/script.js"></script>
+    <!-- inview -->
+    <script type="text/javascript" src="js/jquery.inview.min.js"></script>
+
+    <!-- .jsの読み込み -->
+    <script src="js/script.js"></script>
 
     <!-- マウスストーカー -->
     <div class="stalker" id="js-stalker"></div>

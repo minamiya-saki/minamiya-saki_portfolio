@@ -116,7 +116,7 @@ h2 img {
     letter-spacing: 0.1em; 
     left: 40px;
     top: -440px;
-    margin-bottom: -60px;
+    margin-bottom: -260px;
     pointer-events: none;
 }
 .profile__inner details {
@@ -373,6 +373,8 @@ h2 {
 .c-form__label,
 .c-form__input {
     display: block;
+    /* textarea にページのフォントを継承 */
+    font-family: inherit;
     font-size: 16px;
     font-weight: 500;
     letter-spacing: 0.08em;
@@ -390,16 +392,23 @@ h2 {
     width: 100%;
     box-sizing: border-box;
     font-weight: 400;
-    color: #878787;
+    color: var(--text_color);
     line-height: 1.5;
     margin-top: 16px;
-    padding: 16px 40px;
+    padding: 16px 24px;
     border: none;
     background-color: var(--snow_white);
     border-radius: 10px;
 }
 .c-form__input:focus-visible {
+    /* 項目を選択した時の枠線 */
 	outline: var(--orange) solid 1px;
+}
+.c-form__input::placeholder {
+    /* 見本で入っている文字 */
+    color: #C2C4C8;
+    font-weight: 400;
+    opacity: 1; 
 }
 textarea.c-form__input {
 	height: 300px;
@@ -435,9 +444,46 @@ textarea.c-form__input {
 
 
 /* ラジオボタン */
-
-
-
+.form__radio--wrapper {
+    margin-top: 16px;
+}
+.label__radio {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 44px;
+}
+input[type="radio"] {
+    /* デフォルトラジオボタンCSS無効化 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    /* 外側の丸 */
+    width: 30px;
+    height: 30px;
+    background-color: var(--snow_white);
+    border-radius: 50%;
+    /* 文字と横並びの高さ */
+    vertical-align: -10px;
+}
+input[type="radio"]:checked:before {
+    /* チェック時の内側の丸 */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--text_color);
+}
+.radio__span {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+}
 
 /* 調整中↑↑↑↑↑ */
 
@@ -538,7 +584,7 @@ textarea.c-form__input {
         letter-spacing: 0.04em; 
         left: 0px;
         top: -140px;
-        margin-bottom: 70px;
+        margin-bottom: -20px;
     }
     .headding {
         margin-bottom: 108px;

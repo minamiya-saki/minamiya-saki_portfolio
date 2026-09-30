@@ -27,7 +27,7 @@ main {
 
 /* マウスストーカーのスタイル */
 .stalker {
-    background-color: rgba(250, 253, 255, 0.3);;
+    background-color: rgba(250, 253, 255, 0.3);
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -55,13 +55,14 @@ main {
     width: 100%;
     height: 100%;
     z-index: 9999;
-    display: flex;
+    /* 最初は非表示 */
+    display: none;
     justify-content: center;
     align-items: center;
     background: transparent;
 }
-/* ローディング＿＿中央から消える動き */
 #loading::before {
+    /* ローディング＿＿中央から消える動き */
     content: "";
     position: absolute;
     top: 50%;
@@ -78,6 +79,7 @@ main {
         height 1.2s ease-in-out;
 }
 #loading_box {
+    /* ローディングのロゴ */
     position: relative;
     z-index: 1;
     transition: opacity 0.3s ease;
@@ -92,10 +94,68 @@ main {
 #loading.is-loaded #loading_box {
     opacity: 0;
 }
-/* ローディング終了後、操作可へ */
 #loading.is-loaded {
+    /* ローディング終了後、操作可にする */
     pointer-events: none;
 }
+
+
+/* 画面遷移アニメーション */
+.fade .animation-bg {
+    background: var(--blue);
+    background-image: url(../images/main/bg_noise_offwhite.webp);
+    content: "";
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    animation-name: PageAnime-fade;
+    animation-duration: 0.3s;
+    animation-delay: 0.4s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    pointer-events: none;
+}
+@keyframes PageAnime-fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+
+/* スクロールでふわっと表示 */
+.fadeIn {
+    opacity: 0;
+    transition: 1.5s;
+}
+.fadeIn.is-show {
+    opacity: 1;
+}
+.fadeIn_left {
+    opacity: 0;
+    transform: translate(-4%, 0);
+    transition: 1.5s;
+}
+.fadeIn_left.is-show {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+.fadeIn_right {
+    opacity: 0;
+    transform: translate(4%, 0);
+    transition: 1.5s;
+}
+.fadeIn_right.is-show {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
 
 
 /* メインビジュアル */
@@ -235,12 +295,13 @@ header {
     left: 0;
     width: 100%;
     z-index: 9998;
-    /* 初期状態：上に隠す */
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-out; 
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
 }
 header.is-show {
-    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
 }
 .header__inner {
     position: relative;
@@ -261,7 +322,7 @@ header.is-show {
     max-width: 800px;
     width: 90%;
     height: 50px;
-    background-color: rgba(246, 246, 256, 0.3);
+    background-color: rgba(246, 246, 255, 0.3);
     backdrop-filter: blur(6px);
     border: 1px solid var(--gray_white);
     border-radius: 50px;
@@ -316,7 +377,7 @@ h2 img {
     width: auto;
 }
 .about__text {
-    width: 60%;
+    width: 66%;
 }
 .headding {
     font-size: 28px;
@@ -334,7 +395,8 @@ h2 img {
 .about__image {
     position: absolute;
     right: 0;
-    width: min(34%, 500px);
+    width: min(32%, 500px);
+    /* width: min(24%, 500px); */
 }
 .about__image img {
     border-radius: 30px 0 0 30px;
@@ -954,6 +1016,7 @@ h3 img {
 
 
 /* ＝＝＝レスポンシブ＝＝＝ */
+
 @media screen and (max-width: 1300px) {
     .mv__object {
         margin-top: -70px;
@@ -964,7 +1027,7 @@ h3 img {
     .service__list {
         flex-direction: column;
         align-items: center;
-        gap: 40px;
+        gap: 32px;
     }
     .service__lp,
     .service__web  {
@@ -981,7 +1044,11 @@ h3 img {
         width: 100%;
     }
 }
-
+@media screen and (max-width: 890px) {
+    .headding {
+        font-size: 25px;
+    }
+}
 @media screen and (max-width: 768px) {
     /* ヘッダーナビ */
     header {
@@ -991,7 +1058,7 @@ h3 img {
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        background-color: rgba(246, 246, 256, 0.3);
+        background-color: rgba(246, 246, 255, 0.3);
         backdrop-filter: blur(6px);
         border: 1px solid var(--gray_white);
         top: 12px;
@@ -1011,7 +1078,7 @@ h3 img {
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        background-color: rgba(246, 246, 256, 0.3);
+        background-color: rgba(246, 246, 255, 0.3);
         backdrop-filter: blur(6px);
         border: 1px solid var(--gray_white);
         position: absolute;
@@ -1201,9 +1268,9 @@ h3 img {
         margin: 0 -30px 0 auto;
     }
     .about__image--sp {
-    position: relative;
-    right: 0;
-    width: 81.8%;
+        position: relative;
+        right: 0;
+        width: min(81.8%, 480px);
     }
     .about__image--sp img {
         border-radius: 30px 0 0 30px;
@@ -1292,7 +1359,7 @@ h3 img {
     }
     /* スキル */
     .skill {
-        display: block
+        display: block;
     }
     h3 img {
         height: 30px;

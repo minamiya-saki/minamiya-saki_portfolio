@@ -24,7 +24,8 @@
 </head>
 
 
-<body>
+<body class="fade">
+    <div class="animation-bg"></div>
     <!-- toTopが戻る位置 -->
     <div id="top"></div>
 
@@ -71,7 +72,7 @@
 
 
         <!-- コンタクト -->
-        <section>
+        <section class="inview fadeIn">
             <h2>
                 <img src="images/main/contact.svg" alt="contact">
             </h2>
@@ -81,7 +82,6 @@
                 名刺などWEBデザイン以外でも「こんなのもお願いできる？」というご相談もどうぞ。<br>
                 2営業日以内にお返事させていただきます。
             </p>
-            <!-- ＝＝＝＝＝＝調整中＝＝＝＝＝＝ -->
             <!-- フォーム -->
             <form
                 action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdQImct5mT2iWtTLfsDno_DsMSQ95WPG9yVIEKlljz3YfjXWg/formResponse"
@@ -100,7 +100,7 @@
                 </div>
                 <!-- 会社名 -->
                 <div class="c-form__item">
-                    <label class="c-form__label no-required" for="field-name">会社名</label>
+                    <label class="c-form__label no-required" for="field-company">会社名</label>
                     <input name="entry.1812092247" class="c-form__input" id="field-company" placeholder="373&DESIGN" />
                 </div>
                 <!-- メールアドレス -->
@@ -110,35 +110,38 @@
                         type="email" required="required" />
                 </div>
 
-
-
                 <!-- ご用件 -->
                 <div class="c-form__item">
-                    <label class="c-form__label no-required" for="field-name">ご用件</label>
-                    <div class="form_checkbox-wrapper">
-                        <label class="label_checkbox">
-                            <input type="radio" name="entry.767609341" class="input_checkbox" value="ホームページ制作のご相談"
-                                required="required>
-                            <span class=" checkbox_span">ホームページ制作のご相談</span>
+                    <label class="c-form__label" for="field-name">ご用件</label>
+                    <div class="form__radio--wrapper">
+                        <label class="label__radio">
+                            <input type="radio" name="entry.767609341" value="ホームページ制作のご相談" class="input__radio"
+                                required>
+                            <span class="radio__span">ホームページ制作のご相談</span>
                         </label>
-                        <label class="label_checkbox">
-                            <input type="radio" name="entry.767609341" class="input_checkbox" value="ランディングページ制作のご相談">
-                            <span class="checkbox_span">ランディングページ制作のご相談</span>
+                        <label class="label__radio">
+                            <input type="radio" name="entry.767609341" value="ランディングページ制作のご相談" class="input__radio">
+                            <span class="radio__span">ランディングページ制作のご相談</span>
+                        </label>
+                        <label class="label__radio">
+                            <input type="radio" name="entry.767609341" value="WEB画像制作のご相談" class="input__radio">
+                            <span class="radio__span">WEB画像制作のご相談</span>
+                        </label>
+                        <label class="label__radio">
+                            <input type="radio" name="entry.767609341" value="その他" class="input__radio">
+                            <span class="radio__span">その他</span>
                         </label>
                     </div>
                 </div>
 
-
-
-
                 <!-- ご予算 -->
                 <div class="c-form__item">
-                    <label class="c-form__label no-required" for="field-name">ご予算</label>
+                    <label class="c-form__label no-required" for="field-budget">ご予算</label>
                     <input name="entry.1307867165" class="c-form__input" id="field-budget" placeholder="〜30万/相談したい" />
                 </div>
                 <!-- 希望納期 -->
                 <div class="c-form__item">
-                    <label class="c-form__label no-required" for="field-name">希望納期</label>
+                    <label class="c-form__label no-required" for="field-nouki">希望納期</label>
                     <input name="entry.1567431506" class="c-form__input" id="field-nouki" placeholder="来月末まで" />
                 </div>
                 <!-- お問い合わせ内容 -->
@@ -157,10 +160,7 @@
             </form>
 
         </section>
-
-
     </main>
-
 
 
     <!-- フッター -->
@@ -174,14 +174,14 @@
                 <!-- フッターナビ -->
                 <nav class="footer__nav">
                     <ul>
-                        <li><a href="#about">ABOUT</a></li>
-                        <li><a href="#works">WORKS</a></li>
-                        <li><a href="#service">SERVICE</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
+                        <li><a href="index.html#about">ABOUT</a></li>
+                        <li><a href="index.html#works">WORKS</a></li>
+                        <li><a href="index.html#service">SERVICE</a></li>
+                        <li><a href="index.html#contact">CONTACT</a></li>
                     </ul>
                 </nav>
                 <div class="footer__icon--container">
-                    <a href="#mv" class="footer__logo">
+                    <a href="index.html" class="footer__logo">
                         <img src="images/main/logo_fafdff_web.svg" alt="373&DESIGNのロゴ">
                     </a>
                     <div class="footer__sns--container">
@@ -221,11 +221,14 @@
     <!-- jQueryのCDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    <script src="./js/script.js"></script>
+    <!-- inview -->
+    <script type="text/javascript" src="js/jquery.inview.min.js"></script>
+
+    <!-- .jsの読み込み -->
+    <script src="js/script.js"></script>
 
     <!-- マウスストーカー -->
     <div class="stalker" id="js-stalker"></div>
-
 
 
 </body>

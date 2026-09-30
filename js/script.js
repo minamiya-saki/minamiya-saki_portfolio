@@ -1,11 +1,13 @@
 // ローディング
+// 遷移アニメーション＿＿下層ページからトップページに戻る時に一瞬、初回ローディングの画面が見えてしまう対策
 $(window).on('load', function () {
     if (sessionStorage.getItem('access')) {
-        // 2回目以降ローディング非表示
-        $('#loading').hide();
+        // 2回目以降は何もしない
+        return;
     } else {
         // 初回のみローディング表示
         sessionStorage.setItem('access', 'true');
+        $('#loading').css('display', 'flex');
         // 0.8s待ってからローディング開始
         setTimeout(function () {
             $('#loading').addClass('is-loaded');
@@ -14,13 +16,22 @@ $(window).on('load', function () {
 });
 
 
+//スクロールでふわっと表示__1回だけ
+$(function(){
+    $(".inview").on("inview", function (event, isInView) {
+        if (isInView) {
+        $(this).stop().addClass("is-show");
+        }
+    });
+});
 
-// ヘッダーナビ＿＿MVの後にスライドイン（トップページのみ）
+
+// ヘッダーナビ＿＿MVの後に表示（トップページのみ）
 if ($('#about').length) {
     function headerShow() {
         const aboutPos = $('#about').offset().top;
         const scrollPos = $(window).scrollTop();
-        if (scrollPos >= aboutPos - 400) {
+        if (scrollPos >= aboutPos - 560) {
             $('header').addClass('is-show');
         } else {
             $('header').removeClass('is-show');
@@ -65,25 +76,26 @@ $(function () {
 }); 
 
 // トップページ＿＿ボイス
-new Splide(".splide", {
-    autoplay: true,
-    type: "loop",
-    pauseOnHover: false, 
-    rewind: true,
-    interval: 8000,
-    speed: 800,
-    padding: "20%",
-    gap: 100,
-    fixedWidth: "600px",
-    focus: "center",
-    breakpoints: {
-        768: {
-            padding: "18.5%",
-            gap: 20,
-            fixedWidth: "300px",
+if ($(".splide").length) {
+    new Splide(".splide", {
+        autoplay: true,
+        type: "loop",
+        pauseOnHover: false, 
+        rewind: true,
+        interval: 8000,
+        speed: 800,
+        padding: "20%",
+        gap: 100,
+        fixedWidth: "600px",
+        focus: "center",
+        breakpoints: {
+            768: {
+                padding: "18.5%",
+                gap: 20,
+                fixedWidth: "300px",
+            },
         },
-    },
-}).mount();
-
+    }).mount();
+}
 //コンタクトフォーム
 let submitted = false;

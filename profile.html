@@ -24,7 +24,8 @@
 </head>
 
 
-<body>
+<body class="fade">
+    <div class="animation-bg"></div>
     <!-- toTopが戻る位置 -->
     <div id="top"></div>
 
@@ -72,7 +73,7 @@
 
         <!-- プロフィール -->
         <section>
-            <div class="profile">
+            <div class="profile inview fadeIn_right">
                 <h2>
                     <img src="images/main/profile.svg" alt="profile">
                 </h2>
@@ -87,8 +88,8 @@
                     </picture>
                 </div>
             </div>
-            <div class="profile__circle"></div>
-            <div class="profile__inner">
+            <div class="profile__circle inview fadeIn_right"></div>
+            <div class="profile__inner inview fadeIn_right">
                 <h3 class="headding">みなみやってこんな<span>人</span></h3>
                 <ul class="profile__list">
                     <li>青森県出身・在住</li>
@@ -121,7 +122,7 @@
                     </ul>
                 </details>
             </div>
-            <div class="yagou">
+            <div class="yagou inview fadeIn_left">
                 <img src="images/main/section_white_tama_right.webp" alt="" aria-hidden="true"
                     class="section__title--deco-right">
                 <h3 class="headding">屋号への想い</h3>
@@ -165,14 +166,14 @@
                 <!-- フッターナビ -->
                 <nav class="footer__nav">
                     <ul>
-                        <li><a href="#about">ABOUT</a></li>
-                        <li><a href="#works">WORKS</a></li>
-                        <li><a href="#service">SERVICE</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
+                        <li><a href="index.html#about">ABOUT</a></li>
+                        <li><a href="index.html#works">WORKS</a></li>
+                        <li><a href="index.html#service">SERVICE</a></li>
+                        <li><a href="index.html#contact">CONTACT</a></li>
                     </ul>
                 </nav>
                 <div class="footer__icon--container">
-                    <a href="#mv" class="footer__logo">
+                    <a href="index.html" class="footer__logo">
                         <img src="images/main/logo_fafdff_web.svg" alt="373&DESIGNのロゴ">
                     </a>
                     <div class="footer__sns--container">
@@ -212,7 +213,11 @@
     <!-- jQueryのCDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    <script src="./js/script.js"></script>
+    <!-- inview -->
+    <script type="text/javascript" src="js/jquery.inview.min.js"></script>
+
+    <!-- .jsの読み込み -->
+    <script src="js/script.js"></script>
 
     <!-- マウスストーカー -->
     <div class="stalker" id="js-stalker"></div>

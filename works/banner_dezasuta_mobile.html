@@ -31,7 +31,8 @@
 </head>
 
 
-<body>
+<body class="fade">
+    <div class="animation-bg"></div>
     <!-- toTopが戻る位置 -->
     <div id="top"></div>
 
@@ -78,7 +79,7 @@
 
 
         <!-- ワークス＿＿詳細 -->
-        <section>
+        <section class="inview fadeIn">
             <div class="work">
                 <div class="work__thumb">
                     <img src="../images/work_thumb/mu_banner_dezasuta_mobile@2x.webp">
@@ -125,14 +126,14 @@
                 <!-- フッターナビ -->
                 <nav class="footer__nav">
                     <ul>
-                        <li><a href="#about">ABOUT</a></li>
-                        <li><a href="#works">WORKS</a></li>
-                        <li><a href="#service">SERVICE</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
+                        <li><a href="index.html#about">ABOUT</a></li>
+                        <li><a href="index.html#works">WORKS</a></li>
+                        <li><a href="index.html#service">SERVICE</a></li>
+                        <li><a href="index.html#contact">CONTACT</a></li>
                     </ul>
                 </nav>
                 <div class="footer__icon--container">
-                    <a href="..index.html#mv" class="footer__logo">
+                    <a href="..index.html" class="footer__logo">
                         <img src="../images/main/logo_fafdff_web.svg" alt="373&DESIGNのロゴ">
                     </a>
                     <div class="footer__sns--container">
@@ -183,10 +184,13 @@
     <!-- jQueryのCDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
+    <!-- inview -->
+    <script type="text/javascript" src="../js/jquery.inview.min.js"></script>
+
     <!-- リモーダルのCDN -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal.min.js"></script>
 
-
+    <!-- .jsの読み込み -->
     <script src="../js/script.js"></script>
 
     <!-- マウスストーカー -->
