@@ -75,19 +75,39 @@ main {
     /* vw、vhの大きい方の100％ */
     box-shadow: 0 0 0 100vmax var(--blue);
     transition:
-        width 1.2s ease-in-out,
-        height 1.2s ease-in-out;
+        width 1.5s ease-in-out,
+        height 1.5s ease-in-out;
 }
 #loading_box {
     /* ローディングのロゴ */
     position: relative;
     z-index: 1;
-    transition: opacity 0.3s ease;
+    opacity: 0;
+    animation: logoFadeIn 1.8s ease forwards;
+}
+@keyframes logoFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    40%,60% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+#loading.is-loaded #loading_box {
+    animation: none;
+    opacity: 0;
 }
 .loading__logo {
     width: 27vw;
 }
 #loading.is-loaded::before {
+    /* 内側から円を広げきった後のサイズ */
     width: 300vw;
     height: 300vw;
 }
@@ -101,9 +121,9 @@ main {
 
 
 /* 画面遷移アニメーション */
-.fade .animation-bg {
+/*  フェードイン */
+.body__fadeIn .animation-bg {
     background: var(--blue);
-    background-image: url(../images/main/bg_noise_offwhite.webp);
     content: "";
     position: fixed;
     z-index: 9999;
@@ -113,7 +133,7 @@ main {
     height: 100vh;
     animation-name: PageAnime-fade;
     animation-duration: 0.3s;
-    animation-delay: 0.4s;
+    animation-delay: 0.3s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
     pointer-events: none;
@@ -127,6 +147,25 @@ main {
         display: none;
     }
 }
+/* フェードアウト */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--blue);
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+body.fadeOut::after {
+    opacity: 1;
+}
+
 
 
 /* スクロールでふわっと表示 */
@@ -565,6 +604,17 @@ h2 img {
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    transition: 0.4s ease-in-out;
+}
+.service__circle::after {
+    /* 円の背景ホバー時に明るくする・ */
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(246, 246, 246, 0);
+    transition: background 0.3s ease;
+    pointer-events: none;
 }
 /* ランディングページ */
 .service__lp {
@@ -580,12 +630,20 @@ h2 img {
 }
 .service__title--deco {
     font-family: Montserrat;
-    font-size: 65px;
+    font-size: 64px;
     font-weight: 600;
     line-height: 0.9;
     letter-spacing: -0.05em;
     color: var(--gray_white);
     mix-blend-mode: multiply;
+}
+.service__lp {
+    position: relative;
+}
+
+.service__lp .service__title--deco {
+    position: relative;
+    z-index: 999;
 }
 .service__category {
     font-size: 28px;
@@ -1485,6 +1543,8 @@ h3 img {
     }
 }
 
+/* ================= */
+
 
 /* マウス操作が前提のPC向けスタイル（ホバー時のみ表示など） */
 @media (hover: hover) and (pointer: fine) {
@@ -1494,7 +1554,7 @@ h3 img {
     summary:hover,
     .my-close:hover,
     .profile__photo--wrap:hover,
-    .c-form__submit button,
+    .c-form__submit button:hover,
     .splide .splide__pagination__page:hover {
         cursor: url("../images/main/cursor_hover.svg") 0 0, pointer;
     }
@@ -1515,8 +1575,22 @@ h3 img {
     /* ワークス＿＿サムネ＿＿ホバー */
     .works__item a img:hover {
         opacity:0.6;
-        transform: scale(1.06);
+        transform: scale(1.07);
         transition:0.4s;
+    }
+    /* サービス＿＿ホバー */
+    .service__circle:hover {
+        position: relative;
+        z-index: 1;
+        transform: scale(1.06);
+    }
+    .service__circle:hover::after {
+    background: rgba(246, 246, 246, 0.5);
+    }
+    .service__circle > * {
+        /* 円の中身の文章を前面に出す */
+        z-index: 1;
+
     }
     /* コンタクトボタン＿＿ホバー */
     .contact__btn:hover .contact__btn--arrow {

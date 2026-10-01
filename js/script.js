@@ -1,17 +1,17 @@
 // ローディング
-// 遷移アニメーション＿＿下層ページからトップページに戻る時に一瞬、初回ローディングの画面が見えてしまう対策
 $(window).on('load', function () {
+    //ページの全てのリソースの読み込みが完了後にスタート
     if (sessionStorage.getItem('access')) {
-        // 2回目以降は何もしない
+        // 初回アクセスか確認
         return;
     } else {
         // 初回のみローディング表示
         sessionStorage.setItem('access', 'true');
         $('#loading').css('display', 'flex');
-        // 0.8s待ってからローディング開始
+        // 1.8秒待ってからローディング開始
         setTimeout(function () {
             $('#loading').addClass('is-loaded');
-        }, 800);
+        }, 1800);
     }
 });
 
@@ -22,6 +22,30 @@ $(function(){
         if (isInView) {
         $(this).stop().addClass("is-show");
         }
+    });
+});
+
+
+//画面遷移（フェードアウト__戻る）
+$(window).on('load', function(){
+    $('body').removeClass('fadeout');
+});
+$(function() {
+    // ハッシュリンク(#)と別ウィンドウページとモーダル（remodal
+    // ）を開く場合はスルー
+    $('a:not([href^="#"]):not([target]):not([data-remodal-target]').on('click', function(e){
+        e.preventDefault();
+        // ナビゲートをキャンセル
+        url = $(this).attr('href');
+        // 遷移先のURLを取得
+        if (url !== '') {
+        $('body').addClass('fadeOut');
+        // bodyに class="fadeout"を挿入
+        setTimeout(function(){
+            window.location = url;  // 0.3秒後に取得したURLに遷移
+        }, 300);
+        }
+        return false;
     });
 });
 
@@ -97,5 +121,7 @@ if ($(".splide").length) {
         },
     }).mount();
 }
+
+
 //コンタクトフォーム
 let submitted = false;

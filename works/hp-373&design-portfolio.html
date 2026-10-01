@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>373&DESIGN PORTFOLIO | 373&DESIGN</title>
+    <meta name="description" content="373&DESIGNはWEBデザイナーみなみやのポートフォリオサイトです。ホームページ制作・ランディングページ制作・Web画像制作を承っています。">
+
+
+    <!-- グーグルフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/reset.css" />
+
+    <!-- モーダル -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal-default-theme.min.css">
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/others.css" />
+
+    <!-- ファビコン -->
+    <link rel="shortcut icon" href="../images/main/favicon.ico" type="image/x-icon">
+
+</head>
+
+
+<body class="body__fadeIn">
+    <div class="animation-bg"></div>
+    <!-- toTopが戻る位置 -->
+    <div id="top"></div>
+
+
+    <!-- ナビゲーションバー -->
+    <header>
+        <div class="header__inner">
+            <div class="header__logo--inner">
+                <a href="../index.html"><img src="../images/main/logo_web_color.svg" alt="373&DESIGNのロゴ"></a>
+            </div>
+            <nav class="header__nav">
+                <ul>
+                    <li><a href="../index.html#about">ABOUT</a></li>
+                    <li><a href="../index.html#works">WORKS</a></li>
+                    <li><a href="../index.html#service">SERVICE</a></li>
+                    <li><a href="../index.html#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+            <!-- ハンバーガーメニュー -->
+            <div class="hamburger">
+                <span>MENU</span>
+            </div>
+            <div class="hamburger__overlay"></div>
+            <nav class="header__nav--sp">
+                <ul>
+                    <li><a href="../index.html#about">ABOUT</a></li>
+                    <li><a href="../index.html#works">WORKS</a></li>
+                    <li><a href="../index.html#service">SERVICE</a></li>
+                    <li><a href="../index.html#contact">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+        <!-- パンくずリスト -->
+        <nav>
+            <ol class="breadcrumb">
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../works.html">WORKS</a></li>
+            </ol>
+        </nav>
+
+
+        <!-- ワークス＿＿詳細 -->
+        <section class="inview fadeIn">
+            <div class="work">
+                <div class="work__thumb">
+                    <img src="../images/work_thumb/mu_hp_373&portfolio@2x.webp">
+                    <p class="works__category">HP</p>
+                    <p class="works__title">373&DESIGN PORTFOLIO</p>
+                    <!-- モーダルボタン -->
+                    <div class="work__modal--container">
+                        <a data-remodal-target="modal__pc">
+                            <div class="work__modal">
+                                <p>PC VIEW</p>
+                            </div>
+                        </a>
+                        <a data-remodal-target="modal__sp">
+                            <div class="work__modal">
+                                <p>SP VIEW</p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <dl class="work__production">
+                    <div>
+                        <dt>PRODUCTION：</dt>
+                        <dd>2026/8-9</dd>
+                    </div>
+                    <div>
+                        <dt>TOOL：</dt>
+                        <dd>Figma、Adobe Photoshop、Adobe Illustrator</dd>
+                    </div>
+                    <div>
+                        <dt>IMPLEMENTATION：</dt>
+                        <dd>HTML、CSS、JavaScript、jQuery</dd>
+                    </div>
+                    <div>
+                        <dt>SCOPE OF WORK：</dt>
+                        <dd>Design、Coding</dd>
+                    </div>
+                </dl>
+                <p class="work__production--text">
+                    自身のポートフォリオとなるサイトを制作しました。<br>
+                    私の好きな色である青とオレンジを基調に、誠実さのなかにも元気な印象を伝える配色にしています。<br>
+                    円のモチーフは調和・ご縁・親しみの想いを込めました。<br>
+                    また、私の名前『みなみや』から『なみ』→『波』を連想し、私にとって馴染み深い『海』のイメージと重ね、静かな波のような動きをアニメーションに取り入れています。<br>
+                    静かで落ち着いた印象をベースに、ポップな要素を加え、自分らしい世界観を表現しました。
+                </p>
+            </div>
+
+
+            <!-- ボタン -->
+            <div class="btn__container">
+                <a href="../works.html" class="btn__link">
+                    <div class="btn__inner btn__revese">
+                        <div class="btn__circle"></div>
+                        <span class="btn__arrow"></span>
+                    </div>
+                    <p>一覧へ戻る</p>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <!-- フッター -->
+    <footer>
+        <picture>
+            <source srcset="../images/main/footer_nami_sp.svg" media="(max-width:768px)" />
+            <img src="../images/main/footer_nami_pc.svg" class="footer__wave">
+        </picture>
+        <div class="footer">
+            <div class="footer__container">
+                <!-- フッターナビ -->
+                <nav class="footer__nav">
+                    <ul>
+                        <li><a href="../index.html#about">ABOUT</a></li>
+                        <li><a href="../index.html#works">WORKS</a></li>
+                        <li><a href="../index.html#service">SERVICE</a></li>
+                        <li><a href="../index.html#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <div class="footer__icon--container">
+                    <a href="../index.html" class="footer__logo">
+                        <img src="../images/main/logo_fafdff_web.svg" alt="373&DESIGNのロゴ">
+                    </a>
+                    <div class="footer__sns--container">
+                        <a href="https://lin.ee/58rOvTp" target="_blank" class="sns">
+                            <img src="../images/main/line_brand_icon.png" alt="LINEのアイコン">
+                        </a>
+                        <a href="https://www.instagram.com/373_valley_design?stkn=MXAxNTZ2bGgxdW9zdQ==" target="_blank"
+                            class="sns">
+                            <img src="../images/main/Instagram_Glyph_White.png" alt="Instagramのアイコン">
+                        </a>
+                    </div>
+                </div>
+                <a href="../privacy_policy.html" class="privacy_policy">プライバシーポリシー</a>
+                <p class="copyright">©373&DESIGN</p>
+            </div>
+            <!-- toTOP設置 -->
+            <a href="#top" class="totop">
+                <!-- 回るテキスト -->
+                <div class="totop__svg-wrap">
+                    <svg class="totop__svg" viewBox="0 0 100 100">
+                        <path id="totopPath" class="totop__path" d="M 0 50 A 50 50 0 1 1 0 51 z" />
+                        <text class="totop__text">
+                            <textPath xlink:href="#totopPath">
+                                SCROLL TO TOP
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+                <!-- 矢印 -->
+                <div class="totop__circle">
+                    <div class="totop__arrow"></div>
+                </div>
+            </a>
+        </div>
+    </footer>
+
+    <!-- ＝＝＝＝モーダルに出てくる内容＝＝＝＝ -->
+    <div class="remodal" data-remodal-id="modal__pc" data-remodal-options="hashTracking: false">
+        <div class="remodal__image">
+            <img src="../images/work_view/hp_373&portfolio_pc.webp">
+        </div>
+        <!-- クローズボタン -->
+        <button data-remodal-action="close" class="my-close"></button>
+    </div>
+    <!-- ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ -->
+    <div class="remodal" data-remodal-id="modal__sp" data-remodal-options="hashTracking: false">
+        <div class="remodal__image--sp">
+            <img src="../images/work_view/hp_373&portfolio_sp.jpg">
+        </div>
+        <!-- クローズボタン -->
+        <button data-remodal-action="close" class="my-close"></button>
+    </div>
+
+
+    <!-- jQueryのCDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- inview -->
+    <script type="text/javascript" src="../js/jquery.inview.min.js"></script>
+
+    <!-- リモーダルのCDN -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.5/remodal.min.js"></script>
+
+    <!-- .jsの読み込み -->
+    <script src="../js/script.js"></script>
+
+    <!-- マウスストーカー -->
+    <div class="stalker" id="js-stalker"></div>
+</body>
+
+</html>

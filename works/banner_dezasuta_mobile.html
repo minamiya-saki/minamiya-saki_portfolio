@@ -31,7 +31,7 @@
 </head>
 
 
-<body class="fade">
+<body class="body__fadeIn">
     <div class="animation-bg"></div>
     <!-- toTopが戻る位置 -->
     <div id="top"></div>
@@ -86,19 +86,33 @@
                     <p class="works__category">BANNER</p>
                     <p class="works__title">デザスタmobile [FICTION]</p>
                     <!-- モーダルボタン -->
-                    <a data-remodal-target="modal">
-                        <div class="work__modal">
-                            <p>FULL VIEW</p>
-                        </div>
-                    </a>
+                    <div class="work__modal--container">
+                        <a data-remodal-target="modal">
+                            <div class="work__modal">
+                                <p>FULL VIEW</p>
+                            </div>
+                        </a>
+                    </div>
+
                 </div>
-                <ul class="work__production">
-                    <li>PRODUCTION：2026/6</li>
-                    <li>TOOL：Adobe Illustrator</li>
-                    <li>SCOPE OF WORK：DESIGN</li>
-                </ul>
+                <dl class="work__production">
+                    <div>
+                        <dt>PRODUCTION：</dt>
+                        <dd>2026/6</dd>
+                    </div>
+                    <div>
+                        <dt>TOOL：</dt>
+                        <dd>Adobe Illustrator</dd>
+                    </div>
+                    <div>
+                        <dt>SCOPE OF WORK：</dt>
+                        <dd>Design</dd>
+                    </div>
+                </dl>
                 <p class="work__production--text">春らしい柔らかな色合いに、ザラザラとした質感を加え、視覚的な触感を演出しています。</p>
             </div>
+
+
             <!-- ボタン -->
             <div class="btn__container">
                 <a href="../works.html" class="btn__link">
@@ -126,14 +140,14 @@
                 <!-- フッターナビ -->
                 <nav class="footer__nav">
                     <ul>
-                        <li><a href="index.html#about">ABOUT</a></li>
-                        <li><a href="index.html#works">WORKS</a></li>
-                        <li><a href="index.html#service">SERVICE</a></li>
-                        <li><a href="index.html#contact">CONTACT</a></li>
+                        <li><a href="../index.html#about">ABOUT</a></li>
+                        <li><a href="../index.html#works">WORKS</a></li>
+                        <li><a href="../index.html#service">SERVICE</a></li>
+                        <li><a href="../index.html#contact">CONTACT</a></li>
                     </ul>
                 </nav>
                 <div class="footer__icon--container">
-                    <a href="..index.html" class="footer__logo">
+                    <a href="../index.html" class="footer__logo">
                         <img src="../images/main/logo_fafdff_web.svg" alt="373&DESIGNのロゴ">
                     </a>
                     <div class="footer__sns--container">
@@ -170,7 +184,7 @@
         </div>
     </footer>
 
-    <!-- モーダルに出てくる内容 -->
+    <!-- ＝＝＝＝モーダルに出てくる内容＝＝＝＝ -->
     <div class="remodal" data-remodal-id="modal" data-remodal-options="hashTracking: false">
         <div class="remodal__image">
             <img src="../images/work_view/banner_dezasuta_mobile.webp">
