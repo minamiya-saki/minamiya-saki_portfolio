@@ -335,21 +335,21 @@ details ul {
     padding: 5px 5px 60px 5px;
     max-width: fit-content;
 }
-/* バナーなど */
 .remodal__image {
+    /* バナーなど */
     max-width: 600px;
     max-height: 80vh;
     width: auto;
     height: auto;
 }
-/* PC */
 .remodal__image--pc {
+    /* PC */
     max-width: 700px;
     max-height: 80vh;
     overflow: auto;
 }
-/* SP */
 .remodal__image--sp {
+    /* SP */
     max-width: 400px;
     max-height: 80vh;
     overflow: auto;

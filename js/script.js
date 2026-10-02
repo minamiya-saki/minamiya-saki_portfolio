@@ -1,62 +1,67 @@
 // ＝＝＝＝＝ローディング＝＝＝＝＝
 $(function () {
-    var $loading = $('#loading');
+    const $loading = $('#loading');
     // 2回目以降はローディングしない
-    if (sessionStorage.getItem('access')) {
+    let visited = false;
+    try {
+        visited = sessionStorage.getItem('access');
+    } catch (e) {}
+    if (visited) {
         $loading.hide();
         return;
     }
-    sessionStorage.setItem('access', 'true');
+    try {
+        sessionStorage.setItem('access', 'true');
+    } catch (e) {}
     // ローディング開始
     $loading.css('display', 'flex');
     // 2秒待つ
-    var introFinished = $.Deferred();
-    setTimeout(function () {
-        introFinished.resolve();
-    }, 2000);
+    const introFinished = new Promise(function (resolve) {
+        setTimeout(resolve, 2000);
+    });
     // ページの読み込み完了を待つ
-    var pageLoaded = $.Deferred();
-    if (document.readyState === 'complete') {
-        pageLoaded.resolve();
-    } else {
-        $(window).one('load', function () {
-            pageLoaded.resolve();
-        });
-    }
+    const pageLoaded = new Promise(function (resolve) {
+        if (document.readyState === 'complete') {
+            resolve();
+        } else {
+            $(window).one('load', resolve);
+        }
+    });
     // 両方終わったらローディング終了
-    $.when(introFinished, pageLoaded).done(function () {
+    Promise.all([introFinished, pageLoaded]).then(function () {
         $loading.addClass('is-loaded');
     });
 });
 
+
 //＝＝＝＝＝スクロールでふわっと表示__1回だけ＝＝＝＝＝
-$(function(){
+$(function () {
     $(".inview").on("inview", function (event, isInView) {
         if (isInView) {
-        $(this).stop().addClass("is-show");
+            $(this).stop().addClass("is-show");
         }
     });
 });
 
 
 //＝＝＝＝＝画面遷移（フェードアウト__戻る）＝＝＝＝＝
-$(window).on('load', function(){
+$(window).on('pageshow', function(){
     $('body').removeClass('fadeOut');
 });
-$(function() {
-    // ハッシュリンク(#)と別ウィンドウページとモーダル（remodal
-    // ）を開く場合はスルー
-    $('a:not([href^="#"]):not([target]):not([data-remodal-target])').on('click', function(e){
+
+$(function () {
+    // ハッシュリンク(#)・別ウィンドウ・モーダル（remodal）を開く場合はスルー
+    $('a:not([href^="#"]):not([target]):not([data-remodal-target])').on('click', function (e) {
         e.preventDefault();
-        // ナビゲートをキャンセル
-        url = $(this).attr('href');
         // 遷移先のURLを取得
+        const url = $(this).attr('href');
         if (url !== '') {
-        $('body').addClass('fadeOut');
-        // bodyに class="fadeOut"を挿入
-        setTimeout(function(){
-            window.location = url;  // 0.3秒後に取得したURLに遷移
-        }, 300);
+            // bodyに class="fadeOut"を挿入
+            $('body').addClass('fadeOut');
+            // 0.3秒後に取得したURLに遷移
+            setTimeout(function () {
+                window.location = url;
+            }, 300);
         }
         return false;
     });
@@ -64,22 +69,24 @@ $(function() {
 
 
 // ＝＝＝＝＝ヘッダーナビ＿＿MVの後に表示（トップページのみ）＝＝＝＝＝
-if ($('#about').length) {
-    function headerShow() {
-        const aboutPos = $('#about').offset().top;
-        const scrollPos = $(window).scrollTop();
-        if (scrollPos >= aboutPos - 560) {
-            $('header').addClass('is-show');
-        } else {
-            $('header').removeClass('is-show');
-        }
-    }
-    $(window).on('scroll', headerShow);
-    headerShow();
+$(function () {
+    if ($('#about').length) {
+        const headerShow = function () {
+            const aboutPos = $('#about').offset().top;
+            const scrollPos = $(window).scrollTop();
+            if (scrollPos >= aboutPos - 560) {
+                $('header').addClass('is-show');
+            } else {
+                $('header').removeClass('is-show');
+            }
+        };
+        $(window).on('scroll', headerShow);
+        headerShow();
     } else {
-    // トップページ以外は常に表示する
-    $('header').addClass('is-show');
-}
+        // トップページ以外は常に表示する
+        $('header').addClass('is-show');
+    }
+});
 
 
 // ＝＝＝＝＝ハンバーガーメニュー＝＝＝＝＝

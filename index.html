@@ -13,14 +13,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
-    <!-- 初回ローディング＿＿チラつき防止 -->
-    <script>
-        try {
-            if (!sessionStorage.getItem('access')) {
-                document.documentElement.classList.add('is-first');
-            }
-        } catch (e) { }
-    </script>
 
     <link rel="stylesheet" href="./css/reset.css" />
 
@@ -37,6 +29,8 @@
 
 <body class="body__fadeIn">
     <div class="animation-bg"></div>
+
+    <!-- <body> -->
     <!-- toTopが戻る位置 -->
     <div id="top"></div>
 
