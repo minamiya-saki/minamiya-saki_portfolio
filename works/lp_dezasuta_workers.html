@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>デザスタmobile [FICTION] | 373&DESIGN</title>
+    <title>WORKERS [FICTION] | 373&DESIGN</title>
     <meta name="description" content="373&DESIGNはWEBデザイナーみなみやのポートフォリオサイトです。ホームページ制作・ランディングページ制作・Web画像制作を承っています。">
 
 
@@ -82,14 +82,19 @@
         <section class="inview fadeIn">
             <div class="work">
                 <div class="work__thumb">
-                    <img src="../images/work_thumb/mu_banner_dezasuta_mobile@2x.webp">
-                    <p class="works__category">BANNER</p>
-                    <p class="works__title">デザスタmobile [FICTION]</p>
+                    <img src="../images/work_thumb/mu_lp_dezasuta_workers@2x.webp">
+                    <p class="works__category">LP</p>
+                    <p class="works__title">WORKERS [FICTION]</p>
                     <!-- モーダルボタン -->
                     <div class="work__modal--container">
-                        <a data-remodal-target="modal">
+                        <a data-remodal-target="modal__pc">
                             <div class="work__modal">
-                                <p>FULL VIEW</p>
+                                <p>PC VIEW</p>
+                            </div>
+                        </a>
+                        <a data-remodal-target="modal__sp">
+                            <div class="work__modal">
+                                <p>SP VIEW</p>
                             </div>
                         </a>
                     </div>
@@ -102,14 +107,16 @@
                     </div>
                     <div>
                         <dt>TOOL</dt>
-                        <dd>Adobe Illustrator</dd>
+                        <dd>Figma</dd>
                     </div>
                     <div>
                         <dt>SCOPE OF WORK</dt>
                         <dd>Design</dd>
                     </div>
                 </dl>
-                <p class="work__production--text">春らしい柔らかな色合いに、ザラザラとした質感を加え、視覚的な触感を演出しています。</p>
+                <p class="work__production--text">
+                    トレース課題作品です。
+                </p>
             </div>
 
 
@@ -185,14 +192,21 @@
     </footer>
 
     <!-- ＝＝＝＝＝モーダルに出てくる内容＝＝＝＝＝ -->
-    <div class="remodal" data-remodal-id="modal" data-remodal-options="hashTracking: false">
-        <div class="remodal__image">
-            <img src="../images/work_view/banner_dezasuta_mobile.webp">
+    <div class="remodal" data-remodal-id="modal__pc" data-remodal-options="hashTracking: false">
+        <div class="remodal__image--pc">
+            <img src="../images/work_view/lp_dezasuta_workers_pc.webp">
         </div>
         <!-- クローズボタン -->
         <button data-remodal-action="close" class="my-close"></button>
     </div>
-
+    <!-- ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝ -->
+    <div class="remodal" data-remodal-id="modal__sp" data-remodal-options="hashTracking: false">
+        <div class="remodal__image--sp">
+            <img src="../images/work_view/lp_dezasuta_workers_sp.webp">
+        </div>
+        <!-- クローズボタン -->
+        <button data-remodal-action="close" class="my-close"></button>
+    </div>
 
 
     <!-- jQueryのCDN -->

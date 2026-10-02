@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* ーーーメイン兼共通パーツCSSーーー */
+/* ＝＝＝＝＝メイン兼共通パーツCSS＝＝＝＝＝ */
 
 
 :root {
@@ -25,7 +25,9 @@ main {
 }
 
 
-/* マウスストーカーのスタイル */
+
+
+/* ＝＝＝＝＝マウスストーカー＝＝＝＝＝ */
 .stalker {
     background-color: rgba(250, 253, 255, 0.3);
     border-radius: 50%;
@@ -37,7 +39,7 @@ main {
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease-out;
-    z-index: 9998;
+    z-index: 9997;
 }
 .stalker.js-hover {
     background-color: rgba(240, 131, 2, 0.1);
@@ -48,7 +50,7 @@ main {
 }
 
 
-/* ローディング */
+/* ＝＝＝＝＝ローディング＝＝＝＝＝ */
 #loading {
     position: fixed;
     inset: 0;
@@ -120,7 +122,7 @@ main {
 }
 
 
-/* 画面遷移アニメーション */
+/* ＝＝＝＝＝画面遷移＝＝＝＝＝ */
 /*  フェードイン */
 .body__fadeIn .animation-bg {
     background: var(--blue);
@@ -168,7 +170,7 @@ body.fadeOut::after {
 
 
 
-/* スクロールでふわっと表示 */
+/* ＝＝＝＝＝スクロールでふわっと表示＝＝＝＝＝ */
 .fadeIn {
     opacity: 0;
     transition: 1.5s;
@@ -197,10 +199,11 @@ body.fadeOut::after {
 
 
 
-/* メインビジュアル */
+/* ＝＝＝＝＝メインビジュアル＝＝＝＝＝ */
 #mv {
     height: 100svh;
-    margin: 10vh 0 200px 0;
+    padding-top: 10vh;
+    margin-bottom: 200px;
 }
 /* メインビジュアル＿＿上部 */
 .mv__title {
@@ -327,7 +330,7 @@ body.fadeOut::after {
 }
 
 
-/* ナビゲーションバー */
+/* ＝＝＝＝＝ナビゲーションバー＝＝＝＝＝ */
 header {
     position: fixed;
     top: 0;
@@ -394,7 +397,7 @@ header.is-show {
 }
 
 
-/* セクション＿＿全体 */
+/* ＝＝＝＝＝セクション＿＿全体＝＝＝＝＝ */
 section {
     max-width: 1100px;
     margin: 0 auto;
@@ -403,7 +406,7 @@ section {
 }
 
 
-/* セクション＿＿アバウト */
+/* ＝＝＝＝＝セクション＿＿アバウト＝＝＝＝＝ */
 .about {
     margin-top: 200px;
     display: flex;
@@ -445,7 +448,7 @@ h2 img {
 }
 
 
-/* ボタン */
+/* ＝＝＝＝＝ボタン＝＝＝＝＝ */
 .btn__link {
     display: flex;
     align-items: center;
@@ -500,7 +503,7 @@ h2 img {
 }
 
 
-/* セクション＿＿ワークス */
+/* ＝＝＝＝＝セクション＿＿ワークス＝＝＝＝＝ */
 .works {
     position: relative;
 }
@@ -567,7 +570,7 @@ h2 img {
 }
 
 
-/* セクション＿＿サービス */
+/* ＝＝＝＝＝セクション＿＿サービス＝＝＝＝＝ */
 #service {
     max-width: none;
 }
@@ -825,7 +828,7 @@ h3 img {
 }
 
 
-/* セクション＿＿コンタクト */
+/* ＝＝＝＝＝セクション＿＿コンタクト＝＝＝＝＝ */
 #contact {
     margin-bottom: 210px;
 }
@@ -902,7 +905,7 @@ h3 img {
 }
 
 
-/* フッター */
+/* ＝＝＝＝＝フッター＝＝＝＝＝ */
 .footer__wave {
     mix-blend-mode: multiply;
 }
@@ -973,7 +976,7 @@ h3 img {
 }
 
 
-/* toTOP */
+/* ＝＝＝＝＝toTOP＝＝＝＝＝ */
 .totop {
     position: absolute;
     display: flex;
@@ -1073,7 +1076,7 @@ h3 img {
 }
 
 
-/* ＝＝＝レスポンシブ＝＝＝ */
+/* ＝＝＝＝＝レスポンシブ＝＝＝＝＝ */
 
 @media screen and (max-width: 1300px) {
     .mv__object {
@@ -1291,6 +1294,14 @@ h3 img {
         top: -45%;
         left: 22%;
     }
+    @keyframes tama__front--center {
+        0% {
+            transform: translateY(-30%);
+        }
+        100% {
+            transform: translateY(10%);
+        }
+    }
     .blue_tama__front--right {
         position: absolute;
         width: 49.4%;
@@ -1504,7 +1515,7 @@ h3 img {
     }
     .contact__btn--arrow {
         width: 48px;
-        top: 105px;
+        top: 104px;
         left: 68px;
     }
     .contact__btn--p {
@@ -1519,14 +1530,14 @@ h3 img {
         display: none;
     }
     .footer__logo img {
-        width: 140px;
+        width: 150px;
         margin-bottom: 42px;
     }
     .footer__icon--container {
         display: block;
     }
     .footer__sns--container {
-        gap: 40px;
+        gap: 30px;
         margin-bottom: 264px;
     }
     .totop {
@@ -1543,7 +1554,7 @@ h3 img {
     }
 }
 
-/* ================= */
+/* ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
 
 
 /* マウス操作が前提のPC向けスタイル（ホバー時のみ表示など） */
@@ -1590,7 +1601,6 @@ h3 img {
     .service__circle > * {
         /* 円の中身の文章を前面に出す */
         z-index: 1;
-
     }
     /* コンタクトボタン＿＿ホバー */
     .contact__btn:hover .contact__btn--arrow {
@@ -1604,7 +1614,7 @@ h3 img {
         animation: totop 2s linear infinite;
     }
 }
-/* タッチ操作デバイスでは非表示 */
+/* ＝＝＝＝＝タッチ操作デバイスでは非表示＝＝＝＝＝ */
 @media (pointer: coarse) {
     .stalker {
         display: none;

@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* ーーー下層ページCSSーーー */
+/* ＝＝＝＝＝下層ページCSS＝＝＝＝＝*/
 
 
 :root {
@@ -18,13 +18,19 @@ section {
     margin-bottom: 200px;
     padding: 0 10px;
 }
-/* 下層ページ__h2--マージンボトム */
-h2 img {
+
+/* 下層ページ＿＿ページタイトル */
+h1 {
+    text-align: center;
+}
+h1 img {
+    height: 58px;
+    padding: 11px 0 11px 0;
+    width: auto;
     margin-bottom: 160px;
 }
 
-
-/* パンくずリスト */
+/* ＝＝＝＝＝パンくずリスト＝＝＝＝＝ */
 .breadcrumb {
     display: flex;
     list-style-type: none;
@@ -58,12 +64,12 @@ h2 img {
 }
 
 
-/* ページ＿＿プロフィール */
+/* ＝＝＝＝＝ページ＿＿プロフィール＝＝＝＝＝ */
 .profile {
     position: relative;
     text-align: center;
 }
-.profile h2 {
+.profile h1 {
     position: relative;
     z-index: 2;
     pointer-events: none;
@@ -122,7 +128,7 @@ h2 img {
 .profile__inner details {
     pointer-events: auto;
 }
-h3 span {
+h2 span {
     color: var(--orange);
 }
 .profile__list {
@@ -219,26 +225,27 @@ details ul {
 }
 
 
-/* ページ＿＿ワークス（一覧） */
-h2 {
-    text-align: center;
-}
-.h3works__container {
+/* ＝＝＝＝＝ページ＿＿ワークス（一覧）＝＝＝＝＝ */
+.h2works__container {
     margin-bottom: 72px;
 }
-.h3works {
+.h2works {
     display: flex;
     align-items: center;
     gap: 14px;
 }
-.h3works img {
-        margin-bottom: 0;
+.h2works img {
+    height: 38px;
+    padding: 11px 0 11px 0;
+    width: auto;
+    margin-bottom: 0;
 }
-.h3works__border {
+.h2works__border {
+    /* h2の横線 */
     flex-grow: 1;
     border-top: dashed 1px var(--blue);
 }
-.h3works__container--others {
+.h2works__container--others {
     margin-top: 100px;
 }
 
@@ -288,7 +295,7 @@ h2 {
     background-size: contain;
     margin-left: 32px;
 }
-/* ワーク＿＿プロダクション */
+/* ＝＝＝＝＝ワーク＿＿プロダクション＝＝＝＝＝ */
 .work a {
     cursor: pointer;
 }
@@ -313,7 +320,9 @@ h2 {
     letter-spacing: 0.2em;
     line-height: 1.4;
 }
-
+.work__production dt::after {
+    content: "：";
+}
 .work__production--text {
     font-size: 16px;
     font-weight: 400;
@@ -326,21 +335,33 @@ h2 {
     padding: 5px 5px 60px 5px;
     max-width: fit-content;
 }
+/* バナーなど */
 .remodal__image {
+    max-width: 600px;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+}
+/* PC */
+.remodal__image--pc {
     max-width: 700px;
     max-height: 80vh;
     overflow: auto;
 }
+/* SP */
 .remodal__image--sp {
-    max-width: 380px;
+    max-width: 400px;
     max-height: 80vh;
     overflow: auto;
 }
-.remodal__image img {
+.remodal__image,
+.remodal__image--pc img,
+.remodal__image--sp img {
     display: block;
     width: 100%;
     height: auto;
     border: solid 1px #BBBFC5;
+    box-sizing: border-box;
 }
 .my-close {
     position: absolute;
@@ -372,7 +393,7 @@ h2 {
 }
 
 
-/* コンタクト */
+/* ＝＝＝＝＝コンタクト＝＝＝＝＝ */
 .contact__text {
     text-align: center;
     margin-bottom: 100px;
@@ -449,7 +470,6 @@ textarea.c-form__input {
 }
 
 
-
 /* ラジオボタン */
 .form__radio--wrapper {
     margin-top: 16px;
@@ -494,7 +514,7 @@ input[type="radio"]:checked:before {
 }
 
 
-/* ページ＿＿プライバシーポリシー */
+/* ＝＝＝＝＝ページ＿＿プライバシーポリシー＝＝＝＝＝ */
 .praivacypolicy {
     max-width: 660px;
     margin: 0 auto;
@@ -524,7 +544,7 @@ input[type="radio"]:checked:before {
 }
 
 
-/* レスポンシブ */
+/* ＝＝＝＝＝レスポンシブ＝＝＝＝＝ */
 
 
 @media screen and (max-width: 900px) {
@@ -550,7 +570,7 @@ input[type="radio"]:checked:before {
         margin-bottom: 160px;
         padding: 0 7.69%;
     }
-    h2 img {
+    h1 img {
         margin-bottom: 80px;
     }
 
@@ -644,41 +664,20 @@ input[type="radio"]:checked:before {
 
 
     /* ワークス */
-    .h3works {
+    .h2works {
     display: flex;
     align-items: center;
     gap: 14px;
     }
-    .h3works img {
+    .h2works img {
         height: 20px;
         margin-bottom: 0;
     }
-    .h3works__container {
+    .h2works__container {
         margin-bottom: 50px;
     }
-    .h3works__container--others {
+    .h2works__container--others {
         margin-top: 90px;
-    }
-    .work__production div {
-        display: block;
-    }
-
-
-    /* プライバシーポリシー */
-    .praivacypolicy__title img {
-        height: 88px;
-    }
-    .praivacypolicy {
-        max-width: none;
-    }
-    .praivacypolicy li,
-    .praivacypolicy p,
-    .praivacypolicy dd {
-        font-size: 14px;
-        letter-spacing: 0.05em;
-    }
-    .praivacypolicy dt {
-        margin-bottom: 14px;
     }
 
 
@@ -702,6 +701,11 @@ input[type="radio"]:checked:before {
     .work__production {
         margin: 0 auto 16px;
     }
+    .work__production dt,
+    .work__production dd {
+        letter-spacing: 0.1em;
+        line-height: 1.4;
+    }
     .work__production--text {
         font-size: 14px;
         width: fit-content;
@@ -724,6 +728,19 @@ input[type="radio"]:checked:before {
         width: 13px;
         height: 13px;
         margin-left: 24px;
+    }
+    /* モーダル */
+    .remodal__image {
+        max-width: 350px;
+        max-height: 60vh;
+    }
+    .remodal__image--pc {
+        max-width: 350px;
+        max-height: 60vh;
+    }
+    .remodal__image--sp {
+        max-width: 250px;
+        max-height: 60vh;
     }
 
 
@@ -750,14 +767,42 @@ input[type="radio"]:checked:before {
     .c-form__submit {
         margin-top: 80px;
     }
+
+
+    /* プライバシーポリシー */
+    .praivacypolicy__title img {
+        height: 88px;
+    }
+    .praivacypolicy {
+        max-width: none;
+    }
+    .praivacypolicy li,
+    .praivacypolicy p,
+    .praivacypolicy dd {
+        font-size: 14px;
+        letter-spacing: 0.05em;
+    }
+    .praivacypolicy dt {
+        margin-bottom: 14px;
+    }
+}
+
+
+@media screen and (max-width: 570px) {
+    .work__production {
+        padding: 16px 0;
+    }
+    .work__production div {
+        display: block;
+    }
 }
 
 
 
 
-/* PC版では消す */
+/* ＝＝＝＝＝PC版では消す＝＝＝＝＝ */
 @media screen and (min-width: 769px) {
-    .h3works__border:nth-child(1) {
+    .h2works__border:nth-child(1) {
         display: none;
     }
 }

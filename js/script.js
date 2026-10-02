@@ -1,4 +1,4 @@
-// ローディング
+// ＝＝＝＝＝ローディング＝＝＝＝＝
 $(window).on('load', function () {
     //ページの全てのリソースの読み込みが完了後にスタート
     if (sessionStorage.getItem('access')) {
@@ -16,7 +16,7 @@ $(window).on('load', function () {
 });
 
 
-//スクロールでふわっと表示__1回だけ
+//＝＝＝＝＝スクロールでふわっと表示__1回だけ＝＝＝＝＝
 $(function(){
     $(".inview").on("inview", function (event, isInView) {
         if (isInView) {
@@ -26,21 +26,21 @@ $(function(){
 });
 
 
-//画面遷移（フェードアウト__戻る）
+//＝＝＝＝＝画面遷移（フェードアウト__戻る）＝＝＝＝＝
 $(window).on('load', function(){
-    $('body').removeClass('fadeout');
+    $('body').removeClass('fadeOut');
 });
 $(function() {
     // ハッシュリンク(#)と別ウィンドウページとモーダル（remodal
     // ）を開く場合はスルー
-    $('a:not([href^="#"]):not([target]):not([data-remodal-target]').on('click', function(e){
+    $('a:not([href^="#"]):not([target]):not([data-remodal-target])').on('click', function(e){
         e.preventDefault();
         // ナビゲートをキャンセル
         url = $(this).attr('href');
         // 遷移先のURLを取得
         if (url !== '') {
         $('body').addClass('fadeOut');
-        // bodyに class="fadeout"を挿入
+        // bodyに class="fadeOut"を挿入
         setTimeout(function(){
             window.location = url;  // 0.3秒後に取得したURLに遷移
         }, 300);
@@ -50,7 +50,7 @@ $(function() {
 });
 
 
-// ヘッダーナビ＿＿MVの後に表示（トップページのみ）
+// ＝＝＝＝＝ヘッダーナビ＿＿MVの後に表示（トップページのみ）＝＝＝＝＝
 if ($('#about').length) {
     function headerShow() {
         const aboutPos = $('#about').offset().top;
@@ -69,7 +69,7 @@ if ($('#about').length) {
 }
 
 
-// ハンバーガーメニュー
+// ＝＝＝＝＝ハンバーガーメニュー＝＝＝＝＝
 $(function () {
     $(".hamburger").on("click", function (){
         $(".header__nav--sp").toggleClass("open");
@@ -79,7 +79,7 @@ $(function () {
 });
 
 
-// マウスストーカー
+// ＝＝＝＝＝マウスストーカー＝＝＝＝＝
 $(function () {
     const stalker = $("#js-stalker");
     $(document).on("mousemove", function (e) {
@@ -90,7 +90,7 @@ $(function () {
         transform: "translate(" + x + "px, " + y + "px)",
         });
     });
-        $(document).on("mouseenter", "a, .splide__arrow, .splide__pagination__page", function () {
+        $(document).on("mouseenter", "a, .splide__arrow, .splide__pagination__page, .c-form__submit button", function () {
         stalker.addClass("js-hover");
     });
 
@@ -99,7 +99,7 @@ $(function () {
     });
 }); 
 
-// トップページ＿＿ボイス
+// ＝＝＝＝＝トップページ＿＿ボイス＝＝＝＝＝
 if ($(".splide").length) {
     new Splide(".splide", {
         autoplay: true,
@@ -123,5 +123,5 @@ if ($(".splide").length) {
 }
 
 
-//コンタクトフォーム
+// ＝＝＝＝＝コンタクトフォーム＝＝＝＝＝
 let submitted = false;
