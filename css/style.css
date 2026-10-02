@@ -63,6 +63,10 @@ main {
     align-items: center;
     background: transparent;
 }
+html.is-first #loading {
+    /* 初回訪問時は、JSを待たずに最初からローディングを表示 */
+    display: flex;
+}
 #loading::before {
     /* ローディング＿＿中央から消える動き */
     content: "";
