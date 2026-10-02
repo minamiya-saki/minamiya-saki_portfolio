@@ -1,20 +1,33 @@
 // ＝＝＝＝＝ローディング＝＝＝＝＝
-$(window).on('load', function () {
-    //ページの全てのリソースの読み込みが完了後にスタート
+$(function () {
+    var $loading = $('#loading');
+    // 2回目以降はローディングしない
     if (sessionStorage.getItem('access')) {
-        // 初回アクセスか確認
+        $loading.hide();
         return;
-    } else {
-        // 初回のみローディング表示
-        sessionStorage.setItem('access', 'true');
-        $('#loading').css('display', 'flex');
-        // 1.8秒待ってからローディング開始
-        setTimeout(function () {
-            $('#loading').addClass('is-loaded');
-        }, 1800);
     }
+    sessionStorage.setItem('access', 'true');
+    // ローディング開始
+    $loading.css('display', 'flex');
+    // 2秒待つ
+    var introFinished = $.Deferred();
+    setTimeout(function () {
+        introFinished.resolve();
+    }, 2000);
+    // ページの読み込み完了を待つ
+    var pageLoaded = $.Deferred();
+    if (document.readyState === 'complete') {
+        pageLoaded.resolve();
+    } else {
+        $(window).one('load', function () {
+            pageLoaded.resolve();
+        });
+    }
+    // 両方終わったらローディング終了
+    $.when(introFinished, pageLoaded).done(function () {
+        $loading.addClass('is-loaded');
+    });
 });
-
 
 //＝＝＝＝＝スクロールでふわっと表示__1回だけ＝＝＝＝＝
 $(function(){

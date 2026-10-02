@@ -85,14 +85,14 @@ main {
     position: relative;
     z-index: 1;
     opacity: 0;
-    animation: logoFadeIn 1.8s ease forwards;
+    animation: logoFadeIn 2s ease forwards;
 }
 @keyframes logoFadeIn {
     0% {
         opacity: 0;
         transform: scale(1);
     }
-    40%,60% {
+    50%,60% {
         opacity: 1;
         transform: scale(1);
     }
