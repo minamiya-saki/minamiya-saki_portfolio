@@ -341,6 +341,7 @@ details ul {
     max-height: 80vh;
     width: auto;
     height: auto;
+    overflow: auto;
 }
 .remodal__image--pc {
     /* PC */
@@ -700,6 +701,7 @@ input[type="radio"]:checked:before {
     }
     .work__production {
         margin: 0 auto 16px;
+        /* margin-top: 16px; */
     }
     .work__production dt,
     .work__production dd {
@@ -718,7 +720,7 @@ input[type="radio"]:checked:before {
         margin: 50px auto;
     }
     .work__modal {
-        padding: 15px 42px;
+        padding: 15px 36px;
         margin: 0 auto;
     }
     .work__modal p {
@@ -792,7 +794,8 @@ input[type="radio"]:checked:before {
     .work__production {
         padding: 16px 0;
     }
-    .work__production div {
+    .work__production--vertical div {
+        /* 項目多過ぎる場合の調整用 */
         display: block;
     }
 }

@@ -57,20 +57,11 @@ main {
     width: 100%;
     height: 100%;
     z-index: 9999;
-    /* 最初は非表示 */
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     background: transparent;
 }
-html.is-first #loading {
-    /* 初回訪問時は、JSを待たずに最初からローディングを表示 */
-    display: flex;
-    /* 青い背景を出しておく */
-    /* background: var(--blue); */
-}
-
-
 #loading::before {
     /* ローディング＿＿中央から消える動き */
     content: "";
@@ -85,8 +76,8 @@ html.is-first #loading {
     /* vw、vhの大きい方の100％ */
     box-shadow: 0 0 0 100vmax var(--blue);
     transition:
-        width 1.5s ease-in-out,
-        height 1.5s ease-in-out;
+        width 1.8s ease-in-out,
+        height 1.8s ease-in-out;
 }
 #loading_box {
     /* ローディングのロゴ */
@@ -109,10 +100,6 @@ html.is-first #loading {
         transform: scale(0.9);
     }
 }
-#loading.is-loaded #loading_box {
-    animation: none;
-    opacity: 0;
-}
 .loading__logo {
     width: 27vw;
 }
@@ -120,9 +107,6 @@ html.is-first #loading {
     /* 内側から円を広げきった後のサイズ */
     width: 300vw;
     height: 300vw;
-}
-#loading.is-loaded #loading_box {
-    opacity: 0;
 }
 #loading.is-loaded {
     /* ローディング終了後、操作可にする */
@@ -544,6 +528,7 @@ h2 img {
 /* ＿＿サムネ */
 .works__item img {
     border-radius: 10px;
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 .works__item a {
     display: block;
@@ -615,17 +600,55 @@ h2 img {
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    transition: 0.4s ease-in-out;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    /* 調整 */
+    overflow: hidden;
+}
+.service__circle.is-show {
+    /* 飾り文字のz-indexが隣の円に効くように */
+    transform: none;
+}
+.service__circle > * {
+    /* 円の中の文字を画像より前に出すため */
+    position: relative;
+    z-index: 1;
 }
 .service__circle::after {
-    /* 円の背景ホバー時に明るくする・ */
+    /* 円の中に画像を重ねる(最初は透明) */
     content: "";
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: rgba(246, 246, 246, 0);
-    transition: background 0.3s ease;
-    pointer-events: none;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    /* 縁がぼけるのを相殺 */
+    inset: -2px;
+    filter: blur(1px);
+}
+.service__hp::after {
+    /* 円ごとの画像＿HP */
+    background-image:
+    linear-gradient(rgba(246, 246, 246, 0.7), rgba(246, 246, 246, 0.7)),    
+    url(../images/work_thumb/mu_hp_373&portfolio@2x.webp);
+    filter: blur(1px) brightness(60%);
+}
+.service__lp::after {
+    /* 円ごとの画像＿LP */
+    background-image:
+    linear-gradient(rgba(246, 246, 246, 0.7), rgba(246, 246, 246, 0.7)),
+    url(../images/work_thumb/mu_lp_dezasuta_life_hear_design@2x.webp);
+    filter: blur(1px) brightness(60%);
+}
+.service__web::after {
+    /* 円ごとの画像＿WEB画像 */
+    background-image:
+    linear-gradient(rgba(246, 246, 246, 0.7), rgba(246, 246, 246, 0.7)),
+    url(../images/work_thumb/mu_banner_dezasuta_hamburger_luxury@2x.webp);
+    filter: blur(1px) brightness(60%);
 }
 /* ランディングページ */
 .service__lp {
@@ -637,9 +660,9 @@ h2 img {
 }
 .service__circle p,
 .service__circle dl {
-    transform: translateY(-5%);
+    transform: translateY(-10%);
 }
-.service__title--deco {
+.service__circle p {
     font-family: Montserrat;
     font-size: 64px;
     font-weight: 600;
@@ -647,25 +670,26 @@ h2 img {
     letter-spacing: -0.05em;
     color: var(--gray_white);
     mix-blend-mode: multiply;
-}
-.service__lp {
     position: relative;
+    z-index: 2;
+    transition: opacity 0.3s ease;
 }
-
-.service__lp .service__title--deco {
-    position: relative;
-    z-index: 999;
-}
-.service__category {
+.service__circle dl dt {
     font-size: 28px;
     font-weight: 500;
     letter-spacing: -0.04em;
     color: var(--blue);
     position: relative;
-    bottom: 20px;
-    margin-bottom: 3.0%;
+    bottom: 28px;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 16px 28px;
+    border-radius: 60px;
+    /* ホバーする前は見えない */
+    background-color: rgba(246, 246, 246, 0);
+    transition: background-color 0.3s ease;
 }
-.service__category--text {
+.service__circle dl dd {
     display: inline-block;
     text-align: left;
     font-size: 16px;
@@ -673,6 +697,8 @@ h2 img {
     line-height: 2.0;
     letter-spacing: 0.04em;
     width: 54.5%;
+    margin-top: -12px;
+    transition: color 0.3s ease;
 }
 
 
@@ -749,17 +775,16 @@ h3 img {
     padding: 50px;
     position: relative;
     opacity: 1;
-    transition: opacity 0.3s ease-in;
 }
-/* 白いマスクをフワッとかける */
 .splide__slide::after {
+    /* 白いマスクをフワッとかける */
     content: "";
     position: absolute;
     inset: 0;
     background-color: rgba(255, 255, 255, 0.6); 
     border-radius: 20px;
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.15s;
     pointer-events: none;
 }
 .splide__slide:not(.is-active)::after {
@@ -832,7 +857,7 @@ h3 img {
     padding: 0;
     position: relative;
     top: 100px;
-    transition: transform .2s linear;
+    transition: transform 0.3s linear;
 }
 
 
@@ -1102,6 +1127,12 @@ h3 img {
     .service__web  {
         margin: 0 auto;
     }
+    .service__circle p {
+        transform: translateY(-26%);
+    }
+    .service__circle dl {
+        transform: translateY(-18%);
+    }
 }
 
 @media screen and (max-width: 1060px) {
@@ -1345,7 +1376,7 @@ h3 img {
         margin-bottom: 80px;
     }
     .about__text {
-    width: 100%;
+        width: 100%;
     }
     .about__image {
         display: none;
@@ -1425,24 +1456,26 @@ h3 img {
     .service__circle {
         width: min(100%, 330px);
     }
-    .service__title--deco {
+    .service__circle p {
         font-size: 38px;
     }
-    .service__category {
+    .service__circle dl dt {
         font-size: 20px;
         letter-spacing: 0.02em;
         bottom: 16px;
         margin-bottom: 0px;
     }
-    .service__category--text {
+    .service__circle dl dd {
         font-size: 14px;
         line-height: 1.8;
         letter-spacing: 0.02em;
         width: 68%;
     }
-    .service__circle p,
+    .service__circle p {
+        transform: translateY(-14%);
+    }
     .service__circle dl {
-        transform: translateY(-20px);
+        transform: translateY(-18%);
     }
     /* スキル */
     .skill {
@@ -1455,10 +1488,10 @@ h3 img {
         width: auto;
     }
     .skill__inner {
-    display: flex;
-    flex-direction: column;
-    row-gap: 24px;
-    margin-left: 2.5%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+        margin-left: 2.5%;
     }
     .skill__tool, 
     .skill__implementation {
@@ -1564,6 +1597,7 @@ h3 img {
     }
 }
 
+
 /* メインビジュアル＿＿レスポンシブ調整 */
 @media screen and (max-width: 660px) {
         .blue_tama__front--center {
@@ -1601,25 +1635,41 @@ h3 img {
     .btn__link:hover .btn__circle {
         transform: translateX(20px);
     }
+
+
     /* ワークス＿＿サムネ＿＿ホバー */
     .works__item a img:hover {
         opacity:0.6;
         transform: scale(1.07);
-        transition:0.4s;
     }
     /* サービス＿＿ホバー */
     .service__circle:hover {
-        position: relative;
         z-index: 1;
-        transform: scale(1.04);
+        transform: scale(1.05);
     }
     .service__circle:hover::after {
-    background: rgba(246, 246, 246, 0.5);
+        /* 円の中を画像表示 */
+        opacity: 1;
+        
     }
-    .service__circle > * {
-        /* 円の中身の文章を前面に出す */
-        z-index: 1;
+    .service__circle:hover dl dt {
+        color: var(--blue);
     }
+    .service__circle:hover dl dd {
+        /* text-shadow: 0 0 4px rgba(246, 246, 246, 1); */
+        color: var(--snow_white);
+}
+    .service__circle:hover p {
+        /* 上の英字を消す */
+        opacity: 0;
+    }
+    .service__circle:hover dl dt {
+        background-color: var(--snow_white);
+        padding: 16px 28px;
+        border-radius: 60px;
+}
+
+
     /* コンタクトボタン＿＿ホバー */
     .contact__btn:hover .contact__btn--arrow {
         width: 80px;

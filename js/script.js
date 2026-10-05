@@ -14,7 +14,7 @@ $(function () {
         sessionStorage.setItem('access', 'true');
     } catch (e) {}
     // ローディング開始
-    $loading.css('display', 'flex');
+    // $loading.css('display', 'flex');
     // 2秒待つ
     const introFinished = new Promise(function (resolve) {
         setTimeout(resolve, 2000);
@@ -34,6 +34,27 @@ $(function () {
 });
 
 
+// ＝＝＝＝＝共通パーツ＿＿ヘッダー・フッター＝＝＝＝＝
+// 共通ヘッダーの呼び出し
+function includeHtml(selector, file, callback) {
+    const $target = $(selector);
+    if (!$target.length) return;
+    const root = $target.data('root') || './';
+    $.get(root + 'include/' + file, function (data) {
+        // {root} を実際のパスに置き換えて挿入
+        $target.html(data.replace(/\{root\}/g, root));
+        if (callback) callback();
+    }, 'html');
+}
+
+$(function () {
+    includeHtml('#header', 'header.html', function () {
+        // 挿入が終わってから表示する
+        $('#header header').addClass('is-show');
+    });
+    includeHtml('#footer', 'footer.html');
+});
+
 //＝＝＝＝＝スクロールでふわっと表示__1回だけ＝＝＝＝＝
 $(function () {
     $(".inview").on("inview", function (event, isInView) {
@@ -45,20 +66,33 @@ $(function () {
 
 
 //＝＝＝＝＝画面遷移（フェードアウト__戻る）＝＝＝＝＝
-$(window).on('pageshow', function(){
-    $('body').removeClass('fadeOut');
-});
+// $(window).on('pageshow', function(){
+//     $('body').removeClass('fadeOut');
+// });
 
+// $(function () {
+//     // ハッシュリンク(#)・別ウィンドウ・モーダル（remodal）を開く場合はスルー
+//     $('a:not([href^="#"]):not([target]):not([data-remodal-target])').on('click', function (e) {
+//         e.preventDefault();
+//         // 遷移先のURLを取得
+//         const url = $(this).attr('href');
+//         if (url !== '') {
+//             // bodyに class="fadeOut"を挿入
+//             $('body').addClass('fadeOut');
+//             // 0.3秒後に取得したURLに遷移
+//             setTimeout(function () {
+//                 window.location = url;
+//             }, 300);
+//         }
+//         return false;
+//     });
+// });
 $(function () {
-    // ハッシュリンク(#)・別ウィンドウ・モーダル（remodal）を開く場合はスルー
-    $('a:not([href^="#"]):not([target]):not([data-remodal-target])').on('click', function (e) {
+    $(document).on('click', 'a:not([href^="#"]):not([target]):not([data-remodal-target])', function (e) {
         e.preventDefault();
-        // 遷移先のURLを取得
         const url = $(this).attr('href');
         if (url !== '') {
-            // bodyに class="fadeOut"を挿入
             $('body').addClass('fadeOut');
-            // 0.3秒後に取得したURLに遷移
             setTimeout(function () {
                 window.location = url;
             }, 300);
@@ -88,15 +122,23 @@ $(function () {
     }
 });
 
-
 // ＝＝＝＝＝ハンバーガーメニュー＝＝＝＝＝
+// $(function () {
+//     $(".hamburger").on("click", function (){
+//         $(".header__nav--sp").toggleClass("open");
+//         $(".hamburger").toggleClass("open");
+//         $(".hamburger__overlay").toggleClass("open");
+//     });
+// });
+// 調整
 $(function () {
-    $(".hamburger").on("click", function (){
+    $(document).on("click", ".hamburger", function () {
         $(".header__nav--sp").toggleClass("open");
         $(".hamburger").toggleClass("open");
         $(".hamburger__overlay").toggleClass("open");
     });
 });
+
 
 
 // ＝＝＝＝＝マウスストーカー＝＝＝＝＝
@@ -126,8 +168,8 @@ if ($(".splide").length) {
         type: "loop",
         pauseOnHover: false, 
         rewind: true,
-        interval: 8000,
-        speed: 800,
+        interval: 7000,
+        speed: 700,
         padding: "20%",
         gap: 100,
         fixedWidth: "600px",
