@@ -1194,7 +1194,7 @@ h3 img {
         position: absolute;
         top: 12px;
         right: 16px;
-        z-index: 9998;
+        z-index: 9999;
         cursor: pointer;
     }
     .hamburger span {

@@ -46,14 +46,14 @@ function includeHtml(selector, file, callback) {
         if (callback) callback();
     }, 'html');
 }
-
 $(function () {
     includeHtml('#header', 'header.html', function () {
-        // 挿入が終わってから表示する
+        // 挿入が終わってから表示
         $('#header header').addClass('is-show');
     });
     includeHtml('#footer', 'footer.html');
 });
+
 
 //＝＝＝＝＝スクロールでふわっと表示__1回だけ＝＝＝＝＝
 $(function () {
@@ -66,33 +66,15 @@ $(function () {
 
 
 //＝＝＝＝＝画面遷移（フェードアウト__戻る）＝＝＝＝＝
-// $(window).on('pageshow', function(){
-//     $('body').removeClass('fadeOut');
-// });
-
-// $(function () {
-//     // ハッシュリンク(#)・別ウィンドウ・モーダル（remodal）を開く場合はスルー
-//     $('a:not([href^="#"]):not([target]):not([data-remodal-target])').on('click', function (e) {
-//         e.preventDefault();
-//         // 遷移先のURLを取得
-//         const url = $(this).attr('href');
-//         if (url !== '') {
-//             // bodyに class="fadeOut"を挿入
-//             $('body').addClass('fadeOut');
-//             // 0.3秒後に取得したURLに遷移
-//             setTimeout(function () {
-//                 window.location = url;
-//             }, 300);
-//         }
-//         return false;
-//     });
-// });
 $(function () {
+    // ハッシュリンク(#)・別ウィンドウ・モーダル（remodal）を開く場合はスルー
     $(document).on('click', 'a:not([href^="#"]):not([target]):not([data-remodal-target])', function (e) {
         e.preventDefault();
         const url = $(this).attr('href');
         if (url !== '') {
+             // bodyにfadeOutを挿入
             $('body').addClass('fadeOut');
+            // 0.3秒後に取得したURLに遷移
             setTimeout(function () {
                 window.location = url;
             }, 300);
@@ -123,14 +105,6 @@ $(function () {
 });
 
 // ＝＝＝＝＝ハンバーガーメニュー＝＝＝＝＝
-// $(function () {
-//     $(".hamburger").on("click", function (){
-//         $(".header__nav--sp").toggleClass("open");
-//         $(".hamburger").toggleClass("open");
-//         $(".hamburger__overlay").toggleClass("open");
-//     });
-// });
-// 調整
 $(function () {
     $(document).on("click", ".hamburger", function () {
         $(".header__nav--sp").toggleClass("open");
@@ -138,7 +112,6 @@ $(function () {
         $(".hamburger__overlay").toggleClass("open");
     });
 });
-
 
 
 // ＝＝＝＝＝マウスストーカー＝＝＝＝＝
