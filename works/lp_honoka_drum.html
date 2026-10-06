@@ -37,35 +37,8 @@
     <div id="top"></div>
 
 
-    <!-- ＝＝＝＝＝ナビゲーションバー＝＝＝＝＝ -->
-    <header>
-        <div class="header__inner">
-            <div class="header__logo--inner">
-                <a href="../index.html"><img src="../images/main/logo_web_color.svg" alt="373&DESIGNのロゴ"></a>
-            </div>
-            <nav class="header__nav">
-                <ul>
-                    <li><a href="../index.html#about">ABOUT</a></li>
-                    <li><a href="../index.html#works">WORKS</a></li>
-                    <li><a href="../index.html#service">SERVICE</a></li>
-                    <li><a href="../index.html#contact">CONTACT</a></li>
-                </ul>
-            </nav>
-            <!-- ハンバーガーメニュー -->
-            <div class="hamburger">
-                <span>MENU</span>
-            </div>
-            <div class="hamburger__overlay"></div>
-            <nav class="header__nav--sp">
-                <ul>
-                    <li><a href="../index.html#about">ABOUT</a></li>
-                    <li><a href="../index.html#works">WORKS</a></li>
-                    <li><a href="../index.html#service">SERVICE</a></li>
-                    <li><a href="../index.html#contact">CONTACT</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- ＝＝＝＝＝共通ヘッダー＝＝＝＝＝ -->
+    <div id="header" data-root="../"></div>
 
 
     <main>
@@ -136,61 +109,8 @@
     </main>
 
 
-
-    <!-- ＝＝＝＝＝フッター＝＝＝＝＝ -->
-    <footer>
-        <picture>
-            <source srcset="../images/main/footer_nami_sp.svg" media="(max-width:768px)" />
-            <img src="../images/main/footer_nami_pc.svg" class="footer__wave">
-        </picture>
-        <div class="footer">
-            <div class="footer__container">
-                <!-- フッターナビ -->
-                <nav class="footer__nav">
-                    <ul>
-                        <li><a href="../index.html#about">ABOUT</a></li>
-                        <li><a href="../index.html#works">WORKS</a></li>
-                        <li><a href="../index.html#service">SERVICE</a></li>
-                        <li><a href="../index.html#contact">CONTACT</a></li>
-                    </ul>
-                </nav>
-                <div class="footer__icon--container">
-                    <a href="../index.html" class="footer__logo">
-                        <img src="../images/main/logo_fafdff_web.svg" alt="373&DESIGNのロゴ">
-                    </a>
-                    <div class="footer__sns--container">
-                        <a href="https://lin.ee/58rOvTp" target="_blank" class="sns">
-                            <img src="../images/main/line_brand_icon.png" alt="LINEのアイコン">
-                        </a>
-                        <a href="https://www.instagram.com/373_valley_design?stkn=MXAxNTZ2bGgxdW9zdQ==" target="_blank"
-                            class="sns">
-                            <img src="../images/main/Instagram_Glyph_White.png" alt="Instagramのアイコン">
-                        </a>
-                    </div>
-                </div>
-                <a href="../privacy_policy.html" class="privacy_policy">プライバシーポリシー</a>
-                <p class="copyright">©373&DESIGN</p>
-            </div>
-            <!-- toTOP設置 -->
-            <a href="#top" class="totop">
-                <!-- 回るテキスト -->
-                <div class="totop__svg-wrap">
-                    <svg class="totop__svg" viewBox="0 0 100 100">
-                        <path id="totopPath" class="totop__path" d="M 0 50 A 50 50 0 1 1 0 51 z" />
-                        <text class="totop__text">
-                            <textPath xlink:href="#totopPath">
-                                SCROLL TO TOP
-                            </textPath>
-                        </text>
-                    </svg>
-                </div>
-                <!-- 矢印 -->
-                <div class="totop__circle">
-                    <div class="totop__arrow"></div>
-                </div>
-            </a>
-        </div>
-    </footer>
+    <!-- ＝＝＝＝＝共通フッター＝＝＝＝＝ -->
+    <div id="footer" data-root="../"></div>
 
     <!-- ＝＝＝＝＝モーダルに出てくる内容＝＝＝＝＝ -->
     <div class="remodal" data-remodal-id="modal__sp" data-remodal-options="hashTracking: false">

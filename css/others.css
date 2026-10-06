@@ -514,7 +514,6 @@ input[type="radio"]:checked:before {
     line-height: 1.2;
 }
 
-
 /* ＝＝＝＝＝ページ＿＿プライバシーポリシー＝＝＝＝＝ */
 .praivacypolicy {
     max-width: 660px;
@@ -545,6 +544,21 @@ input[type="radio"]:checked:before {
 }
 
 
+/* ＝＝＝＝＝404＝＝＝＝＝ */
+.notFound img {
+    height: 128px;
+    padding: 11px 0 11px 0;
+    width: auto;
+    margin-bottom: 100px;
+}
+.notFound__text {
+    font-size: 16px;
+    letter-spacing: 0.2em;
+    line-height: 2.0;
+    text-align: center;
+}
+
+
 /* ＝＝＝＝＝レスポンシブ＝＝＝＝＝ */
 
 
@@ -572,6 +586,7 @@ input[type="radio"]:checked:before {
         padding: 0 7.69%;
     }
     h1 img {
+        height: 38px;
         margin-bottom: 80px;
     }
 
@@ -787,6 +802,20 @@ input[type="radio"]:checked:before {
     .praivacypolicy dt {
         margin-bottom: 14px;
     }
+
+
+    /* 404 */
+    .notFound img {
+    height: 80px;
+    padding: 11px 0 11px 0;
+    margin-bottom: 80px;
+}
+.notFound__text {
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    line-height: 2.0;
+    text-align: center;
+}
 }
 
 

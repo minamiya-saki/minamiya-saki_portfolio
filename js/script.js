@@ -83,7 +83,7 @@ $(function () {
     });
 });
 
-// ブラウザバックでページが復元されたとき
+// ブラウザバック＿＿フェードアウトしたまま画面が真っ青になるのを防ぐ
 $(window).on('pageshow', function () {
     $('body').removeClass('fadeOut');
 });

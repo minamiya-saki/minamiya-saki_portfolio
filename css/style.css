@@ -587,6 +587,7 @@ h2 img {
 .service__list {
     max-width: 1440px;
     margin: 0 auto 120px;
+    padding: 0 3% 0 3%;
     display: flex;
     justify-content: center;
 }
@@ -602,7 +603,6 @@ h2 img {
     justify-content: center;
     position: relative;
     transition: transform 0.3s ease-in-out;
-    /* 調整 */
     overflow: hidden;
 }
 .service__circle.is-show {
@@ -1646,7 +1646,7 @@ h3 img {
     /* サービス＿＿ホバー */
     .service__circle:hover {
         z-index: 1;
-        transform: scale(1.05);
+        transform: scale(1.03);
     }
     .service__circle:hover::after {
         /* 円の中を画像表示 */
@@ -1657,7 +1657,6 @@ h3 img {
         color: var(--blue);
     }
     .service__circle:hover dl dd {
-        /* text-shadow: 0 0 4px rgba(246, 246, 246, 1); */
         color: var(--snow_white);
 }
     .service__circle:hover p {
