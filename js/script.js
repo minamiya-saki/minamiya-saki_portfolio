@@ -83,10 +83,14 @@ $(function () {
     });
 });
 
-// ブラウザバック＿＿フェードアウトしたまま画面が真っ青になるのを防ぐ
-$(window).on('pageshow', function () {
-    $('body').removeClass('fadeOut');
-});
+
+//＝＝＝＝＝強制リロード＝＝＝＝＝
+//ブラウザバック対策＿＿オープンメニューそのままや画面遷移の青い画面が出っぱなしになるなど
+window.onpageshow = function(event) {
+	if (event.persisted) {
+		window.location.reload();
+	}
+};
 
 
 // ＝＝＝＝＝ヘッダーナビ＿＿MVの後に表示（トップページのみ）＝＝＝＝＝
