@@ -74,13 +74,18 @@ $(function () {
         if (url !== '') {
              // bodyにfadeOutを挿入
             $('body').addClass('fadeOut');
-            // 0.3秒後に取得したURLに遷移
+            // 0.2秒後に取得したURLに遷移
             setTimeout(function () {
                 window.location = url;
-            }, 300);
+            }, 200);
         }
         return false;
     });
+});
+
+// ブラウザバックでページが復元されたとき
+$(window).on('pageshow', function () {
+    $('body').removeClass('fadeOut');
 });
 
 
