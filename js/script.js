@@ -47,7 +47,12 @@ function includeHtml(selector, file, callback) {
     }, 'html');
 }
 $(function () {
-    includeHtml('#header', 'header.html');
+    includeHtml('#header', 'header.html', function () {
+        // トップページ以外は最初から表示
+        if (!$('#about').length) {
+            $('#header header').addClass('is-show');
+        }
+    });
     includeHtml('#footer', 'footer.html');
 });
 
@@ -109,6 +114,7 @@ $(function () {
         $('header').addClass('is-show');
     }
 });
+
 
 // ＝＝＝＝＝ハンバーガーメニュー＝＝＝＝＝
 $(function () {
