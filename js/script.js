@@ -47,10 +47,7 @@ function includeHtml(selector, file, callback) {
     }, 'html');
 }
 $(function () {
-    includeHtml('#header', 'header.html', function () {
-        // 挿入が終わってから表示
-        $('#header header').addClass('is-show');
-    });
+    includeHtml('#header', 'header.html');
     includeHtml('#footer', 'footer.html');
 });
 
