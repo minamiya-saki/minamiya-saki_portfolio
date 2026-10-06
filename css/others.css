@@ -337,7 +337,7 @@ details ul {
 }
 .remodal__image {
     /* バナーなど */
-    max-width: 600px;
+    max-width: 550px;
     max-height: 80vh;
     width: auto;
     height: auto;
