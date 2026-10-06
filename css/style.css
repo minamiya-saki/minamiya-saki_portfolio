@@ -635,21 +635,21 @@ h2 img {
     background-image:
     linear-gradient(rgba(246, 246, 246, 0.7), rgba(246, 246, 246, 0.7)),    
     url(../images/work_thumb/mu_hp_373&portfolio@2x.webp);
-    filter: blur(1px) brightness(60%);
+    filter: blur(1px) brightness(70%);
 }
 .service__lp::after {
     /* 円ごとの画像＿LP */
     background-image:
     linear-gradient(rgba(246, 246, 246, 0.7), rgba(246, 246, 246, 0.7)),
     url(../images/work_thumb/mu_lp_dezasuta_life_hear_design@2x.webp);
-    filter: blur(1px) brightness(60%);
+    filter: blur(1px) brightness(70%);
 }
 .service__web::after {
     /* 円ごとの画像＿WEB画像 */
     background-image:
     linear-gradient(rgba(246, 246, 246, 0.7), rgba(246, 246, 246, 0.7)),
     url(../images/work_thumb/mu_banner_dezasuta_hamburger_luxury@2x.webp);
-    filter: blur(1px) brightness(60%);
+    filter: blur(1px) brightness(70%);
 }
 /* ランディングページ */
 .service__lp {
@@ -1465,7 +1465,11 @@ h3 img {
         font-size: 20px;
         letter-spacing: 0.02em;
         bottom: 16px;
-        margin-bottom: 0px;
+        margin-bottom: 8px;
+        padding: 8px 16px;
+    }
+    .service__lp dl dt {
+        letter-spacing: 0;
     }
     .service__circle dl dd {
         font-size: 14px;
@@ -1479,6 +1483,8 @@ h3 img {
     .service__circle dl {
         transform: translateY(-18%);
     }
+
+
     /* スキル */
     .skill {
         display: block;
@@ -1600,6 +1606,7 @@ h3 img {
 }
 
 
+
 /* メインビジュアル＿＿レスポンシブ調整 */
 @media screen and (max-width: 660px) {
         .blue_tama__front--center {
@@ -1644,6 +1651,8 @@ h3 img {
         opacity:0.6;
         transform: scale(1.07);
     }
+
+
     /* サービス＿＿ホバー */
     .service__circle:hover {
         z-index: 1;
@@ -1652,14 +1661,14 @@ h3 img {
     .service__circle:hover::after {
         /* 円の中を画像表示 */
         opacity: 1;
-        
     }
     .service__circle:hover dl dt {
         color: var(--blue);
     }
     .service__circle:hover dl dd {
         color: var(--snow_white);
-}
+        filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+    }
     .service__circle:hover p {
         /* 上の英字を消す */
         opacity: 0;
@@ -1668,7 +1677,7 @@ h3 img {
         background-color: var(--snow_white);
         padding: 16px 28px;
         border-radius: 60px;
-}
+    }
 
 
     /* コンタクトボタン＿＿ホバー */
@@ -1678,14 +1687,42 @@ h3 img {
     .contact__btn:hover .contact__btn--circle {
         transform: translateX(20px);
     }
+
+
     /* toTOP＿＿ホバー */
     .totop:hover .totop__arrow {
         animation: totop 2s linear infinite;
     }
 }
+
+
 /* ＝＝＝＝＝タッチ操作デバイスでは非表示＝＝＝＝＝ */
 @media (pointer: coarse) {
     .stalker {
         display: none;
+    }
+    /* ＝＝＝＝＝サービス＿＿タップ時(ホバーと同じ動き)＝＝＝＝＝ */
+    .service__circle.is-active {
+        z-index: 1;
+        transform: scale(1.03);
+    }
+    .service__circle.is-active::after {
+        /* 円の中に画像を表示 */
+        opacity: 1;
+    }
+    .service__circle.is-active p {
+        /* 上の英字を消す */
+        opacity: 0;
+    }
+    .service__circle.is-active dl dt {
+        color: var(--blue);
+        background-color: var(--snow_white);
+        padding: 8px 16px;
+        margin-bottom: 8px;
+        border-radius: 60px;
+    }
+    .service__circle.is-active dl dd {
+        color: var(--snow_white);
+        filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
     }
 }

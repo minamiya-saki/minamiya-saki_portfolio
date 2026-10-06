@@ -146,6 +146,20 @@ $(function () {
     });
 }); 
 
+
+// ＝＝＝＝＝サービス＝＝＝＝＝
+// SP版ではタップでホバーと同じ動き
+$(function () {
+    const isTouch = window.matchMedia('(pointer: coarse)').matches;
+    if (!isTouch) return;
+    $('.service__circle').on('click', function () {
+        // 他の円は閉じる
+        $('.service__circle').not(this).removeClass('is-active');
+        $(this).toggleClass('is-active');
+    });
+});
+
+
 // ＝＝＝＝＝トップページ＿＿ボイス＝＝＝＝＝
 if ($(".splide").length) {
     new Splide(".splide", {
