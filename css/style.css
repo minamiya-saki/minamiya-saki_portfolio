@@ -25,8 +25,6 @@ main {
 }
 
 
-
-
 /* ＝＝＝＝＝マウスストーカー＝＝＝＝＝ */
 .stalker {
     background-color: rgba(250, 253, 255, 0.3);
@@ -161,7 +159,6 @@ body.fadeOut::after {
 }
 
 
-
 /* ＝＝＝＝＝スクロールでふわっと表示＝＝＝＝＝ */
 .fadeIn {
     opacity: 0;
@@ -188,7 +185,6 @@ body.fadeOut::after {
     transform: translate(0, 0);
     opacity: 1;
 }
-
 
 
 /* ＝＝＝＝＝メインビジュアル＝＝＝＝＝ */
@@ -430,10 +426,11 @@ h2 img {
 .about__image {
     position: absolute;
     right: 0;
-    width: min(32%, 500px);
-    /* width: min(24%, 500px); */
+    width: min(32vw, 500px);
+    max-width: none;
 }
 .about__image img {
+    width: 100%;
     border-radius: 30px 0 0 30px;
 }
 .about__image--sp {
@@ -1112,6 +1109,17 @@ h3 img {
 
 /* ＝＝＝＝＝レスポンシブ＝＝＝＝＝ */
 
+@media (min-width: 1440px) {
+    .about__image {
+        right: auto;
+        margin-left: 740px;
+    }
+    .about__image img {
+        border-radius: 30px;
+    }
+}
+
+
 @media screen and (max-width: 1300px) {
     .mv__object {
         margin-top: -70px;
@@ -1517,7 +1525,7 @@ h3 img {
     /* ボイス */
     .splide__slide{
         width: 300px;
-        height: 520px;
+        height: 500px;
         border-radius: 10px;
         padding: 24px;
     }
@@ -1549,7 +1557,7 @@ h3 img {
         right: calc(50% - 150px - 30px);
     }
     .splide__pagination__page {
-        top: 80px;
+        top: 60px;
         margin: 0 20px;
     }
 

@@ -276,7 +276,6 @@ details ul {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 .work__modal p {
     font-family: Montserrat;
@@ -295,6 +294,8 @@ details ul {
     background-size: contain;
     margin-left: 32px;
 }
+
+
 /* ＝＝＝＝＝ワーク＿＿プロダクション＝＝＝＝＝ */
 .work a {
     cursor: pointer;
@@ -391,6 +392,46 @@ details ul {
 }
 .my-close::after {
     transform: rotate(-45deg);
+}
+/* お声 */
+.voice__thank {
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    margin-bottom: 24px;
+}
+.voice {
+    width: 600px;
+    height: fit-content;
+    border-radius: 20px;
+    background-color: var(--gray_white);
+    padding: 32px 40px 32px 40px;
+    position: relative;
+    opacity: 1;
+}
+.voice div {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 14px;
+    align-items: center;
+}
+.voice img {
+    width: 50px;
+    height: 50px;
+}
+.voice .voice__title {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    line-height: 1.8;
+    color: var(--orange);
+}
+.voice p {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 2.0;
 }
 
 

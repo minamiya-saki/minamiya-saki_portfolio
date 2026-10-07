@@ -68,22 +68,70 @@ $(function () {
 
 
 //＝＝＝＝＝画面遷移（フェードアウト__戻る）＝＝＝＝＝
-$(function () {
-    // ハッシュリンク(#)・別ウィンドウ・モーダル（remodal）を開く場合はスルー
-    $(document).on('click', 'a:not([href^="#"]):not([target]):not([data-remodal-target])', function (e) {
+// $(function () {
+//     // ハッシュリンク(#)・別ウィンドウ・モーダル（remodal）を開く場合はスルー
+//     $(document).on('click', 'a:not([href^="#"]):not([target]):not([data-remodal-target])', function (e) {
+//         e.preventDefault();
+//         const url = $(this).attr('href');
+//         if (url !== '') {
+//              // bodyにfadeOutを挿入
+//             $('body').addClass('fadeOut');
+//             // 0.2秒後に取得したURLに遷移
+//             setTimeout(function () {
+//                 window.location = url;
+//             }, 200);
+//         }
+//         return false;
+//     });
+// });
+
+
+$(document).on(
+    //表示しているHTMLページ全体
+    "click",
+    //クリックしたら
+    'a:not([href^="#"]):not([target]):not([data-remodal-target])',
+    //でもhrefが＃で始まるもの、別タブリンク、モーダルは除外
+    function (e) {
+        //クリックに関する情報をeとして受け取る
+        const link = this;
+        //クリックされたaタグをlinkという名前で覚えておく
+            // 同じページ内のハッシュリンクならフェードせずにスクロールだけ
+        const samePage =
+        //同じページがどうかの結果をsamePageという名前で保存
+        link.hash &&
+        // このリンクには＃がついている？かつ、
+        link.pathname.replace(/index\.html$/, "") ===
+        //クリックしたリンクのページ名、からindex.htmlを取り除いたもの、と「現在のページのパス」を比べる
+            location.pathname.replace(/index\.html$/, "");
+            //クリックしたリンクのページと、今いるページは同じか？
+            if (samePage) {
+            //samePage（同じページかどうか）がtrueだったら
+            $(".header__nav--sp, .hamburger, .hamburger__overlay").removeClass(
+            "open",
+            //↑の要素からopenというクラスを削除
+            );
+            return; // デフォルト動作（スムーススクロール）に任せる
+        }
         e.preventDefault();
-        const url = $(this).attr('href');
-        if (url !== '') {
-             // bodyにfadeOutを挿入
-            $('body').addClass('fadeOut');
-            // 0.2秒後に取得したURLに遷移
-            setTimeout(function () {
-                window.location = url;
+        //ブラウザが本来するリンク移動を一旦止める
+        const url = $(this).attr("href");
+         //クリックされたリンク（aタグ）のhrefの中身を取得して、urlという名前で保存
+        if (url !== "") {
+        //urlが空っぽじゃなかったら、〜ではない
+        $("body").addClass("fadeOut");
+        //空っぽでないなら、bodyにfadeOutのクラスを追加
+        setTimeout(function () {
+            //少し時間を置いてから中の処理を実行
+            window.location = url;
+             //urlに保存しておいたページへ移動
             }, 200);
+            //0.2s後に
         }
         return false;
-    });
-});
+        //このクリックイベントの処理をここで終了
+    },
+    );
 
 
 //＝＝＝＝＝強制リロード＝＝＝＝＝
