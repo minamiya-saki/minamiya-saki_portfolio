@@ -431,7 +431,7 @@ h2 img {
 }
 .about__image img {
     width: 100%;
-    border-radius: 30px 0 0 30px;
+    border-radius: 24px 0 0 24px;
 }
 .about__image--sp {
     display: none;
@@ -525,13 +525,13 @@ h2 img {
 }
 /* ＿＿サムネ */
 .works__item img {
-    border-radius: 10px;
+    border-radius: 8px;
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 .works__item a {
     display: block;
     background: var(--blue);
-    border-radius: 10px;
+    border-radius: 8px;
     overflow: hidden;
 }
 /* ＿＿作品カテゴリ */
@@ -682,7 +682,7 @@ h2 img {
     width: fit-content;
     margin: 0 auto;
     padding: 16px 28px;
-    border-radius: 60px;
+    border-radius: 50px;
     /* ホバーする前は見えない */
     background-color: rgba(246, 246, 246, 0);
     transition: background-color 0.3s ease;
@@ -768,7 +768,7 @@ h3 img {
 .splide__slide {
     width: 600px;
     height: 432px;
-    border-radius: 20px;
+    border-radius: 16px;
     background-color: var(--gray_white);
     padding: 50px;
     position: relative;
@@ -780,7 +780,7 @@ h3 img {
     position: absolute;
     inset: 0;
     background-color: rgba(255, 255, 255, 0.6); 
-    border-radius: 20px;
+    border-radius: 16px;
     opacity: 0;
     transition: opacity 0.15s;
     pointer-events: none;
@@ -790,7 +790,7 @@ h3 img {
 }
 @media screen and (max-width: 768px) {
     .splide__slide:not(.is-active)::after {
-        border-radius: 10px; /* SP版の角丸に合わせる */
+        border-radius: 8px; /* SP版の角丸に合わせる */
     }
 }
 .splide__slide div {
@@ -854,7 +854,7 @@ h3 img {
     opacity: 1;
     padding: 0;
     position: relative;
-    top: 100px;
+    top: 64px;
     transition: transform 0.3s linear;
 }
 
@@ -946,7 +946,7 @@ h3 img {
     position: relative;
 }
 .footer__container {
-    padding: 73px 0 90px 5vw;
+    padding: 72px 0 90px 5vw;
 }
 .footer__nav {
     max-width: 611px;
@@ -1115,7 +1115,7 @@ h3 img {
         margin-left: 740px;
     }
     .about__image img {
-        border-radius: 30px;
+        border-radius: 32px;
     }
 }
 
@@ -1130,7 +1130,7 @@ h3 img {
     .service__list {
         flex-direction: column;
         align-items: center;
-        gap: 32px;
+        gap: 24px;
     }
     .service__lp,
     .service__web  {
@@ -1319,7 +1319,7 @@ h3 img {
     /* メインビジュアル */
     #mv {
         padding-top: 20vh;
-        margin-bottom: 100px
+        margin-bottom: 0px;
     }
     .mv__circle {
         width: 61.5vw;
@@ -1370,9 +1370,13 @@ h3 img {
 
 
     /* セクション＿＿アバウト */
+    .about {
+    margin-top: 0px;
+    }
     h2 img {
         height: 37px;
         padding: 9px 0 9px 0;
+        margin-bottom: 72px;
     }
     .headding {
         font-size: 20px;
@@ -1398,10 +1402,10 @@ h3 img {
     .about__image--sp {
         position: relative;
         right: 0;
-        width: min(81.8%, 480px);
+        width: min(81.8%, 400px);
     }
     .about__image--sp img {
-        border-radius: 30px 0 0 30px;
+        border-radius: 16px 0 0 16px;
         margin-bottom: 50px;
     }
 
@@ -1500,7 +1504,7 @@ h3 img {
     h3 img {
         height: 30px;
         padding: 5px 0 5px 0;
-        margin-bottom: 50px;
+        margin-bottom: 48px;
         width: auto;
     }
     .skill__inner {
@@ -1522,15 +1526,18 @@ h3 img {
     .skill__inner p {
         font-size: 14px;
     }
+
+
     /* ボイス */
     .splide__slide{
-        width: 300px;
-        height: 500px;
-        border-radius: 10px;
-        padding: 24px;
+        height: 490px;
+        border-radius: 8px;
+        padding: 32px 28px 32px 28px;
     }
     .splide__slide div {
-        gap: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
         margin-bottom: 12px;
     }
     .splide__slide img {
@@ -1542,6 +1549,8 @@ h3 img {
     }
     .splide__slide p {
         font-size: 14px;
+        letter-spacing: 0.02em;
+        line-height: 1.8;
     }
     .splide__arrow {
         width: 44px;
@@ -1551,10 +1560,10 @@ h3 img {
         background-position: calc(50% + 2px)center;
     }
     .splide__arrow--prev {
-        left: calc(50% - 150px - 30px);
+        left: calc(50% - 150px - 34px);
     }
     .splide__arrow--next {
-        right: calc(50% - 150px - 30px);
+        right: calc(50% - 150px - 34px);
     }
     .splide__pagination__page {
         top: 60px;
@@ -1598,7 +1607,7 @@ h3 img {
     }
     .footer__logo img {
         width: 150px;
-        margin-bottom: 42px;
+        margin-bottom: 32px;
     }
     .footer__icon--container {
         display: block;
@@ -1607,9 +1616,12 @@ h3 img {
         gap: 30px;
         margin-bottom: 264px;
     }
+    .footer__container {
+        padding: 64px 0 48px 5vw;
+    }
     .totop {
         right: 8vw;
-        bottom: 150px;
+        bottom: 100px;
     }
 }
 
@@ -1684,7 +1696,7 @@ h3 img {
     .service__circle:hover dl dt {
         background-color: var(--snow_white);
         padding: 16px 28px;
-        border-radius: 60px;
+        border-radius: 50px;
     }
 
 
@@ -1727,7 +1739,7 @@ h3 img {
         background-color: var(--snow_white);
         padding: 8px 16px;
         margin-bottom: 8px;
-        border-radius: 60px;
+        border-radius: 50px;
     }
     .service__circle.is-active dl dd {
         color: var(--snow_white);

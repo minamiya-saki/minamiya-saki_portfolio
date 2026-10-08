@@ -225,7 +225,7 @@ if ($(".splide").length) {
             768: {
                 padding: "18.5%",
                 gap: 20,
-                fixedWidth: "300px",
+                fixedWidth: "320px",
             },
         },
     }).mount();
