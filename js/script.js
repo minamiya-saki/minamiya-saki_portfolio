@@ -68,30 +68,12 @@ $(function () {
 
 
 //＝＝＝＝＝画面遷移（フェードアウト__戻る）＝＝＝＝＝
-// $(function () {
-//     // ハッシュリンク(#)・別ウィンドウ・モーダル（remodal）を開く場合はスルー
-//     $(document).on('click', 'a:not([href^="#"]):not([target]):not([data-remodal-target])', function (e) {
-//         e.preventDefault();
-//         const url = $(this).attr('href');
-//         if (url !== '') {
-//              // bodyにfadeOutを挿入
-//             $('body').addClass('fadeOut');
-//             // 0.2秒後に取得したURLに遷移
-//             setTimeout(function () {
-//                 window.location = url;
-//             }, 200);
-//         }
-//         return false;
-//     });
-// });
-
-
 $(document).on(
     //表示しているHTMLページ全体
     "click",
     //クリックしたら
-    'a:not([href^="#"]):not([target]):not([data-remodal-target])',
-    //でもhrefが＃で始まるもの、別タブリンク、モーダルは除外
+    'a:not([href^="#"]):not([data-remodal-target]):not([href*="https://www.instagram.com/373_valley_design?stkn=MXAxNTZ2bGgxdW9zdQ=="]):not([href*="https://lin.ee/58rOvTp"])',
+    //でもhrefが＃で始まるもの、モーダル、InstagramとLINEのリンクは除外
     function (e) {
         //クリックに関する情報をeとして受け取る
         const link = this;
@@ -124,12 +106,10 @@ $(document).on(
         setTimeout(function () {
             //少し時間を置いてから中の処理を実行
             window.location = url;
-             //urlに保存しておいたページへ移動
+             //urlに保存しておいたページへ0.2s後に移動
             }, 200);
-            //0.2s後に
         }
         return false;
-        //このクリックイベントの処理をここで終了
     },
     );
 
@@ -185,11 +165,11 @@ $(function () {
         transform: "translate(" + x + "px, " + y + "px)",
         });
     });
-        $(document).on("mouseenter", "a, .splide__arrow, .splide__pagination__page, .c-form__submit button", function () {
+        $(document).on("mouseenter", "a, summary, .splide__arrow, .splide__pagination__page, .c-form__submit button", function () {
         stalker.addClass("js-hover");
     });
 
-    $(document).on("mouseleave", "a, .splide__arrow, .splide__pagination__page, .c-form__submit button", function () {
+    $(document).on("mouseleave", "a, summary, .splide__arrow, .splide__pagination__page, .c-form__submit button", function () {
         stalker.removeClass("js-hover");
     });
 }); 
@@ -225,7 +205,7 @@ if ($(".splide").length) {
             768: {
                 padding: "18.5%",
                 gap: 20,
-                fixedWidth: "320px",
+                fixedWidth: "300px",
             },
         },
     }).mount();

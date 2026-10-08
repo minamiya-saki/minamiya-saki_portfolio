@@ -318,7 +318,7 @@ details ul {
     font-family: Montserrat;
     font-size: 14px;
     font-weight: 400;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     line-height: 1.4;
 }
 .work__production dt::after {
@@ -439,6 +439,10 @@ details ul {
 .contact__text {
     text-align: center;
     margin-bottom: 100px;
+}
+.contact__text span {
+    color: var(--orange);
+    font-weight: 500;
 }
 /* フォーム */
 .c-form {
@@ -803,7 +807,35 @@ input[type="radio"]:checked:before {
         max-width: 250px;
         max-height: 60vh;
     }
-
+    /* お声 */
+    .voice__thank {
+    font-size: 16px;
+    letter-spacing: 0.16em;
+    line-height: 1.8;
+    text-align: center;
+    }
+    .voice {
+    width: 100%;
+    height: fit-content;
+    border-radius: 8px;
+    padding: 32px 24px 32px 24px;
+    box-sizing: border-box;
+    }
+    .voice div {
+        gap: 16px;
+        margin-bottom: 12px;
+    }
+    .voice img {
+        width: 40px;
+        height: 40px;
+    }
+    .voice .voice__title {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .voice p {
+        font-size: 14px;
+    }
 
     /* コンタクト */
     .c-form__item {
