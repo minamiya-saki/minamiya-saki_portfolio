@@ -30,6 +30,7 @@ $(function () {
     // 両方終わったらローディング終了
     Promise.all([introFinished, pageLoaded]).then(function () {
         $loading.addClass('is-loaded');
+        $('.mv__object').addClass('is-mv-show');
     });
 });
 

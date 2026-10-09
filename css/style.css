@@ -224,6 +224,21 @@ body.fadeOut::after {
 .mv__object {
     position: relative;
     margin-top: -116px;
+    /* 遅れて表示 */
+    opacity: 0;
+}
+.mv__object.is-mv-show {
+    /* JSでクラスがついたら0.6s秒遅れて2秒かけてフェードイン開始 */
+    animation: mv_fadeIn 2s ease forwards;
+    animation-delay: 0.6s;
+}
+@keyframes mv_fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 .blue_tama__back {
     width: 86.87%;

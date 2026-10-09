@@ -80,10 +80,10 @@ h1 img {
     position: relative;
     bottom: 180px;
 }
-.profile__photo--wrap picture {
+.profile__photo--img {
     display: block;
 }
-.profile__photo--wrap picture:last-child {
+.profile__photo--img:last-child {
     position: absolute;
     top: 0;
     left: 0;
@@ -91,7 +91,7 @@ h1 img {
     opacity: 0;
     transition: 0.3s;
 }
-.profile__photo--wrap img {
+.profile__photo--img img {
     filter: drop-shadow(8px 8px 0px var(--blue));
     border-radius: 24px;
 }
@@ -645,35 +645,29 @@ input[type="radio"]:checked:before {
         width: 74.3%;
         bottom: 104px;
     }
-    .profile__photo--wrap img {
-    border-radius: 16px;
+    .profile__photo--img img {
+        border-radius: 16px;
     }
-    .profile__photo--wrap picture {
-        transition: none;
-        animation: profile__photo--switch 6s infinite;
-    }
-    .profile__photo--wrap picture:first-child {
-        animation-delay: 0s;
-    }
-    .profile__photo--wrap picture:last-child {
-        animation-delay: 5s;
+    .profile__photo--img {
+        /* 画像を交互に自動切替 */
+        animation: profile__photo--switch 8s infinite;
     }
     @keyframes profile__photo--switch {
-        0% {
-        opacity: 0;
-        }
-        25% {
+        0%, 42.5% {
             opacity: 1;
         }
-        50% {
-            opacity: 1;
-        }
-        75% {
+        50%, 92.5% {
             opacity: 0;
         }
         100% {
-            opacity: 0;
+            opacity: 1;
         }
+    }
+    .profile__photo--img:nth-child(1) {
+        animation-delay: 0s;
+    }
+    .profile__photo--img:nth-child(2) {
+        animation-delay: -4s;
     }
     .profile__inner {
         font-size: 14px;
