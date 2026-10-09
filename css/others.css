@@ -143,6 +143,7 @@ h2 span {
     line-height: 2.2;
     margin-bottom: 64px;
     width: 77%;
+    text-align: justify;
 }
 /* アコーディオンメニュー */
 summary {
@@ -209,6 +210,7 @@ details ul {
     flex-direction: column;
     gap: 35px;
     text-align: left;
+    text-align: justify;
 }
 .yagou__text p {
     letter-spacing: 0.06em;
@@ -330,6 +332,7 @@ details ul {
     letter-spacing: 0.04em;
     line-height: 2.0;
     margin-bottom: 100px;
+    text-align: justify;
 }
 /* モーダル */
 .remodal {
@@ -432,6 +435,7 @@ details ul {
     font-weight: 400;
     letter-spacing: 0.04em;
     line-height: 2.0;
+    text-align: justify;
 }
 
 
