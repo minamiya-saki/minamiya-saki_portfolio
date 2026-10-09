@@ -290,7 +290,7 @@ body.fadeOut::after {
 }
 .blue_tama__front--right {
     width: 29.4%;
-    margin: 2.5% 0 0 9.4%;
+    margin: 2.5% 0.8% 0 9.4%;
     animation: tama__front--right 4s ease-in-out infinite alternate-reverse;
     animation-delay: 1s;
 }
