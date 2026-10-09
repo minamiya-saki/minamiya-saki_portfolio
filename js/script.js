@@ -8,6 +8,7 @@ $(function () {
     } catch (e) {}
     if (visited) {
         $loading.hide();
+        $('.mv__object').addClass('is-mv-show');
         return;
     }
     try {
