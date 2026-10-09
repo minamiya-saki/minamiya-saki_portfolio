@@ -169,7 +169,7 @@ body.fadeOut::after {
 }
 .fadeIn_left {
     opacity: 0;
-    transform: translate(-6%, 0);
+    transform: translate(-5%, 0);
     transition: 1.3s;
 }
 .fadeIn_left.is-show {
@@ -178,7 +178,7 @@ body.fadeOut::after {
 }
 .fadeIn_right {
     opacity: 0;
-    transform: translate(6%, 0);
+    transform: translate(5%, 0);
     transition: 1.3s;
 }
 .fadeIn_right.is-show {
