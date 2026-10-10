@@ -109,6 +109,7 @@ h1 img {
     left: -100px;
     z-index: -9999;
     background-image: url(../images/main/bg_noise_white.webp);
+    background-size: auto;
     animation: fuwafuwa 3s ease-in-out infinite alternate-reverse;
 }
 .headding {
