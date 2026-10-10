@@ -193,17 +193,18 @@ $(function () {
 // ＝＝＝＝＝トップページ＿＿ボイス＝＝＝＝＝
 if ($(".splide").length) {
     new Splide(".splide", {
-        autoplay: true,
-        type: "loop",
-        pauseOnHover: false, 
-        rewind: true,
+        autoplay: true,//自動再生
+        type: "loop",//ループ
+        pauseOnHover: false,//カーソルが乗ってもスクロールを停止させない
+        rewind: true,//終わりまで行ったら先頭に戻る
         interval: 7000,
-        speed: 700,
-        padding: "20%",
+        speed: 1000,
+        padding: "20%",//左右のスライドを見せる
         gap: 100,
-        fixedWidth: "600px",
-        focus: "center",
-        breakpoints: {
+        fixedWidth: "600px",//横幅
+        focus: "center",//中央をアクティブ
+        updateOnMove: true,//スライドが動いている途中からアクティブ状態を更新
+        breakpoints: {//レスポンシブ
             768: {
                 padding: "18.5%",
                 gap: 20,

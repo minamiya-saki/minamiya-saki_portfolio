@@ -802,7 +802,7 @@ h3 img {
     background-color: rgba(255, 255, 255, 0.6); 
     border-radius: 16px;
     opacity: 0;
-    transition: opacity 0.15s;
+    transition: opacity 0.4s;
     pointer-events: none;
 }
 .splide__slide:not(.is-active)::after {
