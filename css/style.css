@@ -1531,10 +1531,10 @@ h3 img {
         width: 68%;
     }
     .service__circle p {
-        transform: translateY(-14%);
+        transform: translateY(-18%);
     }
     .service__circle dl {
-        transform: translateY(-18%);
+        transform: translateY(-12%);
     }
 
 
