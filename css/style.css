@@ -1740,7 +1740,7 @@ h3 img {
     /* サービス＿＿ホバー */
     .service__circle:hover {
         z-index: 1;
-        scale: (1.03);
+        scale: 1.03;
     }
     .service__circle:hover::after {
         /* 円の中を画像表示 */
@@ -1788,7 +1788,7 @@ h3 img {
     /* ＝＝＝＝＝サービス＿＿タップ時(ホバーと同じ動き)＝＝＝＝＝ */
     .service__circle.is-active {
         z-index: 1;
-        scale: (1.03);
+        scale: 1.03;
     }
     .service__circle.is-active::after {
         /* 円の中に画像を表示 */
